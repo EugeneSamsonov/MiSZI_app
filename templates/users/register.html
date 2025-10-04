@@ -6,14 +6,6 @@
 	{% if request.user.is_admin %}
 		<h1>Зарегистрировать пользователя</h1>
 		<form action="." method="post">
-			{% comment %} {% for field in user_form %}
-				<p><label for={{ field.id_for_label }}>{{ field.label }}</label> {{ field }} </p>
-				<div>{{ field.errors }} </div>
-			{% endfor %}
-			{% csrf_token %}
-			<p><input type="submit" value="Create my account"></p>
-			<p><a href="{% url "home" %}">Главная</a> <a href="{% url "login" %}">Форма авторизации</a> </p> {% endcomment %}
-
 			<div class="login_form_fields">
 				{% for field in user_form %}
 					<div class="form_field">
@@ -23,7 +15,7 @@
 					<div class="errors">{{ field.errors }} </div>
 				{% endfor %}
 				<p><input type="submit" value="Зарегистрировать пользователя"></p>
-				<p><a href="{% url "home" %}">Главная</a> | <a href="{% url "login" %}">Форма авторизации</a> </p>
+				<p><a href="{% url "user:home" %}">Главная</a> | <a href="{% url "user:login" %}">Форма авторизации</a> </p>
 				{% csrf_token %}
 			</div>
 		</form>

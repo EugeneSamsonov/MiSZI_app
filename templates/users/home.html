@@ -5,10 +5,10 @@
 {% block content %}
 	<h1>Здравствуйте {{ request.user.username }}</h1>
 	
-	<div class="form_fields"><a href="{% url "change-password" %}">Поменять пароль</a></div>
+	<div class="form_fields"><a href="{% url "user:change-password" %}">Поменять пароль</a></div>
 	
 	{% if request.user.is_admin %}
-		<p><a href="{% url "register" %}">Зарегестрировать пользователя</a></p>
+		<p><a href="{% url "user:register" %}">Зарегестрировать пользователя</a></p>
 		
 		<div class="users-list">
 			<p> Список пользователей </p>
@@ -29,6 +29,6 @@
 		</div>
 	{% endif %}
 	
-	<p><a href="{% url "logout" %}">Выйти из системы</a></p>
+	<p><a href="{% url "user:logout" %}">Выйти из системы</a></p>
 	
 {% endblock  %}

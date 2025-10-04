@@ -1,5 +1,5 @@
 import re
-from user.models import User
+from users.models import User
 from django import forms
 from django.core.validators import BaseValidator
 from django.utils.deconstruct import deconstructible

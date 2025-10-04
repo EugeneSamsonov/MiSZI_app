@@ -106,7 +106,7 @@
 	<div class="container">
 			{% if request.user.is_blocked %}
 			<div><h1>Вы были заблокированы администрацией</h1></div>
-			<p><a href="{% url "logout" %}">Выйти из системы</a></p>
+			<p><a href="{% url "user:logout" %}">Выйти из системы</a></p>
 			{% else %}
 				{% block content %}{% endblock %}
 			{% endif %}

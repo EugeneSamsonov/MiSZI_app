@@ -40,8 +40,7 @@ INSTALLED_APPS = [
 
     "axes",
 
-    "user",
-    "login",
+    "users",
 ]
 
 MIDDLEWARE = [
@@ -137,7 +136,7 @@ STATIC_URL = "static/"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-AUTH_USER_MODEL = "user.User"
+AUTH_USER_MODEL = "users.User"
 
 AXES_FAILURE_LIMIT = 3 # Колличесвто попыток
 # AXES_COOLOFF_TIME = 2 # Блок на 2 часа

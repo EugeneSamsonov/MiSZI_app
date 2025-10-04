@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from user.models import User
+from users.models import User
 
 # Register your models here.
 class AuthorAdmin(admin.ModelAdmin):
