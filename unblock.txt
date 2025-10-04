@@ -1,0 +1,9 @@
+python manage.py axes_reset сбросит все блокировки и записи доступа.
+
+python manage.py axes_reset_ip [ip ...] очистит блокировки и записи для указанных IP-адресов.
+
+python manage.py axes_reset_username [username ...] очистит блокировки и записи для указанных имен пользователей.
+
+python manage.py axes_reset_ip_username [ip] [username] очистит блокировки и записи для указанного IP-адреса и имени пользователя.
+
+python manage.py axes_reset_logs (age) сбросит (т.е. удалит) записи AccessLog, которые старше заданного возраста, где возраст по умолчанию составляет 30 дней.
