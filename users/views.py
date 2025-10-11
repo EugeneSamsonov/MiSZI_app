@@ -10,8 +10,6 @@ from django.db.models import Q
 from users.models import User
 
 # Create your views here.
-
-
 def user_login(request):
     if request.method == "POST":
         login_form = UserLoginForm(request.POST)

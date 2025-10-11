@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block title %}Панель управления тестами{% endblock  %}
+
+{% block content %}
+<div>
+    <h1>Панель управления тестами</h1>
+    <p><a href="{% url "tests:create-test" %}">Создать тест</a></p>
+    {% comment %} <p><a href="{% url "tests:create-test" %}">Изменить тест</a></p> {% endcomment %}
+    {% comment %} <p><a href="{% url "tests:create-test" %}">Удалить тест</a></p> {% endcomment %}
+</div>
+{% endblock  %}

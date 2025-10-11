@@ -41,7 +41,7 @@ body {
 }
 .form_field {
   display: flex;
-  /* flex-direction: row; */
+  flex-direction: row;
   align-items: center;
   justify-content: space-between;
   margin-bottom: 10px;
@@ -83,4 +83,65 @@ a {
 }
 a:hover {
   text-decoration: underline;
+}
+
+.question-block {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 20px;
+    background-color: #f9f9f9;
+}
+
+.answer-block {
+    border-left: 3px solid #007bff;
+    padding-left: 10px;
+    margin-bottom: 10px;
+}
+
+.users-list h3 {
+    margin-top: 0;
+    color: #333;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 5px;
+}
+
+.users-list h4 {
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.user-card h5 {
+    margin: 0 0 10px 0;
+    color: #333;
+    font-size: 1.1em;
+}
+
+.answers_fields {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    background-color: #f2f2f2;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+/* Скрываем скрытые поля */
+input[type="hidden"],
+select[style*="display: none"],
+.hidden {
+    display: none !important;
+}
+
+/* Альтернативный вариант - скрываем по имени */
+input[name*="TOTAL_FORMS"],
+input[name*="INITIAL_FORMS"],
+input[name*="MIN_NUM_FORMS"],
+input[name*="MAX_NUM_FORMS"],
+input[name*="-id"],
+input[name*="-DELETE"] {
+    display: none !important;
 }

@@ -10,6 +10,8 @@
 	{% if request.user.is_admin %}
 		<p><a href="{% url "user:register" %}">Зарегестрировать пользователя</a></p>
 		
+        <p><a href="{% url "tests:control-panel" %}">Панель управления тестами</a></p>
+
 		<div class="users-list">
 			<p> Список пользователей </p>
 			{% for user in users %}

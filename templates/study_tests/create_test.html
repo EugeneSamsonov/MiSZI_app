@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+
+{% block title %}Создать тест{% endblock title %} 
+
+{% block content %}
+<h1>Создать тест</h1>
+<form method="post">
+    {% csrf_token %}
+    
+    <!-- Форма теста -->
+    <div class="login_form_fields">
+        {% for field in test_form %}
+            {% if not field.is_hidden %}
+            <div class="form_field">
+                <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                <p>{{ field }}</p>
+            </div>
+            <div class="errors">{{ field.errors }}</div>
+            {% else %}
+            {{ field }}
+            {% endif %}
+        {% endfor %}
+    </div>
+    
+    <!-- Formset вопросов - management_form скрыт но работает -->
+    <div style="display: none;">
+        {{ question_formset.management_form }}
+    </div>
+    
+    {% for question_form, answer_formset in questions_with_answers %}
+        <div class="users-list" style="margin-bottom: 30px;">
+            <h3>Вопрос {{ forloop.counter }}</h3>
+            
+            <!-- Форма вопроса -->
+            <div class="login_form_fields">
+                {% for field in question_form %}
+                    {% if not field.is_hidden %}
+                    <div class="form_field">
+                        <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                        <p>{{ field }}</p>
+                    </div>
+                    <div class="errors">{{ field.errors }}</div>
+                    {% else %}
+                    {{ field }}
+                    {% endif %}
+                {% endfor %}
+            </div>
+            
+            <!-- Formset ответов для этого вопроса - скрыт но работает -->
+            <div style="display: none;">
+                {{ answer_formset.management_form }}
+            </div>
+            
+            <div style="margin-top: 15px;">
+                <h4>Ответы:</h4>
+                {% for answer_form in answer_formset %}
+                    <div class="answers_fields" style="flex-direction: column; align-items: flex-start; margin-bottom: 10px;">
+                        <div class="login_form_fields" style="width: 100%;">
+                            {% for field in answer_form %}
+                                {% if not field.is_hidden %}
+                                <div class="form_field">
+                                    <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                                    <p>{{ field }}</p>
+                                </div>
+                                <div class="errors">{{ field.errors }}</div>
+                                {% else %}
+                                {{ field }}
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    {% endfor %}
+    
+    <p><input type="submit" value="Создать тест"></p>
+    <p><a href="{% url 'tests:control-panel' %}">Назад к панели управления</a></p>
+</form>
+{% endblock content %}

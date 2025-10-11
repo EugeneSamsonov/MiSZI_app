@@ -22,4 +22,5 @@ import app
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include(('users.urls', 'user'), namespace='user')),
+    path('tests/', include(('study_tests.urls', 'study_tests'), namespace='tests')),
 ]
