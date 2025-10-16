@@ -9,6 +9,7 @@ from django.db.models import Q
 
 from users.models import User
 
+
 # Create your views here.
 def user_login(request):
     if request.method == "POST":
@@ -96,3 +97,7 @@ def user_update(request):
         user.save()
 
     return HttpResponseRedirect(reverse_lazy("user:home"))
+
+
+def blocked(request):
+    return render(request, "users/only_for_admin.html")

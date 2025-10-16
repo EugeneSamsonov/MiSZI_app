@@ -12,6 +12,9 @@ class StudyTest(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
+    def __str__(self):
+        return f"{self.title} | {self.author}"
+
 
 class Question(models.Model):
     test = models.ForeignKey(
@@ -21,7 +24,7 @@ class Question(models.Model):
     multiple_answers = models.BooleanField(default=False)
 
     def __str__(self):
-        return self.text
+        return f"{self.text}{" | multiple" if self.multiple_answers else ''}"
 
 
 class Answer(models.Model):
@@ -32,7 +35,7 @@ class Answer(models.Model):
     is_correct = models.BooleanField(default=False)
 
     def __str__(self):
-        return self.text
+        return f"{self.text}{" | correct" if self.is_correct else ''}"
 
 
 class TestAttempt(models.Model):

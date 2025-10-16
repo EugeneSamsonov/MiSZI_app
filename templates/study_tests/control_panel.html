@@ -1,12 +1,34 @@
 {% extends "base.html" %}
-
-{% block title %}Панель управления тестами{% endblock  %}
-
+{% block title %}
+    Панель управления тестами
+{% endblock title %}
 {% block content %}
-<div>
-    <h1>Панель управления тестами</h1>
-    <p><a href="{% url "tests:create-test" %}">Создать тест</a></p>
-    {% comment %} <p><a href="{% url "tests:create-test" %}">Изменить тест</a></p> {% endcomment %}
-    {% comment %} <p><a href="{% url "tests:create-test" %}">Удалить тест</a></p> {% endcomment %}
-</div>
-{% endblock  %}
+    <div>
+        <h1>Панель управления тестами</h1>
+        <p>
+            <a href="{% url "tests:create-test" %}">Создать тест</a>
+            <span>|</span>
+            <a href="{% url "user:home" %}">Главная</a>
+        </p>
+        <div class="tests-list">
+            {% if tests %}
+                {% for test in tests %}
+                    <div class="test-card">
+                        <a href="{% url "tests:test-update" %}">
+                            <p>{{ test.title }}</p>
+                            <form action="{% url "tests:test-delete" test.id %}" method="get">
+                                <input type="hidden" name="user_id" value="{{ test.id }}">
+                                {% csrf_token %}
+                                <input type="submit" value="Удалить">
+                            </form>
+                        </a>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <div class="test-card">
+                    <p>У вас пока нет тестов</p>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+{% endblock content %}

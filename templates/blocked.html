@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% if request.user.is_blocked %}
+        <h1>Вы были заблокированы</h1>
+    {% elif not request.user.is_admin %}
+        <h1>Только для администрации</h1>
+    {% endif %}
+{% endblock content %}

@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block title %}Здравствуйте {{ request.user.username }}{% endblock  %}
+{% block title %}Здравствуйте {{ request.user.username }}{% endblock title %}
 
 {% block content %}
 	<h1>Здравствуйте {{ request.user.username }}</h1>
@@ -16,7 +16,7 @@
 			<p> Список пользователей </p>
 			{% for user in users %}
 				<div class="user-card {% if user.is_blocked %}user-blocked{% endif %}">
-					<p>{{ user.username }}
+					<p>{{ user.username }}</p>
 					<form action="{% url "user:user-update" %}" method="post">
 						<input type="hidden" name="user_id" value="{{ user.id }}">
 						{% csrf_token %}
@@ -29,8 +29,10 @@
 				</div>
 			{% endfor %}
 		</div>
+    {% else %}
+    <p><a href="{% url "tests:home" %}">Пройти тест</a></p>
 	{% endif %}
 	
 	<p><a href="{% url "user:logout" %}">Выйти из системы</a></p>
 	
-{% endblock  %}
+{% endblock content %}

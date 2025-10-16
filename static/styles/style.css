@@ -9,7 +9,7 @@ body {
   padding-top: auto;
 }
 .container {
-  max-width: 500px;
+  max-width: 50%;
   margin: 0 auto;
   padding: 20px;
   margin-left: auto;
@@ -60,6 +60,8 @@ body {
   border: 1px solid #ccc;
   border-radius: 5px;
 }
+li,
+.errorlist .nonform li,
 .errors {
   color: red;
   font-weight: bold;
@@ -86,54 +88,54 @@ a:hover {
 }
 
 .question-block {
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 15px;
-    margin-bottom: 20px;
-    background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 15px;
+  margin-bottom: 20px;
+  background-color: #f9f9f9;
 }
 
 .answer-block {
-    border-left: 3px solid #007bff;
-    padding-left: 10px;
-    margin-bottom: 10px;
+  border-left: 3px solid #007bff;
+  padding-left: 10px;
+  margin-bottom: 10px;
 }
 
 .users-list h3 {
-    margin-top: 0;
-    color: #333;
-    border-bottom: 2px solid #007bff;
-    padding-bottom: 5px;
+  margin-top: 0;
+  color: #333;
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 5px;
 }
 
 .users-list h4 {
-    color: #555;
-    margin-bottom: 15px;
+  color: #555;
+  margin-bottom: 15px;
 }
 
 .user-card h5 {
-    margin: 0 0 10px 0;
-    color: #333;
-    font-size: 1.1em;
+  margin: 0 0 10px 0;
+  color: #333;
+  font-size: 1.1em;
 }
 
 .answers_fields {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 10px;
-    background-color: #f2f2f2;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  background-color: #f2f2f2;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
 }
 
 /* Скрываем скрытые поля */
 input[type="hidden"],
 select[style*="display: none"],
 .hidden {
-    display: none !important;
+  display: none !important;
 }
 
 /* Альтернативный вариант - скрываем по имени */
@@ -143,5 +145,68 @@ input[name*="MIN_NUM_FORMS"],
 input[name*="MAX_NUM_FORMS"],
 input[name*="-id"],
 input[name*="-DELETE"] {
-    display: none !important;
+  display: none !important;
+}
+
+.test-card {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+  justify-content: center;
+}
+
+.test-card a {
+  margin-right: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 10px;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.form_fields {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  background-color: #f2f2f2;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.test_form_field {
+  width: 95%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 5px;
+  background-color: #f2f2f2;
+  padding: 10px;
+}
+
+.test_form_field textarea,
+.test_form_field input {
+  padding: 5px;
+  border-radius: 5px;
+  width: 60%;
+  border: 1px solid #ccc;
+}
+
+.test_form_field input[type="image"],
+.test_form_field input[type="range"],
+.test_form_field input[type="checkbox"],
+.test_form_field input[type="number"],
+.test_form_field input[type="radio"] {
+  border-radius: 5px;
+  text-align: center;
+  margin: auto;
+  width: 34%;
 }
