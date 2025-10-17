@@ -12,8 +12,13 @@ class StudyTestForm(forms.ModelForm):
             "description",
             "attempt_limit",
         ]
+        labels = {
+            "title": "Название",
+            "description": "Описание",
+            "attempt_limit": "Лимит попыток",
+        }
 
-    title = forms.CharField(required=True)
+    title = forms.CharField(required=True, label="Название")
 
     def clean_title(self):
         if self.cleaned_data["title"] == "":
@@ -29,8 +34,12 @@ class QuestionForm(forms.ModelForm):
             "text",
             # "multiple_answers",
         ]
+        labels = {
+            "text": "Вопрос",
+            # "multiple_answers": "Множественные ответы",
+        }
 
-    text = forms.CharField(required=True)
+    text = forms.CharField(required=True, label="Вопрос")
 
 
 class AnswerForm(forms.ModelForm):
@@ -40,8 +49,12 @@ class AnswerForm(forms.ModelForm):
             "text",
             "is_correct",
         ]
+        labels = {
+            "text": "Ответ",
+            "is_correct": "Правильный?",
+        }
 
-    text = forms.CharField(required=True)
+    text = forms.CharField(required=True, label="Ответ")
 
     # def clean_text(self):
     #     if self.cleaned_data["text"] == "":

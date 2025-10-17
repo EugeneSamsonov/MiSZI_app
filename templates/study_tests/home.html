@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}
+    Тесты - Главная
+{% endblock title %}
+{% block content %}
+    <h1>Пройти тест</h1>
+    <a href="{% url "user:home" %}">Главная</a>
+    <div class="tests-list">
+        {% if tests %}
+            {% for test in tests %}
+                <div class="test-card-attempt">
+                    <h3>{{ test.title }}</h3>
+                    <div class="test-description">
+                        <p>{{ test.description }}</p>
+                    </div>
+                    <div class="small_inf">
+                        <p>Количество попыток - {{ test.attempt_limit }}</p>
+                        <p>{{ test.author }}</p>
+                    </div>
+                    <a class="button" href="{% url "tests:home" %}">Пройти</a>
+                </div>
+            {% endfor %}
+        {% else %}
+            <div class="test-card">Упс, но тестов пока нет</div>
+        {% endif %}
+    </div>
+{% endblock content %}

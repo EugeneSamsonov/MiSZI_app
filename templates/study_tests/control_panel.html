@@ -14,14 +14,12 @@
             {% if tests %}
                 {% for test in tests %}
                     <div class="test-card">
-                        <a href="{% url "tests:test-update" %}">
-                            <p>{{ test.title }}</p>
-                            <form action="{% url "tests:test-delete" test.id %}" method="get">
-                                <input type="hidden" name="user_id" value="{{ test.id }}">
-                                {% csrf_token %}
-                                <input type="submit" value="Удалить">
-                            </form>
-                        </a>
+                        <p>{{ test.title }}</p>
+                        <form action="{% url "tests:test-delete" test.id %}" method="get">
+                            <input type="hidden" name="user_id" value="{{ test.id }}">
+                            {% csrf_token %}
+                            <input type="submit" value="Удалить">
+                        </form>
                     </div>
                 {% endfor %}
             {% else %}

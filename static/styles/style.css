@@ -66,6 +66,7 @@ li,
   color: red;
   font-weight: bold;
 }
+.button,
 input[type="submit"] {
   background-color: #000000;
   color: white;
@@ -74,10 +75,14 @@ input[type="submit"] {
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease-in-out;
+  text-decoration: none;
 }
+
+.button:hover,
 input[type="submit"]:hover {
-  background-color: #e3e3e3;
-  color: #000000;
+    background-color: #e3e3e3;
+    color: #000000;
+    text-decoration: none;
 }
 a {
   color: #000000;
@@ -150,12 +155,13 @@ input[name*="-DELETE"] {
 
 .test-card {
   display: flex;
+  flex-direction: row;
   align-items: center;
   border: 1px solid #ccc;
   border-radius: 5px;
   padding: 10px;
   margin-bottom: 10px;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 .test-card a {
@@ -209,4 +215,42 @@ input[name*="-DELETE"] {
   text-align: center;
   margin: auto;
   width: 34%;
+}
+
+.test-card-attempt {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+  justify-content: space-between;
+  background-color: #f2f2f2;
+  width: 95%;
+  text-align: left;
+}
+
+.test-description {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  justify-content: space-between;
+  background-color: #f2f2f2;
+  width: 95%;
+  text-align: left;
+}
+
+.small_inf {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  padding: 10px;
+  margin-bottom: 10px;
+  justify-content: space-between;
+  background-color: #f2f2f2;
+  width: 95%;
+  text-align: left;
+  font-size: smaller;
+  color: #555;
 }

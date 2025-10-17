@@ -46,52 +46,29 @@ def create_test(request):
         if is_valid:
             test = test_form.save(commit=False)
             test.author = request.user
+            test.save()
 
-            is_breaked = False
             for question_form, answer_formset in questions_with_answers:
-                # Проверяем, что вопрос не пустой
-                if question_form.cleaned_data and not question_form.cleaned_data.get(
-                    "DELETE", False
-                ):
-                    question = question_form.save(commit=False)
-                    question.test = test
+                question = question_form.save(commit=False)
+                question.test = test
 
-                    correct_count = 0
-                    for answer_form in answer_formset:
-                        if (
-                            answer_form.cleaned_data
-                            and answer_form.cleaned_data["is_correct"]
-                        ):
-                            correct_count += 1
+                correct_count = 0
+                for answer_form in answer_formset:
+                    if (
+                        answer_form.cleaned_data
+                        and answer_form.cleaned_data["is_correct"]
+                    ):
+                        correct_count += 1
 
-                    if correct_count == 0:
-                        question_form.add_error(
-                            "text", "At least one answer must be correct"
-                        )
-                        is_breaked = True
-                        break
-                    else:
-                        question.multiple_answers = correct_count > 1
+                    question.multiple_answers = correct_count > 1
 
-                        answer_formset.instance = question
+                    answer_formset.instance = question
+                
 
-                        test.save()
-                        question.save()
-                        answer_formset.save()
-                        return HttpResponseRedirect(reverse_lazy("tests:control-panel"))
+                question.save()
+                answer_formset.save()
 
-            if is_breaked:
-                return render(
-                    request,
-                    "study_tests/create_test.html",
-                    {
-                        "test_form": test_form,
-                        "question_formset": question_formset,
-                        "questions_with_answers": questions_with_answers,
-                        "answer_formsets": answer_formsets,
-                    },
-                )
-
+            return HttpResponseRedirect(reverse_lazy("tests:control-panel"))
         else:
             return render(
                 request,
@@ -129,3 +106,9 @@ def delete_test(request, test_id):
     test = StudyTest.objects.get(id=test_id)
     test.delete()
     return HttpResponseRedirect(reverse_lazy("tests:control-panel"))
+
+
+@login_required(login_url=reverse_lazy("user:login"))
+def home(request):
+    tests = StudyTest.objects.all()
+    return render(request, "study_tests/home.html", {"tests": tests})

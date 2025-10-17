@@ -5,6 +5,11 @@ from users.models import User
 
 # Create your models here.
 class StudyTest(models.Model):
+
+    class Meta:
+        verbose_name = "Тест"
+        verbose_name_plural = "Тесты"
+
     title = models.CharField(max_length=255)
     description = models.TextField()
     attempt_limit = models.IntegerField(default=3)
@@ -17,6 +22,11 @@ class StudyTest(models.Model):
 
 
 class Question(models.Model):
+
+    class Meta:
+        verbose_name = "Вопрос"
+        verbose_name_plural = "Вопросы"
+
     test = models.ForeignKey(
         StudyTest, related_name="questions", on_delete=models.CASCADE
     )
@@ -24,10 +34,15 @@ class Question(models.Model):
     multiple_answers = models.BooleanField(default=False)
 
     def __str__(self):
-        return f"{self.text}{" | multiple" if self.multiple_answers else ''}"
+        return f"тест {self.test.id } | {self.text}{" | multiple" if self.multiple_answers else ''}"
 
 
 class Answer(models.Model):
+
+    class Meta:
+        verbose_name = "Ответ"
+        verbose_name_plural = "Ответы"
+
     question = models.ForeignKey(
         Question, related_name="answers", on_delete=models.CASCADE
     )
@@ -35,10 +50,15 @@ class Answer(models.Model):
     is_correct = models.BooleanField(default=False)
 
     def __str__(self):
-        return f"{self.text}{" | correct" if self.is_correct else ''}"
+        return f"вопрос {self.question.id } | {self.text}{" | correct" if self.is_correct else ''}"
 
 
 class TestAttempt(models.Model):
+
+    class Meta:
+        verbose_name = "Попытка"
+        verbose_name_plural = "Попытки"
+
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     test = models.ForeignKey(StudyTest, on_delete=models.CASCADE)
     attempt_number = models.IntegerField(default=1)
@@ -50,7 +70,13 @@ class TestAttempt(models.Model):
         return f"{self.user} - {self.test} - №{self.attempt_number}"
 
 
+
 class QuestionAttempt(models.Model):
+
+    class Meta:
+        verbose_name = "Ответ на вопрос"
+        verbose_name_plural = "Ответы на вопросы"
+
     attempt = models.ForeignKey(
         TestAttempt, on_delete=models.CASCADE, related_name="question_attempts"
     )
