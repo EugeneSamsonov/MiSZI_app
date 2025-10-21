@@ -39,7 +39,7 @@ class UserRegistrationForm(forms.ModelForm):
         model = User
         fields = ("username", "password1", "password2")
 
-    username = forms.CharField()
+    username = forms.CharField(label="Имя пользователя")
     password1 = forms.CharField(
         widget=forms.PasswordInput, required=False, validators=[PasswordValidator()], label="Пароль"
     )

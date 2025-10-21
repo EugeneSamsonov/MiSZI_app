@@ -3,25 +3,26 @@
     Тесты - Главная
 {% endblock title %}
 {% block content %}
-    <h1>Пройти тест</h1>
-    <a href="{% url "user:home" %}">Главная</a>
+    <h1>Список тестов для прохождения</h1>
     <div class="tests-list">
         {% if tests %}
             {% for test in tests %}
-                <div class="test-card-attempt">
+                <a class="test-card-attempt test-card-link"
+                   href="{% url "tests:test-attempt" test.id %}">
                     <h3>{{ test.title }}</h3>
-                    <div class="test-description">
+                    <div class="test-card-inf">
+                    <div class="test-card-description">
                         <p>{{ test.description }}</p>
                     </div>
-                    <div class="small_inf">
+                    <div class="test-card-small_inf">
                         <p>Количество попыток - {{ test.attempt_limit }}</p>
                         <p>{{ test.author }}</p>
-                    </div>
-                    <a class="button" href="{% url "tests:home" %}">Пройти</a>
-                </div>
+                    </div></div>
+                </a>
             {% endfor %}
         {% else %}
             <div class="test-card">Упс, но тестов пока нет</div>
         {% endif %}
+        <a class="button" href="{% url "user:home" %}">Главная</a>
     </div>
 {% endblock content %}

@@ -60,32 +60,37 @@ body {
   border: 1px solid #ccc;
   border-radius: 5px;
 }
+
 li,
 .errorlist .nonform li,
 .errors {
   color: red;
   font-weight: bold;
 }
+
 .button,
 input[type="submit"] {
   background-color: #000000;
+  border: 1px solid #000000;
   color: white;
   padding: 10px 20px;
-  border: none;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease-in-out;
   text-decoration: none;
+  font-size: medium;
 }
 
 .button:hover,
 input[type="submit"]:hover {
-    background-color: #e3e3e3;
-    color: #000000;
-    text-decoration: none;
+  background-color: #f2f2f2;
+  border: 1px solid #000000;
+  color: #000000;
+  text-decoration: none;
 }
 a {
   color: #000000;
+  transition: background-color 0.3s ease-in-out;
   text-decoration: none;
 }
 a:hover {
@@ -223,34 +228,108 @@ input[name*="-DELETE"] {
   align-items: center;
   border: 1px solid #ccc;
   border-radius: 5px;
-  padding: 10px;
-  margin-bottom: 10px;
+  padding: 10px 10px 0 10px;
+  margin-bottom: 20px;
   justify-content: space-between;
-  background-color: #f2f2f2;
-  width: 95%;
-  text-align: left;
+  text-align: center;           /* ← ИЗМЕНИ на center */
+  text-decoration: none;
 }
 
-.test-description {
+.test-card-attempt h3 {
+  margin-top: 0;
+  color: #333;
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 5px;
+  width: 95%;
+  text-align: center;
+}
+
+.test-card-link {
+  text-decoration: none;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.test-card-link:hover,
+.test-card-link:hover .test-card-inf {
+  background-color: #e3e3e3;
+  text-decoration: none;
+}
+
+.test-card-inf {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: baseline;
+  background-color: #f2f2f2;
+  width: 95%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.test-card-description {
   display: flex;
   flex-direction: column;
   align-items: baseline;
   justify-content: space-between;
-  background-color: #f2f2f2;
   width: 95%;
   text-align: left;
 }
 
-.small_inf {
+.test-card-small_inf {
   display: flex;
   flex-direction: row;
   align-items: baseline;
-  padding: 10px;
-  margin-bottom: 10px;
+  padding: 10px 10px 0 10px;
   justify-content: space-between;
-  background-color: #f2f2f2;
   width: 95%;
   text-align: left;
   font-size: smaller;
   color: #555;
+}
+
+.test-attempt-answers-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.test-attempt-answer {
+  margin: 5px;
+}
+
+.buttons-list {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 10px;
+  /* padding: 10px; */
+}
+
+.test-panel-buttons {
+  justify-content: space-between;
+}
+
+.home-buttons .button {
+  width: 36%;
+}
+
+.button.delete {
+  background-color: #dc3545;  /* красный для удаления */
+  border-color: #dc3545;
+  margin-bottom: 20px;
+}
+
+.button.delete:hover {
+  background-color: #c82333;
+  color: white;
 }

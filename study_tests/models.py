@@ -50,7 +50,7 @@ class Answer(models.Model):
     is_correct = models.BooleanField(default=False)
 
     def __str__(self):
-        return f"вопрос {self.question.id } | {self.text}{" | correct" if self.is_correct else ''}"
+        return f"вопрос {self.question.id } | {self.id} {self.text}{" | correct" if self.is_correct else ''}"
 
 
 class TestAttempt(models.Model):

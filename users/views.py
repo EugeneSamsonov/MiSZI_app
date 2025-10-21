@@ -30,7 +30,7 @@ def user_login(request):
     return render(request, "users/login.html", {"login_form": login_form})
 
 
-@login_required(login_url=reverse_lazy("user:login"))
+@login_required()
 def register(request):
     if request.method == "POST":
         user_form = UserRegistrationForm(request.POST)
@@ -48,13 +48,13 @@ def register(request):
     return render(request, "users/register.html", {"user_form": user_form})
 
 
-@login_required(login_url=reverse_lazy("user:login"))
+@login_required()
 def user_logout(request):
     logout(request)
     return HttpResponseRedirect(reverse_lazy("user:login"))
 
 
-@login_required(login_url=reverse_lazy("user:login"))
+@login_required()
 def home(request):
     if request.user.is_admin:
         users = User.objects.filter(~Q(pk=request.user.pk)).all().order_by("username")
@@ -62,7 +62,7 @@ def home(request):
     return render(request, "users/home.html")
 
 
-@login_required(login_url=reverse_lazy("user:login"))
+@login_required()
 def change_password(request):
     if request.method == "POST":
         change_password_form = UserChangePasswordForm(request.POST)

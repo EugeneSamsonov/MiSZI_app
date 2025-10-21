@@ -120,11 +120,12 @@ AUTH_PASSWORD_VALIDATORS = [
 # LANGUAGE_CODE = "en-us"
 LANGUAGE_CODE = "ru"
 
-TIME_ZONE = "UTC"
+USE_TZ = True
+
+TIME_ZONE = "Europe/Moscow"
 
 USE_I18N = True
 
-USE_TZ = True
 
 
 # Static files (CSS, JavaScript, Images)
@@ -145,3 +146,5 @@ AUTH_USER_MODEL = "users.User"
 AXES_FAILURE_LIMIT = 3 # Колличесвто попыток
 # AXES_COOLOFF_TIME = 2 # Блок на 2 часа
 AXES_COOLOFF_TIME = 0.004
+
+LOGIN_URL = '/login/'

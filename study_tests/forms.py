@@ -79,7 +79,7 @@ class AnswerFormSet(BaseInlineFormSet):
             if form.cleaned_data:
                 if form.cleaned_data.get("is_correct", False):
                     has_correct_answer = True
-                    break  # Достаточно одного правильного ответа
+                    break
 
         # Если ни один ответ не правильный - ошибка
         if not has_correct_answer:

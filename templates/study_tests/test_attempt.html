@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block title %}
+    Тест {{ test.title }}
+{% endblock title %}
+{% block content %}
+    <h1>{{ test.title }}</h1>
+    {% if attempt_limit %}
+        <h3>Оставшиеся попытки - {{ attempt_limit }}</h3>
+        <form method="post">
+            {% csrf_token %}
+            {% for question, answers in questions_with_answers %}
+                <div class="users-list">
+                    <div class="question-card">
+                        <h3>Вопрос {{ forloop.counter }}</h3>
+                        <div class="test-attempt-answers-block form_fields">
+                            {% for answer in answers %}
+                                <div class="test-attempt-answer">
+                                    {% if question.multiple_answers %}
+                                        <!-- CHECKBOX для множественного выбора -->
+                                        <label>
+                                            <input type="checkbox"
+                                                   name="question_{{ question.id }}"
+                                                   value="{{ answer.id }}"
+                                                   {% if forloop.counter == 1 %}required{% endif %}>
+                                            {{ answer.text }}
+                                        </label>
+                                    {% else %}
+                                        <!-- RADIO для одиночного выбора -->
+                                        <label>
+                                            <input type="radio"
+                                                   name="question_{{ question.id }}"
+                                                   value="{{ answer.id }}"
+                                                   required>
+                                            {{ answer.text }}
+                                        </label>
+                                    {% endif %}
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+            <input type="submit" value="Закончить">
+        </form>
+    {% else %}
+        <h1>Ваши попытки закончились</h1>
+    {% endif %}
+{% endblock content %}

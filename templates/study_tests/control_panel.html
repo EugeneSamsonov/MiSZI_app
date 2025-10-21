@@ -3,13 +3,29 @@
     Панель управления тестами
 {% endblock title %}
 {% block content %}
+    <h1>Панель управления тестами</h1>
     <div>
-        <h1>Панель управления тестами</h1>
-        <p>
-            <a href="{% url "tests:create-test" %}">Создать тест</a>
-            <span>|</span>
-            <a href="{% url "user:home" %}">Главная</a>
-        </p>
+        {% if tests %}
+            {% for test in tests %}
+                <div class="test-card-attempt"
+                     href="{% url "tests:test-attempt" test.id %}">
+                    <h3>{{ test.title }}</h3>
+                    <div class="test-card-inf">
+                        <div class="test-card-description">
+                            <p>{{ test.description }}</p>
+                        </div>
+                        <div class="test-card-small_inf">
+                            <p>Количество попыток - {{ test.attempt_limit }}</p>
+                            <p>{{ test.author }}</p>
+                        </div>
+                    </div>
+                    <a class="button delete" href="{% url "tests:test-delete" test.id %}">Удалить</a>
+                </div>
+            {% endfor %}
+        {% else %}
+            <div class="test-card">Упс, но тестов пока нет</div>
+        {% endif %}
+        {% comment %}
         <div class="tests-list">
             {% if tests %}
                 {% for test in tests %}
@@ -27,6 +43,10 @@
                     <p>У вас пока нет тестов</p>
                 </div>
             {% endif %}
-        </div>
+        </div> {% endcomment %}
+    </div>
+    <div class="buttons test-panel-buttons">
+        <a class="button" href="{% url "user:home" %}">Главная</a>
+        <a class="button" href="{% url "tests:create-test" %}">Создать тест</a>
     </div>
 {% endblock content %}
