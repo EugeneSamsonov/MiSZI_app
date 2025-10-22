@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block title %}
+    {{ attempt.test.title }} - Попытка №{{ attempt.attempt_number }}
+{% endblock title %}
+{% block content %}
+    <h1>{{ attempt.test.title }}</h1>
+    <div>
+        {% for question, answers in questions_with_answers %}
+            <div class="users-list">
+                <div class="question-card">
+                    <h3>Вопрос {{ forloop.counter }}</h3>
+                    <div class="test-attempt-answers-block form_fields">
+                        {% for answer in answers %}
+                            <div class="test-attempt-answer {% if answer.id in selected_answers_ids and answer.is_correct %}answer-pass{% elif answer.id in selected_answers_ids %}answer-fail{% endif %}">
+                                {% if question.multiple_answers %}
+                                    <!-- CHECKBOX для множественного выбора -->
+                                    <label>
+                                        {% comment %} <input type="checkbox"
+                                               name="question_{{ question.id }}"
+                                               value="{{ answer.id }}"
+                                               {% if answer.id in selected_answers_ids %}checked{% endif %}> {% endcomment %}
+                                        {{ answer.text }}
+                                    </label>
+                                {% else %}
+                                    <!-- RADIO для одиночного выбора -->
+                                    <label>
+                                        {% comment %} <input type="radio"
+                                               name="question_{{ question.id }}"
+                                               value="{{ answer.id }}"
+                                               {% if answer.id in selected_answers_ids %}checked{% endif %}> {% endcomment %}
+                                        {{ answer.text }}
+                                    </label>
+                                {% endif %}
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+        <div class="test-card-small_inf">
+            <p>Время начала - {{ attempt.started_at }} | Время конца - {{ attempt.completed_at }}</p>
+            <h3 class="{% if attempt.score == 2 %} attempt-fail {% elif attempt.score == 5 %} attempt-pass {% endif %}">
+                Оценка - {{ attempt.score }}
+            </h3>
+        </div>
+    </div>
+{% endblock content %}

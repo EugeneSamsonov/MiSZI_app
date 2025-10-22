@@ -1,3 +1,4 @@
+import select
 from django.utils import timezone
 from django.http import HttpResponseRedirect
 from django.urls import reverse_lazy
@@ -121,7 +122,9 @@ def test(request, test_id):
     user_attempts = TestAttempt.objects.filter(test=test, user=request.user).count()
     attempt_limit = test.attempt_limit - user_attempts
     correct_answers = {
-        question.id: [str(answer.id) for answer in question.answers.filter(is_correct=True)]
+        question.id: [
+            str(answer.id) for answer in question.answers.filter(is_correct=True)
+        ]
         for question in questions
     }
 
@@ -169,7 +172,7 @@ def test(request, test_id):
                 else:
                     for id in selected_ids:
                         if id in correct_answers[question.id]:
-                            score += 0.5 
+                            score += 0.5
 
         percent = score / len(questions)
         if percent >= 0.91:
@@ -183,7 +186,7 @@ def test(request, test_id):
 
         test_attempt.save()
 
-        return HttpResponseRedirect(reverse_lazy("tests:list"))
+        return HttpResponseRedirect(reverse_lazy("tests:home"))
 
     answers = [question.answers.all() for question in questions]
     questions_with_answers = zip(questions, answers)
@@ -196,4 +199,26 @@ def test(request, test_id):
             "questions_with_answers": questions_with_answers,
             "attempt_limit": attempt_limit,
         },
+    )
+
+
+@login_required
+def home(request):
+    attempts = TestAttempt.objects.filter(user=request.user).order_by("-started_at")
+    return render(request, "study_tests/home.html", {"attempts": attempts})
+
+
+@login_required
+def attempt_result(request, test_id):
+    attempt = TestAttempt.objects.get(id=test_id)
+    questions = attempt.test.questions.all().prefetch_related("answers").order_by("id")
+    selected_answers_ids = [answer.id for question in attempt.question_attempts.all() for answer in question.selected_answers.all()]
+    questions_with_answers = zip(
+        questions,
+        [question.answers.all() for question in questions]
+    )
+    return render(
+        request,
+        "study_tests/attempt_result.html",
+        {"attempt": attempt, "questions_with_answers": questions_with_answers, "selected_answers_ids": selected_answers_ids},
     )

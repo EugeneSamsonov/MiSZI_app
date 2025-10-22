@@ -165,7 +165,7 @@ input[name*="-DELETE"] {
   border: 1px solid #ccc;
   border-radius: 5px;
   padding: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   justify-content: space-between;
 }
 
@@ -231,7 +231,7 @@ input[name*="-DELETE"] {
   padding: 10px 10px 0 10px;
   margin-bottom: 20px;
   justify-content: space-between;
-  text-align: center;           /* ← ИЗМЕНИ на center */
+  text-align: center; /* ← ИЗМЕНИ на center */
   text-decoration: none;
 }
 
@@ -324,7 +324,7 @@ input[name*="-DELETE"] {
 }
 
 .button.delete {
-  background-color: #dc3545;  /* красный для удаления */
+  background-color: #dc3545; /* красный для удаления */
   border-color: #dc3545;
   margin-bottom: 20px;
 }
@@ -332,4 +332,45 @@ input[name*="-DELETE"] {
 .button.delete:hover {
   background-color: #c82333;
   color: white;
+}
+
+.attempt-card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px 25px 10px 10px;
+  margin-bottom: 20px;
+  justify-content: space-between;
+  text-align: center;
+  text-decoration: none;
+}
+
+.attempt-fail {
+  border-color: red;
+  color: red;
+}
+
+.attempt-pass {
+  border-color: green;
+  color: green;
+}
+
+.answer-pass {
+  border: 2px solid green;
+  border-radius: 5px;
+  padding: 5px;
+  border-color: green;
+  color: white;
+  background-color: green;
+}
+
+.answer-fail {
+  border: 2px solid red;
+  border-radius: 5px;
+  padding: 5px;
+  border-color: red;
+  color: white;
+  background-color: red;
 }

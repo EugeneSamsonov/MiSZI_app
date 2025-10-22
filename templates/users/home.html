@@ -7,14 +7,13 @@
     <div class="buttons-list">
         <div class="buttons home-buttons">
             <a class="button" href="{% url "user:change-password" %}">Поменять пароль</a>
-            <a class="button" href="{% url "tests:list" %}">Список тестов</a>
-        </div>
-        {% if request.user.is_admin %}
-            <div class="buttons home-buttons">
+            {% if request.user.is_admin %}
                 <a class="button" href="{% url "user:register" %}">Зарегестрировать пользователя</a>
-                <a class="button" href="{% url "tests:control-panel" %}">Панель управления тестами</a>
-            </div>
-        {% endif %}
+            {% endif %}
+        </div>
+        <div class="buttons home-buttons">
+            <a class="button" href="{% url "tests:home" %}">Тесты</a>
+        </div>
     </div>
     {% if request.user.is_admin %}
         <div class="users-list">

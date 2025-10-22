@@ -64,7 +64,7 @@ class TestAttempt(models.Model):
     attempt_number = models.IntegerField(default=1)
     started_at = models.DateTimeField(auto_now_add=True)
     completed_at = models.DateTimeField(null=True, blank=True)
-    score = models.FloatField(null=True, blank=True)
+    score = models.PositiveIntegerField(null=True, blank=True)
 
     def __str__(self):
         return f"{self.user} - {self.test} - №{self.attempt_number}"
@@ -84,4 +84,4 @@ class QuestionAttempt(models.Model):
     selected_answers = models.ManyToManyField(Answer)
 
     def __str__(self):
-        return f"{self.attempt} - {self.question}"
+        return f"{self.attempt} - {self.question} - {self.id}"
