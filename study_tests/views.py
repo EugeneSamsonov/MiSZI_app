@@ -4,6 +4,8 @@ from django.http import HttpResponseRedirect
 from django.urls import reverse_lazy
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
+from django.db.models import Window
+from django.db.models.functions import RowNumber
 
 from study_tests.models import Answer, QuestionAttempt, StudyTest, TestAttempt
 
@@ -212,13 +214,51 @@ def home(request):
 def attempt_result(request, test_id):
     attempt = TestAttempt.objects.get(id=test_id)
     questions = attempt.test.questions.all().prefetch_related("answers").order_by("id")
-    selected_answers_ids = [answer.id for question in attempt.question_attempts.all() for answer in question.selected_answers.all()]
+    selected_answers_ids = [
+        answer.id
+        for question in attempt.question_attempts.all()
+        for answer in question.selected_answers.all()
+    ]
     questions_with_answers = zip(
-        questions,
-        [question.answers.all() for question in questions]
+        questions, [question.answers.all() for question in questions]
     )
     return render(
         request,
         "study_tests/attempt_result.html",
-        {"attempt": attempt, "questions_with_answers": questions_with_answers, "selected_answers_ids": selected_answers_ids},
+        {
+            "attempt": attempt,
+            "questions_with_answers": questions_with_answers,
+            "selected_answers_ids": selected_answers_ids,
+        },
+    )
+
+
+@login_required
+def list_passed_users(request, test_id=None):
+    if test_id is None:
+        tests = StudyTest.objects.all()
+        return render(
+            request, "study_tests/tests_list_passed_users.html", {"tests": tests}
+        )
+
+    attempts = (
+        TestAttempt.objects.filter(test_id=test_id)
+        .annotate(
+            row_number=Window(
+                expression=RowNumber(),
+                partition_by=["user_id"],
+                order_by=[
+                    "-score",
+                    "-id",
+                ],  # -id чтобы брать последнюю при одинаковых оценках
+            )
+        )
+        .filter(row_number=1)
+        .order_by("-score")
+    )
+    test_title = attempts.first().test.title
+    return render(
+        request,
+        "study_tests/list_passed_users.html",
+        {"attempts": attempts, "test_title": test_title},
     )

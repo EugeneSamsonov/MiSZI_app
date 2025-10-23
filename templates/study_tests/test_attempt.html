@@ -20,8 +20,7 @@
                                         <label>
                                             <input type="checkbox"
                                                    name="question_{{ question.id }}"
-                                                   value="{{ answer.id }}"
-                                                   {% if forloop.counter == 1 %}required{% endif %}>
+                                                   value="{{ answer.id }}">
                                             {{ answer.text }}
                                         </label>
                                     {% else %}

@@ -43,7 +43,6 @@
                 <!-- Formset ответов для этого вопроса - скрыт но работает -->
                 <div>{{ answer_formset.management_form }}</div>
                 {{ answer_formset.non_form_errors }}
-                {% for form in answer_formset %}<div class="errors">{{ form.errors }}</div>{% endfor %}
                 <div>
                     <h4>Ответы:</h4>
                     {% for answer_form in answer_formset %}

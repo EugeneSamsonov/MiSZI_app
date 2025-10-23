@@ -4,6 +4,10 @@
 {% endblock title %}
 {% block content %}
     <h1>Панель управления тестами</h1>
+    <div class="buttons test-panel-buttons">
+        <a class="button" href="{% url "tests:home" %}">Главная</a>
+        <a class="button" href="{% url "tests:create-test" %}">Создать тест</a>
+    </div>
     <div>
         {% if tests %}
             {% for test in tests %}
@@ -44,9 +48,5 @@
                 </div>
             {% endif %}
         </div> {% endcomment %}
-    </div>
-    <div class="buttons test-panel-buttons">
-        <a class="button" href="{% url "tests:home" %}">Главная</a>
-        <a class="button" href="{% url "tests:create-test" %}">Создать тест</a>
     </div>
 {% endblock content %}

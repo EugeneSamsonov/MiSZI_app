@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}
+    Пользователи сдавшие {{ test_title }}
+{% endblock title %}
+{% block content %}
+    <h1>Пользователи сдавшие {{ test_title }}</h1>
+    <div class="buttons-list">
+        <div class="buttons home-buttons">
+            <a class="button" href="{% url "tests:home" %}">Главная</a>
+        </div>
+    </div>
+    <div class="tests-list">
+        {% if attempts %}
+            {% for attempt in attempts %}
+                <a class="attempt-card test-card-link {% if attempt.score == 2 %} attempt-fail {% elif attempt.score == 5 %} attempt-pass {% endif %}"
+                   href="{% url "tests:attempt-result" attempt.id %}">
+                   <h3>{{ attempt.user }} | {{ attempt.user.first_name }} | {{ attempt.user.last_name }}</h3>
+                    <h3>Попытка №{{ attempt.attempt_number }}</h3>
+                    <div class="attempt-card-inf">
+                        <div>
+                            <p>Оценка - {{ attempt.score }}</p>
+                        </div>
+                    </div>
+                </a>
+            {% endfor %}
+        {% else %}
+            <div class="test-card"><h3>Увы, но никто пока не прошёл этот тест</h3></div>
+        {% endif %}
+    </div>
+{% endblock content %}
