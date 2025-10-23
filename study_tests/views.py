@@ -12,8 +12,10 @@ from study_tests.models import Answer, QuestionAttempt, StudyTest, TestAttempt
 from .forms import StudyTestForm, QuestionFormSet, AnswerFormSet
 
 
-@login_required()
+@login_required
 def control_panel(request):
+    if not request.user.is_admin: return HttpResponseRedirect(reverse_lazy("user:home"))
+    
     tests = StudyTest.objects.filter(author=request.user)
     return render(request, "study_tests/control_panel.html", {"tests": tests})
 
@@ -34,8 +36,10 @@ def validate_all_forms(test_form, question_formset, answer_formsets):
     return errors == 0
 
 
-@login_required()
+@login_required
 def create_test(request):
+    if not request.user.is_admin: return HttpResponseRedirect(reverse_lazy("user:home"))
+    
     if request.method == "POST":
         test_form = StudyTestForm(request.POST)
         question_formset = QuestionFormSet(request.POST, prefix="questions")
@@ -104,14 +108,16 @@ def create_test(request):
     )
 
 
-@login_required()
+@login_required
 def delete_test(request, test_id):
+    if not request.user.is_admin: return HttpResponseRedirect(reverse_lazy("user:home"))
+    
     test = StudyTest.objects.get(id=test_id)
     test.delete()
     return HttpResponseRedirect(reverse_lazy("tests:control-panel"))
 
 
-@login_required()
+@login_required
 def tests_list(request):
     tests = StudyTest.objects.all()
     return render(request, "study_tests/tests_list.html", {"tests": tests})
@@ -235,6 +241,8 @@ def attempt_result(request, test_id):
 
 @login_required
 def list_passed_users(request, test_id=None):
+    if not request.user.is_admin: return HttpResponseRedirect(reverse_lazy("user:home"))
+    
     if test_id is None:
         tests = StudyTest.objects.all()
         return render(
