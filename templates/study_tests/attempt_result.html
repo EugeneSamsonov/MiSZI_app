@@ -4,7 +4,7 @@
 {% endblock title %}
 {% block content %}
     <h1>{{ attempt.test.title }}</h1>
-    <h4>{{ attempt.user }} | {{ attempt.user.first_name }} | {{ attempt.user.last_name }}</h4>
+    <h4>{{ attempt.user }} | ({{ attempt.user.first_name }} {{ attempt.user.last_name }})</h4>
     <div>
         {% for question, answers in questions_with_answers %}
             <div class="users-list">

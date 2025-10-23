@@ -37,13 +37,16 @@ class PasswordValidator(BaseValidator):
 class UserRegistrationForm(forms.ModelForm):
     class Meta:
         model = User
-        fields = ("username", "password1", "password2")
+        fields = ("username", "first_name", "last_name", "password1", "password2")
 
-    username = forms.CharField(label="Имя пользователя")
+    username = forms.CharField(label="Имя пользователя (username)")
     password1 = forms.CharField(
         widget=forms.PasswordInput, required=False, validators=[PasswordValidator()], label="Пароль"
     )
     password2 = forms.CharField(widget=forms.PasswordInput, required=False, label="Повторите пароль")
+
+    first_name = forms.CharField(label="Имя", required=True)
+    last_name = forms.CharField(label="Фамилия", required=True)
 
     def clean_password1(self):
         usnm = self.cleaned_data.get("username")

@@ -3,7 +3,7 @@
     Регистрация
 {% endblock title %}
 {% block content %}
-    <h1>Зарегистрировать пользователя</h1>
+    <h1>Зарегистрироватьcя</h1>
     <form action="." method="post">
         <div class="login_form_fields">
             {% for field in user_form %}
@@ -15,7 +15,7 @@
                 <div class="errors">{{ field.errors }}</div>
             {% endfor %}
             <p>
-                <input type="submit" value="Зарегистрировать пользователя">
+                <input type="submit" value="Зарегистрироваться">
             </p>
             <p>
                 <a href="{% url "user:home" %}">Главная</a> | <a href="{% url "user:login" %}">Форма авторизации</a>

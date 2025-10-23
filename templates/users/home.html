@@ -7,11 +7,6 @@
     <div class="buttons-list">
         <div class="buttons home-buttons">
             <a class="button" href="{% url "user:change-password" %}">Поменять пароль</a>
-            {% if request.user.is_admin %}
-                <a class="button" href="{% url "user:register" %}">Зарегестрировать пользователя</a>
-            {% endif %}
-        </div>
-        <div class="buttons home-buttons">
             <a class="button" href="{% url "tests:home" %}">Тесты</a>
         </div>
     </div>

@@ -30,7 +30,6 @@ def user_login(request):
     return render(request, "users/login.html", {"login_form": login_form})
 
 
-@login_required()
 def register(request):
     if request.method == "POST":
         user_form = UserRegistrationForm(request.POST)
@@ -38,9 +37,8 @@ def register(request):
             new_user = user_form.save(commit=False)
             new_user.set_password(user_form.cleaned_data["password1"])
             new_user.save()
-            # login(request, new_user)
-            # return HttpResponseRedirect(reverse_lazy("user:home"))
-            user_form.add_error("username", "User created")
+            login(request, new_user, backend='django.contrib.auth.backends.ModelBackend')
+            return HttpResponseRedirect(reverse_lazy("user:home"))
 
     else:
         user_form = UserRegistrationForm()
@@ -48,13 +46,13 @@ def register(request):
     return render(request, "users/register.html", {"user_form": user_form})
 
 
-@login_required()
+@login_required
 def user_logout(request):
     logout(request)
     return HttpResponseRedirect(reverse_lazy("user:login"))
 
 
-@login_required()
+@login_required
 def home(request):
     if request.user.is_admin:
         users = User.objects.filter(~Q(pk=request.user.pk)).all().order_by("username")
@@ -62,7 +60,7 @@ def home(request):
     return render(request, "users/home.html")
 
 
-@login_required()
+@login_required
 def change_password(request):
     if request.method == "POST":
         change_password_form = UserChangePasswordForm(request.POST)
@@ -89,6 +87,7 @@ def change_password(request):
     )
 
 
+@login_required
 def user_update(request):
     if request.method == "POST":
         user = User.objects.get(id=request.POST.get("user_id"))

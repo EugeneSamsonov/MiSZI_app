@@ -14,7 +14,7 @@
             {% for attempt in attempts %}
                 <a class="attempt-card test-card-link {% if attempt.score == 2 %} attempt-fail {% elif attempt.score == 5 %} attempt-pass {% endif %}"
                    href="{% url "tests:attempt-result" attempt.id %}">
-                   <h3>{{ attempt.user }} | {{ attempt.user.first_name }} | {{ attempt.user.last_name }}</h3>
+                   <h3>{{ attempt.user }} | ({{ attempt.user.first_name }} {{ attempt.user.last_name }})</h3>
                     <h3>Попытка №{{ attempt.attempt_number }}</h3>
                     <div class="attempt-card-inf">
                         <div>

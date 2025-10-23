@@ -1,20 +1,24 @@
 {% extends "base.html" %}
-
-{% block title %}Войти{% endblock %}
-
+{% block title %}
+    Войти
+{% endblock title %}
 {% block content %}
-	<h1>Войти в систему</h1>
-	<form action="{% url "user:login" %}" method="post">
-		<div class="login_form_fields">
-			{% for field in login_form %}
-				<div class="form_field">
-					<label for={{ field.id_for_label }}>{{ field.label }}</label>
-					<p>{{ field }}</p>
-				</div>
-				<div class="errors">{{ field.errors }} </div>
-			{% endfor %}
-		</div>
-		{% csrf_token %}
-		<p><input type="submit" value="Войти"></p>
-	</form>
-{% endblock %}
+    <h1>Войти в систему</h1>
+    <form action="{% url "user:login" %}" method="post">
+        <div class="login_form_fields">
+            {% for field in login_form %}
+                <div class="form_field">
+                    <label for={{ field.id_for_label }}>{{ field.label }}
+                    </label>
+                    <p>{{ field }}</p>
+                </div>
+                <div class="errors">{{ field.errors }}</div>
+            {% endfor %}
+        </div>
+        {% csrf_token %}
+        <p>
+            <input type="submit" value="Войти">
+        </p>
+        <a href="{% url "user:register" %}">Зарегестрироваться</a>
+    </form>
+{% endblock content %}
