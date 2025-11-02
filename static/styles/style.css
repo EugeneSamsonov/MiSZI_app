@@ -33,11 +33,16 @@ body {
   border-radius: 5px;
   padding: 10px;
   margin-bottom: 10px;
-  background-color: green;
-  color: white;
+  background-color: #f2f2f2;
+  /* color: white; */
 }
 .user-blocked {
+  color: white;
   background-color: red;
+}
+.user-admin {
+  color: white;
+  background-color: slateblue;
 }
 .form_field {
   display: flex;
@@ -79,6 +84,7 @@ input[type="submit"] {
   transition: background-color 0.3s ease-in-out;
   text-decoration: none;
   font-size: medium;
+  margin-left: 2px;
 }
 
 .button:hover,
@@ -156,6 +162,13 @@ input[name*="MAX_NUM_FORMS"],
 input[name*="-id"],
 input[name*="-DELETE"] {
   display: none !important;
+}
+
+.tests-list {
+  margin-top: 20px;
+}
+.tests-list .button {
+  margin-top: 20px;
 }
 
 .test-card {
@@ -311,16 +324,17 @@ input[name*="-DELETE"] {
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
-  margin-bottom: 10px;
   /* padding: 10px; */
 }
 
 .test-panel-buttons {
   justify-content: space-between;
+  margin-bottom: 10px;
 }
 
 .home-buttons .button {
   width: 36%;
+  margin-bottom: 10px;
 }
 
 .button.delete {
@@ -347,6 +361,14 @@ input[name*="-DELETE"] {
   text-decoration: none;
 }
 
+.attempt-card-inf {
+  display: flex;
+  justify-content: space-between;
+}
+.attempt-card-inf p {
+  margin-left: 10px;
+}
+
 .attempt-fail {
   border-color: red;
   color: red;
@@ -357,20 +379,11 @@ input[name*="-DELETE"] {
   color: green;
 }
 
-.answer-pass {
-  border: 2px solid green;
+.answer-choice {
+  border: 2px solid #007bff;
   border-radius: 5px;
   padding: 5px;
-  border-color: green;
+  border-color: #007bff;
   color: white;
-  background-color: green;
-}
-
-.answer-fail {
-  border: 2px solid red;
-  border-radius: 5px;
-  padding: 5px;
-  border-color: red;
-  color: white;
-  background-color: red;
+  background-color: #007bff;
 }

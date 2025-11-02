@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block title %}
+    Здравствуйте {{ request.user.first_name }}
+{% endblock title %}
+{% block content %}
+    <h1>Здравствуйте {{ request.user.first_name }}</h1>
+    <div class="buttons-list">
+        <div class="buttons home-buttons">
+            <a class="button" href="{% url "user:change-password" %}">Поменять пароль</a>
+            <a class="button" href="{% url "tests:home" %}">Тесты</a>
+        </div>
+    </div>
+    <div class="users-list">
+        <h3>Список пользователей</h3>
+        {% for user in users %}
+            <div class="user-card {% if user.is_blocked %}user-blocked{% elif user.is_admin %}user-admin{% endif %} ">
+                <p>{{ user.username }}</p>
+                <div class="buttons">
+                    <form action="{% url "user:user-update" %}" method="post">
+                        <input type="hidden" name="user_id" value="{{ user.id }}">
+                        <input type="hidden" name="is_admin" value="{{ user.is_admin }}">
+                        {% csrf_token %}
+                        {% if user.is_admin %}
+                            <input type="submit" value="Разадминить">
+                        {% else %}
+                            <input type="submit" value="Сделать админом">
+                        {% endif %}
+                    </form>
+                    <form action="{% url "user:user-update" %}" method="post">
+                        <input type="hidden" name="is_blocked" value="{{ user.is_blocked }}">
+                        <input type="hidden" name="user_id" value="{{ user.id }}">
+                        {% csrf_token %}
+                        {% if user.is_blocked %}
+                            <input type="submit" value="Разблокировать">
+                        {% else %}
+                            <input type="submit" value="Заблокировать">
+                        {% endif %}
+                    </form>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    <p>
+        <a href="{% url "user:logout" %}">Выйти из системы</a>
+    </p>
+{% endblock content %}

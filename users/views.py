@@ -37,7 +37,9 @@ def register(request):
             new_user = user_form.save(commit=False)
             new_user.set_password(user_form.cleaned_data["password1"])
             new_user.save()
-            login(request, new_user, backend='django.contrib.auth.backends.ModelBackend')
+            login(
+                request, new_user, backend="django.contrib.auth.backends.ModelBackend"
+            )
             return HttpResponseRedirect(reverse_lazy("user:home"))
 
     else:
@@ -56,7 +58,7 @@ def user_logout(request):
 def home(request):
     if request.user.is_admin:
         users = User.objects.filter(~Q(pk=request.user.pk)).all().order_by("username")
-        return render(request, "users/home.html", {"users": users})
+        return render(request, "users/home_admin.html", {"users": users})
     return render(request, "users/home.html")
 
 
@@ -89,10 +91,22 @@ def change_password(request):
 
 @login_required
 def user_update(request):
+    if not request.user.is_admin:
+        return HttpResponseRedirect(reverse_lazy("user:home"))
+
     if request.method == "POST":
         user = User.objects.get(id=request.POST.get("user_id"))
 
-        user.is_blocked = not user.is_blocked
+        user_is_blocked = request.POST.get("is_blocked", None)
+        if user_is_blocked is not None:
+            user.is_blocked = not user.is_blocked
+        
+        user_is_admin = request.POST.get("is_admin", None)
+        if user_is_admin is not None:
+            user.is_admin = not user.is_admin
+
+
+
         user.save()
 
     return HttpResponseRedirect(reverse_lazy("user:home"))

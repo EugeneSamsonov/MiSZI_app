@@ -4,6 +4,19 @@ from users.models import User
 
 
 # Create your models here.
+class TestCategory(models.Model):
+
+    class Meta:
+        verbose_name = "Категория теста"
+        verbose_name_plural = "Категории тестов"
+
+    name = models.CharField(max_length=255)
+    description = models.TextField()
+
+    def __str__(self):
+        return self.name
+
+
 class StudyTest(models.Model):
 
     class Meta:
@@ -11,6 +24,7 @@ class StudyTest(models.Model):
         verbose_name_plural = "Тесты"
 
     title = models.CharField(max_length=255)
+    category = models.ForeignKey(TestCategory, on_delete=models.CASCADE)
     description = models.TextField()
     attempt_limit = models.IntegerField(default=3)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -62,13 +76,41 @@ class TestAttempt(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     test = models.ForeignKey(StudyTest, on_delete=models.CASCADE)
     attempt_number = models.IntegerField(default=1)
-    started_at = models.DateTimeField(auto_now_add=True)
+    started_at = models.DateTimeField()
     completed_at = models.DateTimeField(null=True, blank=True)
     score = models.PositiveIntegerField(null=True, blank=True)
 
+    def get_correct_count(self):
+        correct_count = 0
+        for question_attempt in self.question_attempts.all():
+            if question_attempt.selected_answers.count() == 0:
+                continue
+            if question_attempt.question.multiple_answers:
+                if question_attempt.selected_answers.count() == question_attempt.question.answers.filter(is_correct=True).count():
+                    correct_count += 1
+                else:
+                    correct_count += (
+                    question_attempt.selected_answers.filter(is_correct=True).count()
+                    / question_attempt.question.answers.count()
+                )
+            else:
+                correct_count += (
+                    1
+                    if question_attempt.selected_answers.filter(
+                        is_correct=True
+                    ).exists()
+                    else 0
+                )
+
+        return (
+            correct_count if int(correct_count) != correct_count else int(correct_count)
+        )
+
+    def get_question_count(self):
+        return self.test.questions.count()
+
     def __str__(self):
         return f"{self.user} - {self.test} - №{self.attempt_number}"
-
 
 
 class QuestionAttempt(models.Model):

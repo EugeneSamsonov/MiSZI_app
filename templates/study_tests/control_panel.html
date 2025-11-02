@@ -5,8 +5,9 @@
 {% block content %}
     <h1>Панель управления тестами</h1>
     <div class="buttons test-panel-buttons">
-        <a class="button" href="{% url "tests:home" %}">Главная</a>
-        <a class="button" href="{% url "tests:create-test" %}">Создать тест</a>
+        <a class="button" href="{% url "user:home" %}">Главная</a>
+        <a class="button" href="{% url "tests:list-passed-users" category %}">Списки сдавших тесты</a>
+        <a class="button" href="{% url "tests:create-test" category %}">Создать тест</a>
     </div>
     <div>
         {% if tests %}

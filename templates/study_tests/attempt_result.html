@@ -12,7 +12,7 @@
                     <h3>Вопрос {{ forloop.counter }}</h3>
                     <div class="test-attempt-answers-block form_fields">
                         {% for answer in answers %}
-                            <div class="test-attempt-answer {% if answer.id in selected_answers_ids and answer.is_correct %}answer-pass{% elif answer.id in selected_answers_ids %}answer-fail{% endif %}">
+                            <div class="test-attempt-answer {% if answer.id in selected_answers_ids %}answer-choice{% endif %}">
                                 {% if question.multiple_answers %}
                                     <!-- CHECKBOX для множественного выбора -->
                                     <label>

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}
+    Тесты - Главная
+{% endblock title %}
+{% block content %}
+    <h1>Раздел тестов</h1>
+    <div class="buttons-list">
+        <div class="buttons home-buttons">
+            <a class="button" href="{% url "tests:control-panel" %}">Панель управления тестами</a>
+            <a class="button" href="{% url "tests:list-passed-users" %}">Список сдавших тест</a>
+        </div>
+    </div>
+    <div class="tests-list"></div>
+    <a class="button" href="{% url "user:home" %}">Главная</a>
+{% endblock content %}

@@ -127,3 +127,4 @@ ipython_config.py
 ehthumbs.db
 Thumbs.db
 
+migrations/

@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block title %}
-    Тесты - Главная
+    Тесты - Список тестов
 {% endblock title %}
 {% block content %}
     <h1>Выберите тест</h1>
@@ -8,16 +8,17 @@
         {% if tests %}
             {% for test in tests %}
                 <a class="test-card-attempt test-card-link"
-                   href="{% url "tests:list-passed-users" test.id %}">
+                   href="{% url "tests:list-passed-users" category test.id %}">
                     <h3>{{ test.title }}</h3>
                     <div class="test-card-inf">
-                    <div class="test-card-description">
-                        <p>{{ test.description }}</p>
+                        <div class="test-card-description">
+                            <p>{{ test.description }}</p>
+                        </div>
+                        <div class="test-card-small_inf">
+                            <p>Количество попыток - {{ test.attempt_limit }}</p>
+                            <p>{{ test.author }}</p>
+                        </div>
                     </div>
-                    <div class="test-card-small_inf">
-                        <p>Количество попыток - {{ test.attempt_limit }}</p>
-                        <p>{{ test.author }}</p>
-                    </div></div>
                 </a>
             {% endfor %}
         {% else %}

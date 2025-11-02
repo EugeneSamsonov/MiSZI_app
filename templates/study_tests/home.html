@@ -3,34 +3,28 @@
     Тесты - Главная
 {% endblock title %}
 {% block content %}
-    <h1>Здравствуйте {{ request.user.username }}</h1>
+    <h1>Раздел тестов</h1>
     <div class="buttons-list">
         <div class="buttons home-buttons">
+            <a class="button" href="{% url "user:home" %}">Главная</a>
             <a class="button" href="{% url "tests:list" %}">Пройти тест</a>
-            {% if request.user.is_admin %}
-                <a class="button" href="{% url "tests:control-panel" %}">Панель управления тестами</a>
-            </div>
-            <div class="buttons home-buttons">
-                <a class="button" href="{% url "tests:list-passed-users" %}">Список сдавших тест</a>
-            </div>
-        {% endif %}
+        </div>
     </div>
     <div class="tests-list">
         {% if attempts %}
             {% for attempt in attempts %}
                 <a class="attempt-card test-card-link {% if attempt.score == 2 %} attempt-fail {% elif attempt.score == 5 %} attempt-pass {% endif %}"
                    href="{% url "tests:attempt-result" attempt.id %}">
-                    <h3>{{ attempt.test.title }} Попытка №{{ attempt.attempt_number }}</h3>
+                    <h3>{{ attempt.test.title|truncatechars:30 }} Попытка №{{ attempt.attempt_number }}</h3>
                     <div class="attempt-card-inf">
-                        <div>
-                            <p>Оценка - {{ attempt.score }}</p>
-                        </div>
+                        <p>{{ attempt.get_correct_count }}/{{ attempt.get_question_count }}</p>
+                        <p>Оценка - {{ attempt.score }}</p>
                     </div>
                 </a>
             {% endfor %}
         {% else %}
             <div class="test-card">Вы не проходили ни одного теста</div>
         {% endif %}
-        <a class="button" href="{% url "user:home" %}">Главная</a>
     </div>
+    <a class="button" href="javascript:history.back()">Назад</a>
 {% endblock content %}

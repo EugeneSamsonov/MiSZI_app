@@ -88,7 +88,7 @@ class AnswerFormSet(BaseInlineFormSet):
 
 # Formset для вопросов
 QuestionFormSet = formset_factory(
-    QuestionForm, extra=2, max_num=10, min_num=10, can_delete=False
+    QuestionForm, extra=2, max_num=2, min_num=2, can_delete=False
 )
 
 # Inline formset для ответов (привязан к вопросу)
@@ -97,7 +97,7 @@ AnswerFormSet = inlineformset_factory(
     Answer,
     form=AnswerForm,
     formset=AnswerFormSet,
-    max_num=4,
-    min_num=4,
+    max_num=2,
+    min_num=2,
     can_delete=False,
 )
