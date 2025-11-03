@@ -13,7 +13,89 @@
             <a class="button" href="{% url "user:change-password" %}">Поменять пароль</a>
         </div>
     </div>
+    <section id="encryption-tools" class="crypto-section">
+        <h2>Онлайн Шифрование</h2>
+        <div class="crypto-cards">
+            <div class="crypto-card" data-cipher="caesar" title="Шифр Цезаря">
+                <div class="crypto-card-icon">🔤</div>
+                <div class="crypto-card-title">Цезарь</div>
+            </div>
+            <div class="crypto-card" data-cipher="affine" title="Аффинный шифр">
+                <div class="crypto-card-icon">📐</div>
+                <div class="crypto-card-title">Аффинный</div>
+            </div>
+            <div class="crypto-card" data-cipher="des" title="DES">
+                <div class="crypto-card-icon">🧩</div>
+                <div class="crypto-card-title">DES</div>
+            </div>
+            <div class="crypto-card" data-cipher="vigenere" title="Шифр Виженера">
+                <div class="crypto-card-icon">🧾</div>
+                <div class="crypto-card-title">Виженер</div>
+            </div>
+            <div class="crypto-card" data-cipher="feistel" title="Сеть Фейстеля">
+                <div class="crypto-card-icon">🕸</div>
+                <div class="crypto-card-title">Фейстель</div>
+            </div>
+            <div class="crypto-card" data-cipher="transposition" title="Перестановка с ключом">
+                <div class="crypto-card-icon">🔁</div>
+                <div class="crypto-card-title">Перестановка</div>
+            </div>
+            <div class="crypto-card" data-cipher="rsa" title="RSA">
+                <div class="crypto-card-icon">🔑</div>
+                <div class="crypto-card-title">RSA</div>
+            </div>
+            <div class="crypto-card" data-cipher="elgamal" title="ElGamal">
+                <div class="crypto-card-icon">🧮</div>
+                <div class="crypto-card-title">ElGamal</div>
+            </div>
+            <div class="crypto-card" data-cipher="ecc" title="ECC">
+                <div class="crypto-card-icon">🟣</div>
+                <div class="crypto-card-title">ECC</div>
+            </div>
+        </div>
+
+        <div class="cipher-fact" id="cipherFact" aria-live="polite"></div>
+
+        <div id="cryptoModal" class="modal" aria-hidden="true">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 id="modalTitle">Шифр</h3>
+                    <button class="modal-close" id="modalClose" aria-label="Закрыть">✖</button>
+                </div>
+                <div class="modal-body">
+                    <div class="form_fields">
+                        <div class="test_form_field">
+                            <label for="modalInput">Текст</label>
+                            <textarea id="modalInput" rows="5" placeholder="Введите текст"></textarea>
+                        </div>
+                        <div class="test_form_field" id="modalKeyField">
+                            <label for="modalKey">Ключ</label>
+                            <input id="modalKey" type="text" placeholder="Ключ" />
+                        </div>
+                        <div class="test_form_field small-info" id="modalHint"></div>
+                    </div>
+                    <div class="buttons test-panel-buttons">
+                        <button class="button btn-primary" id="modalEncrypt">Зашифровать</button>
+                        <button class="button" id="modalDecrypt">Расшифровать</button>
+                        <button class="button" id="modalCopy">Копировать</button>
+                        <button class="button" id="modalReset">Сброс</button>
+                        <button class="button" id="modalExport">Экспорт</button>
+                    </div>
+                    <div class="form_fields">
+                        <div class="test_form_field">
+                            <label for="modalResult">Результат</label>
+                            <textarea id="modalResult" rows="5" readonly placeholder="Здесь появится результат"></textarea>
+                        </div>
+                        <div class="test_form_field small-info" id="statusBar" aria-live="polite"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="modalBackdrop" class="modal-backdrop" aria-hidden="true"></div>
+    </section>
     <p>
         <a href="{% url "user:logout" %}">Выйти из системы</a>
     </p>
+    {% load static %}
+    <script src="{% static 'crypto-tools.js' %}"></script>
 {% endblock content %}
