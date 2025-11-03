@@ -6,7 +6,7 @@
     <h1>Здравствуйте {{ request.user.first_name }}</h1>
     <div class="buttons-list">
         <div class="buttons home-buttons">
-            <a class="button" href="">Теория</a>
+            <a class="button" href="{% url "theory:list" %}">Теория</a>
             <a class="button" href="{% url "tests:home" %}">Тесты</a>
         </div>
         <div class="buttons home-buttons">

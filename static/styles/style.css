@@ -387,3 +387,81 @@ input[name*="-DELETE"] {
   color: white;
   background-color: #007bff;
 }
+.theory-detail {
+  text-align: left;
+  margin: 0 auto;
+  max-width: 90%;
+}
+
+.theory-header {
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 15px;
+  margin-bottom: 20px;
+}
+
+.theory-header h1 {
+  color: #333;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.theory-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f2f2f2;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-size: 0.9em;
+}
+
+.theory-author,
+.theory-dates {
+  margin: 0;
+}
+
+.theory-description {
+  background-color: #f9f9f9;
+  border-left: 4px solid #007bff;
+  padding: 15px;
+  margin-bottom: 25px;
+  border-radius: 0 5px 5px 0;
+}
+
+.theory-description h3 {
+  margin-top: 0;
+  color: #333;
+}
+
+.theory-content {
+  margin-bottom: 30px;
+}
+
+.theory-content h3 {
+  color: #333;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 8px;
+  margin-bottom: 15px;
+}
+
+.theory-text {
+  line-height: 1.6;
+  font-size: 1.1em;
+  background-color: #fafafa;
+  padding: 20px;
+  border-radius: 5px;
+  border: 1px solid #e0e0e0;
+}
+
+.theory-text p {
+  margin-bottom: 15px;
+}
+
+.theory-actions {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid #ccc;
+}

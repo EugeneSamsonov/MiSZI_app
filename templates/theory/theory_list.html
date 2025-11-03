@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}
+    Теория - Выберите тему
+{% endblock title %}
+{% block content %}
+    <h1>Выберите тему</h1>
+    <div class="tests-list">
+        {% if theory_list %}
+            {% for theory in theory_list %}
+                <a class="test-card-attempt test-card-link"
+                   href="{% url "theory:detail" theory.id %}">
+                    <h3>{{ theory.title }}</h3>
+                    <div class="test-card-inf">
+                        <div class="test-card-description">
+                            <p>{{ theory.description }}</p>
+                        </div>
+                        <div class="test-card-small_inf">
+                            {% if theory.updated_at %}
+                                <p>Изменено - {{ theory.updated_at }}</p>
+                            {% else %}
+                                <p>Опубликовано - {{ theory.created_at }}</p>
+                            {% endif %}
+                            <p>{{ test.author }}</p>
+                        </div>
+                    </div>
+                </a>
+            {% endfor %}
+        {% else %}
+            <div class="test-card">Упс, но теории пока нет</div>
+        {% endif %}
+        <a class="button" href="{% url "user:home" %}">Главная</a>
+    </div>
+{% endblock content %}

@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block title %}
+    {{ theory.title }}
+{% endblock title %}
+{% block content %}
+    <div class="theory-detail">
+        <div class="theory-header">
+            <h1>{{ theory.title }}</h1>
+            <div class="theory-meta">
+                <div class="theory-author">
+                    <p><strong>Автор:</strong> {{ theory.author }}</p>
+                </div>
+                <div class="theory-dates">
+                    {% if theory.updated_at %}
+                        <p><strong>Обновлено:</strong> {{ theory.updated_at }}</p>
+                    {% else %}
+                        <p><strong>Опубликовано:</strong> {{ theory.created_at }}</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+
+        <div class="theory-description">
+            <h3>Описание</h3>
+            <p>{{ theory.description }}</p>
+        </div>
+
+        <div class="theory-content">
+            <h3>Теоретический материал</h3>
+            <div class="theory-text">
+                {{ theory.text|linebreaks }}
+            </div>
+        </div>
+
+        <div class="theory-actions">
+            <a class="button" href="{% url "theory:list" theory.category.name %}">Назад к списку</a>
+            <a class="button" href="{% url "user:home" %}">Главная</a>
+        </div>
+    </div>
+{% endblock content %}

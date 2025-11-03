@@ -42,6 +42,7 @@ INSTALLED_APPS = [
 
     "users",
     "study_tests",
+    "theory",
 ]
 
 MIDDLEWARE = [
