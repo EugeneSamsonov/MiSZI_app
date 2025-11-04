@@ -1,0 +1,203 @@
+[
+  { "model": "study_tests.studytest", "pk": 2, "fields": {
+    "title": "Тест: RSA",
+    "category": 7,
+    "description": "Вопросы по асимметричному алгоритму RSA (смешанный: одиночный и множественный выбор)",
+    "attempt_limit": 3,
+    "author": 1,
+    "created_at": "2025-11-04T00:00:00Z",
+    "updated_at": "2025-11-04T00:00:00Z"    
+  }},
+
+  { "model": "study_tests.question", "pk": 11, "fields": { "test": 2, "text": "Что характеризует RSA?", "multiple_answers": false } },
+  { "model": "study_tests.answer", "pk": 41, "fields": { "question": 11, "text": "Асимметричное шифрование с парами ключей", "is_correct": true } },
+  { "model": "study_tests.answer", "pk": 42, "fields": { "question": 11, "text": "Основан на трудности факторизации", "is_correct": false } },
+  { "model": "study_tests.answer", "pk": 43, "fields": { "question": 11, "text": "Использует S-box", "is_correct": false } },
+  { "model": "study_tests.answer", "pk": 44, "fields": { "question": 11, "text": "Размер блока фиксирован 128 бит", "is_correct": false } },
+
+  { "model": "study_tests.question", "pk": 12, "fields": { "test": 2, "text": "Что входит в открытый ключ RSA?", "multiple_answers": false } },
+  { "model": "study_tests.answer", "pk": 45, "fields": { "question": 12, "text": "Модуль n", "is_correct": true } },
+  { "model": "study_tests.answer", "pk": 46, "fields": { "question": 12, "text": "Открытая экспонента e", "is_correct": false } },
+  { "model": "study_tests.answer", "pk": 47, "fields": { "question": 12, "text": "Закрытая экспонента d", "is_correct": false } },
+  { "model": "study_tests.answer", "pk": 48, "fields": { "question": 12, "text": "Пара простых (p, q) как есть", "is_correct": false } },
+
+  { "model": "study_tests.question", "pk": 13, "fields": { "test": 2, "text": "Выберите верное свойство d", "multiple_answers": false } },
+  { "model": "study_tests.answer", "pk": 49, "fields": { "question": 13, "text": "d — мультипликативная обратная к e mod φ(n)", "is_correct": true } },
+  { "model": "study_tests.answer", "pk": 50, "fields": { "question": 13, "text": "d = e^−1 mod n", "is_correct": false } },
+  { "model": "study_tests.answer", "pk": 51, "fields": { "question": 13, "text": "d — сумма p и q", "is_correct": false } },
+  { "model": "study_tests.answer", "pk": 52, "fields": { "question": 13, "text": "d — публичная экспонента", "is_correct": false } },
+
+  { "model": "study_tests.question", "pk": 14, "fields": { "test": 2, "text": "Где чаще применяют RSA на практике?", "multiple_answers": false } },
+  { "model": "study_tests.answer", "pk": 53, "fields": { "question": 14, "text": "Шифрование ключей в гибридных схемах", "is_correct": true } },
+  { "model": "study_tests.answer", "pk": 54, "fields": { "question": 14, "text": "Цифровые подписи", "is_correct": false } },
+  { "model": "study_tests.answer", "pk": 55, "fields": { "question": 14, "text": "Потоковое шифрование больших данных", "is_correct": false } },
+  { "model": "study_tests.answer", "pk": 56, "fields": { "question": 14, "text": "Выбор S-box для AES", "is_correct": false } },
+
+  { "model": "study_tests.question", "pk": 15, "fields": { "test": 2, "text": "Какой риск относится к RSA?", "multiple_answers": false } },
+  { "model": "study_tests.answer", "pk": 57, "fields": { "question": 15, "text": "Общие модули n у разных пользователей", "is_correct": true } },
+  { "model": "study_tests.answer", "pk": 58, "fields": { "question": 15, "text": "Наличие IP-перестановки", "is_correct": false } },
+  { "model": "study_tests.answer", "pk": 59, "fields": { "question": 15, "text": "Малый блок 64 бита в стандарте", "is_correct": false } },
+  { "model": "study_tests.answer", "pk": 60, "fields": { "question": 15, "text": "Использование S-box", "is_correct": false } },
+
+  { "model": "study_tests.question", "pk": 16, "fields": { "test": 2, "text": "Что верно про OAEP?", "multiple_answers": false } },
+  { "model": "study_tests.answer", "pk": 61, "fields": { "question": 16, "text": "Схема паддинга для безопасности", "is_correct": true } },
+  { "model": "study_tests.answer", "pk": 62, "fields": { "question": 16, "text": "Уменьшает модуль n", "is_correct": false } },
+  { "model": "study_tests.answer", "pk": 63, "fields": { "question": 16, "text": "Заменяет хэш-функцию", "is_correct": false } },
+  { "model": "study_tests.answer", "pk": 64, "fields": { "question": 16, "text": "Определяет e=65537", "is_correct": false } },
+
+  { "model": "study_tests.question", "pk": 17, "fields": { "test": 2, "text": "Шифрование/расшифрование в RSA основано на", "multiple_answers": true } },
+  { "model": "study_tests.answer", "pk": 65, "fields": { "question": 17, "text": "Возведении в степень по модулю n", "is_correct": true } },
+  { "model": "study_tests.answer", "pk": 66, "fields": { "question": 17, "text": "(M^e)^d ≡ M mod n", "is_correct": true } },
+  { "model": "study_tests.answer", "pk": 67, "fields": { "question": 17, "text": "Случайной перестановке символов", "is_correct": false } },
+  { "model": "study_tests.answer", "pk": 68, "fields": { "question": 17, "text": "S-box подстановке", "is_correct": false } },
+
+  { "model": "study_tests.question", "pk": 18, "fields": { "test": 2, "text": "Что входит в закрытый ключ RSA?", "multiple_answers": true } },
+  { "model": "study_tests.answer", "pk": 69, "fields": { "question": 18, "text": "Модуль n", "is_correct": true } },
+  { "model": "study_tests.answer", "pk": 70, "fields": { "question": 18, "text": "Закрытая экспонента d", "is_correct": true } },
+  { "model": "study_tests.answer", "pk": 71, "fields": { "question": 18, "text": "Только p и q без n", "is_correct": false } },
+  { "model": "study_tests.answer", "pk": 72, "fields": { "question": 18, "text": "Только открытая экспонента e", "is_correct": false } },
+
+  { "model": "study_tests.question", "pk": 19, "fields": { "test": 2, "text": "Где используется RSA в протоколах?", "multiple_answers": true } },
+  { "model": "study_tests.answer", "pk": 73, "fields": { "question": 19, "text": "TLS/SSL установление соединения", "is_correct": true } },
+  { "model": "study_tests.answer", "pk": 74, "fields": { "question": 19, "text": "PGP/SSH аутентификация/подпись", "is_correct": true } },
+  { "model": "study_tests.answer", "pk": 75, "fields": { "question": 19, "text": "S-box AES", "is_correct": false } },
+  { "model": "study_tests.answer", "pk": 76, "fields": { "question": 19, "text": "Режим CBC", "is_correct": false } },
+
+  { "model": "study_tests.question", "pk": 20, "fields": { "test": 2, "text": "Какие оптимизации ускоряют RSA?", "multiple_answers": true } },
+  { "model": "study_tests.answer", "pk": 77, "fields": { "question": 20, "text": "CRT для операций", "is_correct": true } },
+  { "model": "study_tests.answer", "pk": 78, "fields": { "question": 20, "text": "Выбор e=65537", "is_correct": true } },
+  { "model": "study_tests.answer", "pk": 79, "fields": { "question": 20, "text": "Увеличение блока до 512 бит", "is_correct": false } },
+  { "model": "study_tests.answer", "pk": 80, "fields": { "question": 20, "text": "Замена φ(n) на n−1", "is_correct": false } },
+
+  { "model": "study_tests.studytest", "pk": 3, "fields": {
+    "title": "Тест: ECC",
+    "category": 7,
+    "description": "Вопросы по ECC (смешанный: одиночный и множественный выбор)",
+    "attempt_limit": 3,
+    "author": 1,
+    "created_at": "2025-11-04T00:00:00Z",
+    "updated_at": "2025-11-04T00:00:00Z"
+  }},
+
+  { "model": "study_tests.question", "pk": 21, "fields": { "test": 3, "text": "Что является основой безопасности ECC?", "multiple_answers": false } },
+  { "model": "study_tests.answer", "pk": 81, "fields": { "question": 21, "text": "Задача дискретного логарифма на кривой (ECDLP)", "is_correct": true } },
+  { "model": "study_tests.answer", "pk": 82, "fields": { "question": 21, "text": "Факторизация модуля n", "is_correct": false } },
+  { "model": "study_tests.answer", "pk": 83, "fields": { "question": 21, "text": "S-box таблицы", "is_correct": false } },
+  { "model": "study_tests.answer", "pk": 84, "fields": { "question": 21, "text": "IP/FP перестановки", "is_correct": false } },
+
+  { "model": "study_tests.question", "pk": 22, "fields": { "test": 3, "text": "Что входит в параметры домена ECC?", "multiple_answers": false } },
+  { "model": "study_tests.answer", "pk": 85, "fields": { "question": 22, "text": "Коэффициенты кривой a, b", "is_correct": true } },
+  { "model": "study_tests.answer", "pk": 86, "fields": { "question": 22, "text": "Базовая точка G и её порядок n", "is_correct": false } },
+  { "model": "study_tests.answer", "pk": 87, "fields": { "question": 22, "text": "S-box таблицы", "is_correct": false } },
+  { "model": "study_tests.answer", "pk": 88, "fields": { "question": 22, "text": "Перестановки PC-1/PC-2", "is_correct": false } },
+
+  { "model": "study_tests.question", "pk": 23, "fields": { "test": 3, "text": "Что верно о сложении/удвоении точек?", "multiple_answers": false } },
+  { "model": "study_tests.answer", "pk": 89, "fields": { "question": 23, "text": "Разные формулы для P≠Q и 2P", "is_correct": true } },
+  { "model": "study_tests.answer", "pk": 90, "fields": { "question": 23, "text": "Требует факторизации", "is_correct": false } },
+  { "model": "study_tests.answer", "pk": 91, "fields": { "question": 23, "text": "Только над R", "is_correct": false } },
+  { "model": "study_tests.answer", "pk": 92, "fields": { "question": 23, "text": "Опирается на S-box", "is_correct": false } },
+
+  { "model": "study_tests.question", "pk": 24, "fields": { "test": 3, "text": "Что верно про ECDSA?", "multiple_answers": false } },
+  { "model": "study_tests.answer", "pk": 93, "fields": { "question": 24, "text": "Подпись — пара (r, s)", "is_correct": true } },
+  { "model": "study_tests.answer", "pk": 94, "fields": { "question": 24, "text": "Шифрует сообщение напрямую", "is_correct": false } },
+  { "model": "study_tests.answer", "pk": 95, "fields": { "question": 24, "text": "r — это y-координата", "is_correct": false } },
+  { "model": "study_tests.answer", "pk": 96, "fields": { "question": 24, "text": "Не использует хэш", "is_correct": false } },
+
+  { "model": "study_tests.question", "pk": 25, "fields": { "test": 3, "text": "Где применяется ECC?", "multiple_answers": false } },
+  { "model": "study_tests.answer", "pk": 97, "fields": { "question": 25, "text": "TLS/SSL, SSH, Signal", "is_correct": true } },
+  { "model": "study_tests.answer", "pk": 98, "fields": { "question": 25, "text": "Внутри S-box AES", "is_correct": false } },
+  { "model": "study_tests.answer", "pk": 99, "fields": { "question": 25, "text": "Как режим блочного шифра", "is_correct": false } },
+  { "model": "study_tests.answer", "pk": 100, "fields": { "question": 25, "text": "Только для хэширования", "is_correct": false } },
+
+  { "model": "study_tests.question", "pk": 26, "fields": { "test": 3, "text": "Примеры стандартных кривых", "multiple_answers": false } },
+  { "model": "study_tests.answer", "pk": 101, "fields": { "question": 26, "text": "NIST P-256 / P-384 / P-521", "is_correct": true } },
+  { "model": "study_tests.answer", "pk": 102, "fields": { "question": 26, "text": "secp256k1", "is_correct": false } },
+  { "model": "study_tests.answer", "pk": 103, "fields": { "question": 26, "text": "AES-256", "is_correct": false } },
+  { "model": "study_tests.answer", "pk": 104, "fields": { "question": 26, "text": "DES-56", "is_correct": false } },
+
+  { "model": "study_tests.question", "pk": 27, "fields": { "test": 3, "text": "Что такое ECDLP?", "multiple_answers": true } },
+  { "model": "study_tests.answer", "pk": 105, "fields": { "question": 27, "text": "Задача дискретного логарифма на кривой", "is_correct": true } },
+  { "model": "study_tests.answer", "pk": 106, "fields": { "question": 27, "text": "Найти d из Q = d·G", "is_correct": true } },
+  { "model": "study_tests.answer", "pk": 107, "fields": { "question": 27, "text": "Факторизация n", "is_correct": false } },
+  { "model": "study_tests.answer", "pk": 108, "fields": { "question": 27, "text": "Интерполяция S-box", "is_correct": false } },
+
+  { "model": "study_tests.question", "pk": 28, "fields": { "test": 3, "text": "Какие факторы влияют на безопасность ECC?", "multiple_answers": true } },
+  { "model": "study_tests.answer", "pk": 109, "fields": { "question": 28, "text": "Размер n (порядок G)", "is_correct": true } },
+  { "model": "study_tests.answer", "pk": 110, "fields": { "question": 28, "text": "Качество генерации случайных чисел", "is_correct": true } },
+  { "model": "study_tests.answer", "pk": 111, "fields": { "question": 28, "text": "Длина блока 128 бит", "is_correct": false } },
+  { "model": "study_tests.answer", "pk": 112, "fields": { "question": 28, "text": "Наличие IP перестановки", "is_correct": false } },
+
+  { "model": "study_tests.question", "pk": 29, "fields": { "test": 3, "text": "Чем отличаются поля для ECC?", "multiple_answers": true } },
+  { "model": "study_tests.answer", "pk": 113, "fields": { "question": 29, "text": "Поля простого модуля Fp", "is_correct": true } },
+  { "model": "study_tests.answer", "pk": 114, "fields": { "question": 29, "text": "Бинарные поля F2^m", "is_correct": true } },
+  { "model": "study_tests.answer", "pk": 115, "fields": { "question": 29, "text": "Только вещественные числа R", "is_correct": false } },
+  { "model": "study_tests.answer", "pk": 116, "fields": { "question": 29, "text": "Только комплексные C", "is_correct": false } },
+
+  { "model": "study_tests.question", "pk": 30, "fields": { "test": 3, "text": "Что делает умножение точки k·P?", "multiple_answers": true } },
+  { "model": "study_tests.answer", "pk": 117, "fields": { "question": 30, "text": "Определяет публичный ключ Q = d·G", "is_correct": true } },
+  { "model": "study_tests.answer", "pk": 118, "fields": { "question": 30, "text": "Основа сложности ECDLP", "is_correct": true } },
+  { "model": "study_tests.answer", "pk": 119, "fields": { "question": 30, "text": "Заменяет необходимость ключей", "is_correct": false } },
+  { "model": "study_tests.answer", "pk": 120, "fields": { "question": 30, "text": "Выполняется делением по модулю", "is_correct": false } },
+
+  { "model": "study_tests.studytest", "pk": 4, "fields": { "title": "Тест: ElGamal", "category": 7, "description": "Вопросы по алгоритму ElGamal (смешанный: одиночный и множественный выбор)", "attempt_limit": 3, "author": 1, "created_at": "2025-11-04T00:00:00Z", "updated_at": "2025-11-04T00:00:00Z" }},
+
+  { "model": "study_tests.question", "pk": 31, "fields": { "test": 4, "text": "Что верно про ElGamal-шифрование?", "multiple_answers": false } },
+  { "model": "study_tests.answer", "pk": 121, "fields": { "question": 31, "text": "Работает в мультипликативной группе mod p", "is_correct": true } },
+  { "model": "study_tests.answer", "pk": 122, "fields": { "question": 31, "text": "Шифротекст — пара (a, b)", "is_correct": false } },
+  { "model": "study_tests.answer", "pk": 123, "fields": { "question": 31, "text": "Детерминированный без случайности", "is_correct": false } },
+  { "model": "study_tests.answer", "pk": 124, "fields": { "question": 31, "text": "Основан на факторизации", "is_correct": false } },
+
+  { "model": "study_tests.question", "pk": 32, "fields": { "test": 4, "text": "Какие требования к k в ElGamal?", "multiple_answers": false } },
+  { "model": "study_tests.answer", "pk": 125, "fields": { "question": 32, "text": "k выбирается случайно каждый раз", "is_correct": true } },
+  { "model": "study_tests.answer", "pk": 126, "fields": { "question": 32, "text": "gcd(k, p−1) = 1", "is_correct": false } },
+  { "model": "study_tests.answer", "pk": 127, "fields": { "question": 32, "text": "k = 1 для повторяемости", "is_correct": false } },
+  { "model": "study_tests.answer", "pk": 128, "fields": { "question": 32, "text": "k должен делить p−1", "is_correct": false } },
+
+  { "model": "study_tests.question", "pk": 33, "fields": { "test": 4, "text": "Что входит в открытый ключ ElGamal?", "multiple_answers": false } },
+  { "model": "study_tests.answer", "pk": 129, "fields": { "question": 33, "text": "(p, g, y)", "is_correct": true } },
+  { "model": "study_tests.answer", "pk": 130, "fields": { "question": 33, "text": "Секретное x", "is_correct": false } },
+  { "model": "study_tests.answer", "pk": 131, "fields": { "question": 33, "text": "Только g", "is_correct": false } },
+  { "model": "study_tests.answer", "pk": 132, "fields": { "question": 33, "text": "(p, q, d)", "is_correct": false } },
+
+  { "model": "study_tests.question", "pk": 34, "fields": { "test": 4, "text": "Выберите формулу расшифрования ElGamal", "multiple_answers": false } },
+  { "model": "study_tests.answer", "pk": 133, "fields": { "question": 34, "text": "M = b * a^(p−1−x) mod p", "is_correct": true } },
+  { "model": "study_tests.answer", "pk": 134, "fields": { "question": 34, "text": "Эквивалентно b * (a^x)⁻¹ mod p", "is_correct": false } },
+  { "model": "study_tests.answer", "pk": 135, "fields": { "question": 34, "text": "M = b − a^x", "is_correct": false } },
+  { "model": "study_tests.answer", "pk": 136, "fields": { "question": 34, "text": "M = a / b mod p", "is_correct": false } },
+
+  { "model": "study_tests.question", "pk": 35, "fields": { "test": 4, "text": "Что верно про подпись ElGamal?", "multiple_answers": false } },
+  { "model": "study_tests.answer", "pk": 137, "fields": { "question": 35, "text": "Подпись — пара (r, s)", "is_correct": true } },
+  { "model": "study_tests.answer", "pk": 138, "fields": { "question": 35, "text": "Проверка сравнивает v1 и v2", "is_correct": false } },
+  { "model": "study_tests.answer", "pk": 139, "fields": { "question": 35, "text": "Использует S-box", "is_correct": false } },
+  { "model": "study_tests.answer", "pk": 140, "fields": { "question": 35, "text": "r = k mod p без возведения", "is_correct": false } },
+
+  { "model": "study_tests.question", "pk": 36, "fields": { "test": 4, "text": "Какая угроза актуальна для ElGamal?", "multiple_answers": false } },
+  { "model": "study_tests.answer", "pk": 141, "fields": { "question": 36, "text": "Повторное использование k раскрывает ключ", "is_correct": true } },
+  { "model": "study_tests.answer", "pk": 142, "fields": { "question": 36, "text": "Недетерминированность делает слабым", "is_correct": false } },
+  { "model": "study_tests.answer", "pk": 143, "fields": { "question": 36, "text": "Малый блок 64 бита", "is_correct": false } },
+  { "model": "study_tests.answer", "pk": 144, "fields": { "question": 36, "text": "Наличие IP-перестановки", "is_correct": false } },
+
+  { "model": "study_tests.question", "pk": 37, "fields": { "test": 4, "text": "Где применяется ElGamal?", "multiple_answers": true } },
+  { "model": "study_tests.answer", "pk": 145, "fields": { "question": 37, "text": "PGP/GPG", "is_correct": true } },
+  { "model": "study_tests.answer", "pk": 146, "fields": { "question": 37, "text": "Гибридное шифрование (шифрование симм. ключа)", "is_correct": true } },
+  { "model": "study_tests.answer", "pk": 147, "fields": { "question": 37, "text": "Внутри AES MixColumns", "is_correct": false } },
+  { "model": "study_tests.answer", "pk": 148, "fields": { "question": 37, "text": "Как режим потокового шифра", "is_correct": false } },
+
+  { "model": "study_tests.question", "pk": 38, "fields": { "test": 4, "text": "Какие элементы задают основу ElGamal?", "multiple_answers": true } },
+  { "model": "study_tests.answer", "pk": 149, "fields": { "question": 38, "text": "Большое простое p", "is_correct": true } },
+  { "model": "study_tests.answer", "pk": 150, "fields": { "question": 38, "text": "Примитивный корень g", "is_correct": true } },
+  { "model": "study_tests.answer", "pk": 151, "fields": { "question": 38, "text": "S-box 16×16", "is_correct": false } },
+  { "model": "study_tests.answer", "pk": 152, "fields": { "question": 38, "text": "Гаммирование XOR с ключом", "is_correct": false } },
+
+  { "model": "study_tests.question", "pk": 39, "fields": { "test": 4, "text": "Что делает случайный параметр k?", "multiple_answers": true } },
+  { "model": "study_tests.answer", "pk": 153, "fields": { "question": 39, "text": "Обеспечивает недетерминированность", "is_correct": true } },
+  { "model": "study_tests.answer", "pk": 154, "fields": { "question": 39, "text": "Используется и в подписи, и в шифровании", "is_correct": true } },
+  { "model": "study_tests.answer", "pk": 155, "fields": { "question": 39, "text": "Фиксируется один раз на все сообщения", "is_correct": false } },
+  { "model": "study_tests.answer", "pk": 156, "fields": { "question": 39, "text": "Делает алгоритм потоковым", "is_correct": false } },
+
+  { "model": "study_tests.question", "pk": 40, "fields": { "test": 4, "text": "Какие свойства группы важны для ElGamal?", "multiple_answers": true } },
+  { "model": "study_tests.answer", "pk": 157, "fields": { "question": 40, "text": "Мультипликативность по модулю простого p", "is_correct": true } },
+  { "model": "study_tests.answer", "pk": 158, "fields": { "question": 40, "text": "Наличие примитивного корня", "is_correct": true } },
+  { "model": "study_tests.answer", "pk": 159, "fields": { "question": 40, "text": "S-box таблицы", "is_correct": false } },
+  { "model": "study_tests.answer", "pk": 160, "fields": { "question": 40, "text": "Перестановки PC-1/PC-2", "is_correct": false } }
+]

@@ -200,11 +200,11 @@ def test(request, test_id):
                 question_attempt.selected_answers.set(answers)
 
         percent = test_attempt.get_correct_count() / test_attempt.get_question_count()
-        if percent >= 0.91:
+        if percent >= 0.86:
             test_attempt.score = 5
-        elif percent >= 0.76:
+        elif percent >= 0.66:
             test_attempt.score = 4
-        elif percent >= 0.60:
+        elif percent >= 0.56:
             test_attempt.score = 3
         else:
             test_attempt.score = 2
