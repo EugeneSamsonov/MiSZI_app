@@ -14,7 +14,7 @@ class TestCategory(models.Model):
     description = models.TextField()
 
     def __str__(self):
-        return self.name
+        return f"Категория: {self.name}"
 
 
 class StudyTest(models.Model):
@@ -32,7 +32,7 @@ class StudyTest(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return f"{self.title} | {self.author}"
+        return f"Тест: {self.title} (автор: {self.author})"
 
 
 class Question(models.Model):
@@ -48,7 +48,8 @@ class Question(models.Model):
     multiple_answers = models.BooleanField(default=False)
 
     def __str__(self):
-        return f"тест {self.test.id } | {self.text}{" | multiple" if self.multiple_answers else ''}"
+        suffix = " | множественный выбор" if self.multiple_answers else ""
+        return f"Вопрос теста {self.test_id}: {self.text}{suffix}"
 
 
 class Answer(models.Model):
@@ -64,7 +65,8 @@ class Answer(models.Model):
     is_correct = models.BooleanField(default=False)
 
     def __str__(self):
-        return f"вопрос {self.question.id } | {self.id} {self.text}{" | correct" if self.is_correct else ''}"
+        mark = "✔" if self.is_correct else "✘"
+        return f"Ответ {self.id} к вопросу {self.question_id}: {self.text} {mark}"
 
 
 class TestAttempt(models.Model):

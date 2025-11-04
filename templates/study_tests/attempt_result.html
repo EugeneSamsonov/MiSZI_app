@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block title %}
-    {{ attempt.test.title }} - Попытка №{{ attempt.attempt_number }}
+    Результаты {{ attempt.test.title }} - Попытка №{{ attempt.attempt_number }}
 {% endblock title %}
 {% block content %}
     <h1>{{ attempt.test.title }}</h1>
@@ -9,7 +9,7 @@
         {% for question, answers in questions_with_answers %}
             <div class="users-list">
                 <div class="question-card">
-                    <h3>Вопрос {{ forloop.counter }}</h3>
+                    <h3>{{ question.text }}</h3>
                     <div class="test-attempt-answers-block form_fields">
                         {% for answer in answers %}
                             <div class="test-attempt-answer {% if answer.id in selected_answers_ids %}answer-choice{% endif %}">

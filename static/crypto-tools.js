@@ -64,7 +64,7 @@
 		affine: 'Аффинный шифр — линейное преобразование по модулю 26.',
 		des: 'DES — стандарт 1977 года; ныне считается устаревшим.',
 		vigenere: 'Виженер — полиалфавитный шифр, известен как “несокрушимый”.',
-		feistel: 'Сеть Фейстеля — базовый принцип многих блочных шифров.',
+		aes: 'AES — современный стандарт блочного шифрования (GCM, 128/192/256).',
 		transposition: 'Перестановки меняют порядок символов без замены.',
 		rsa: 'RSA — предложен Ривестом, Шамиром и Адлеманом в 1977.',
 		elgamal: 'ElGamal — основан на сложности дискретного логарифма.',
@@ -185,6 +185,32 @@
 		for (let i=0;i<padded.length;i+=2){ out.set(process(padded.slice(i,i+2)), i); }
 		const res = out.slice(0, bytes.length);
 		return decrypt ? fromBytes(res) : b64e(res);
+	}
+
+	// AES-GCM using Web Crypto + PBKDF2(passphrase)
+	async function aesEncrypt(text, passphrase){
+		if (!window.crypto || !window.crypto.subtle) throw new Error('Web Crypto не поддерживается');
+		const salt = new Uint8Array(16); crypto.getRandomValues(salt);
+		const iv = new Uint8Array(12); crypto.getRandomValues(iv);
+		const keyMat = await crypto.subtle.importKey('raw', toBytes(passphrase), 'PBKDF2', false, ['deriveKey']);
+		const key = await crypto.subtle.deriveKey({name:'PBKDF2', salt, iterations:100000, hash:'SHA-256'}, keyMat, {name:'AES-GCM', length:256}, false, ['encrypt','decrypt']);
+		const ct = await crypto.subtle.encrypt({name:'AES-GCM', iv}, key, toBytes(text));
+		const packed = new Uint8Array(salt.length + iv.length + ct.byteLength);
+		packed.set(salt,0); packed.set(iv, salt.length); packed.set(new Uint8Array(ct), salt.length+iv.length);
+		return b64e(packed);
+	}
+
+	async function aesDecrypt(b64, passphrase){
+		if (!window.crypto || !window.crypto.subtle) throw new Error('Web Crypto не поддерживается');
+		const data = b64d(b64);
+		if (data.length < 16+12) throw new Error('Неверный формат шифртекста');
+		const salt = data.slice(0,16);
+		const iv = data.slice(16, 16+12);
+		const ct = data.slice(28);
+		const keyMat = await crypto.subtle.importKey('raw', toBytes(passphrase), 'PBKDF2', false, ['deriveKey']);
+		const key = await crypto.subtle.deriveKey({name:'PBKDF2', salt, iterations:100000, hash:'SHA-256'}, keyMat, {name:'AES-GCM', length:256}, false, ['encrypt','decrypt']);
+		const pt = await crypto.subtle.decrypt({name:'AES-GCM', iv}, key, ct);
+		return fromBytes(new Uint8Array(pt));
 	}
 
 	// Toy DES (extremely simplified, NOT real DES)
@@ -314,11 +340,11 @@
 			encrypt: (t,k)=> vigenereCipher(t,k,false),
 			decrypt: (t,k)=> vigenereCipher(t,k,true),
 		},
-		feistel: {
-			name: 'Сеть Фейстеля',
-			placeholder: 'Ключ: hex, напр. 0f0e0d0c0b0a0908',
-			encrypt: (t,k)=> feistelCipher(t,k,4,false),
-			decrypt: (t,k)=> feistelCipher(t,k,4,true),
+		aes: {
+			name: 'AES',
+			placeholder: 'Ключ-пароль (вывод: base64)',
+			encrypt: (t,k)=> aesEncrypt(t,k),
+			decrypt: (t,k)=> aesDecrypt(t,k),
 		},
 		transposition: {
 			name: 'Перестановка с ключом',
@@ -352,7 +378,7 @@
 		affine: '5,8',
 		des: 'password',
 		vigenere: 'LEMON',
-		feistel: '0f0e0d0c0b0a0908',
+		aes: 'secret123',
 		transposition: 'SECRET',
 		rsa: '',
 		elgamal: '',
@@ -386,6 +412,7 @@
 			let output;
 			if (mode==='encrypt') output = CIPHERS[currentCipher].encrypt(text, key);
 			else output = CIPHERS[currentCipher].decrypt(text, key);
+			if (output && typeof output.then === 'function') output = await output;
 			ui.modalResult.value = typeof output === 'string' ? output : String(output);
 			setStatus(L.success, 'success');
 		}catch(e){

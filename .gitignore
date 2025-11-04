@@ -128,3 +128,4 @@ ehthumbs.db
 Thumbs.db
 
 migrations/
+populate_data.py
