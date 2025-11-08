@@ -1,3 +1,5 @@
+import random
+
 from django.utils import timezone
 from datetime import datetime
 from django.http import HttpResponseRedirect
@@ -166,7 +168,7 @@ def tests_list(request, category=None):
 @login_required
 def test(request, test_id):
     test = StudyTest.objects.get(id=test_id)
-    questions = test.questions.all().prefetch_related("answers").order_by("id")
+    questions = test.questions.all().prefetch_related("answers").order_by("?")
     user_attempts = TestAttempt.objects.filter(test=test, user=request.user).count()
     attempt_limit = test.attempt_limit - user_attempts
 
@@ -176,7 +178,9 @@ def test(request, test_id):
         test_attempt = TestAttempt.objects.create(
             user=request.user,
             test=test,
-            started_at=datetime.strptime(request.POST.get("started_at"), "%Y-%m-%d %H:%M"),
+            started_at=datetime.strptime(
+                request.POST.get("started_at"), "%Y-%m-%d %H:%M"
+            ),
             completed_at=timezone.now(),
             attempt_number=user_attempts + 1,
         )
@@ -213,7 +217,7 @@ def test(request, test_id):
 
         return HttpResponseRedirect(reverse_lazy("tests:home"))
 
-    answers = [question.answers.all() for question in questions]
+    answers = [question.answers.all().order_by("?") for question in questions]
     questions_with_answers = zip(questions, answers)
     started_at = timezone.localtime(timezone.now())
 
