@@ -1,0 +1,4467 @@
+[
+    {
+        "model": "users.user",
+        "pk": 1,
+        "fields": {
+            "password": "pbkdf2_sha256$1000000$GwRbGxBPJfjDETZoBVJKyQ$c/4pA2Dh5objXWyBncLqpnw8L2tF7eMet+H3AaLv8s4=",
+            "last_login": "2025-11-08T12:11:12.108Z",
+            "is_superuser": true,
+            "username": "admin",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2025-10-29T16:59:56Z",
+            "is_blocked": false,
+            "is_admin": true,
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "users.user",
+        "pk": 2,
+        "fields": {
+            "password": "pbkdf2_sha256$1000000$uwsg5eECr2kFR1TSj4kAfs$gWvL9tx33vdwNSPWsfSaNpIUO54cILJKIc99NbplSS8=",
+            "last_login": "2025-11-08T12:06:53.551Z",
+            "is_superuser": false,
+            "username": "eugene",
+            "first_name": "Евгений",
+            "last_name": "Самсонов",
+            "email": "",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2025-10-29T17:01:02.386Z",
+            "is_blocked": false,
+            "is_admin": false,
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "study_tests.testcategory",
+        "pk": 6,
+        "fields": {
+            "name": "Симметричные алгоритмы шифрования",
+            "description": "Алгоритмы шифрования, использующие один ключ для шифрования и дешифрования"
+        }
+    },
+    {
+        "model": "study_tests.testcategory",
+        "pk": 7,
+        "fields": {
+            "name": "Асимметричные алгоритмы шифрования",
+            "description": "Алгоритмы шифрования, использующие пару ключей: открытый и закрытый"
+        }
+    },
+    {
+        "model": "study_tests.studytest",
+        "pk": 1,
+        "fields": {
+            "title": "Тест: Шифр Цезаря",
+            "category": 6,
+            "description": "Обновлённый тест: 6 одиночных и 4 множественных вопросы",
+            "attempt_limit": 3,
+            "author": 1,
+            "created_at": "2025-11-04T00:00:00Z",
+            "updated_at": "2025-11-04T00:00:00Z"
+        }
+    },
+    {
+        "model": "study_tests.studytest",
+        "pk": 2,
+        "fields": {
+            "title": "Тест: RSA",
+            "category": 7,
+            "description": "Вопросы по асимметричному алгоритму RSA (смешанный: одиночный и множественный выбор)",
+            "attempt_limit": 3,
+            "author": 1,
+            "created_at": "2025-11-04T00:00:00Z",
+            "updated_at": "2025-11-04T00:00:00Z"
+        }
+    },
+    {
+        "model": "study_tests.studytest",
+        "pk": 3,
+        "fields": {
+            "title": "Тест: ECC",
+            "category": 7,
+            "description": "Вопросы по ECC (смешанный: одиночный и множественный выбор)",
+            "attempt_limit": 3,
+            "author": 1,
+            "created_at": "2025-11-04T00:00:00Z",
+            "updated_at": "2025-11-04T00:00:00Z"
+        }
+    },
+    {
+        "model": "study_tests.studytest",
+        "pk": 4,
+        "fields": {
+            "title": "Тест: ElGamal",
+            "category": 7,
+            "description": "Вопросы по алгоритму ElGamal (смешанный: одиночный и множественный выбор)",
+            "attempt_limit": 3,
+            "author": 1,
+            "created_at": "2025-11-04T00:00:00Z",
+            "updated_at": "2025-11-04T00:00:00Z"
+        }
+    },
+    {
+        "model": "study_tests.studytest",
+        "pk": 5,
+        "fields": {
+            "title": "Тест: DES",
+            "category": 6,
+            "description": "DES: 6 одиночных и 4 множественных вопроса",
+            "attempt_limit": 3,
+            "author": 1,
+            "created_at": "2025-11-04T00:00:00Z",
+            "updated_at": "2025-11-04T00:00:00Z"
+        }
+    },
+    {
+        "model": "study_tests.studytest",
+        "pk": 6,
+        "fields": {
+            "title": "Тест: AES",
+            "category": 6,
+            "description": "AES: 6 одиночных и 4 множественных вопроса",
+            "attempt_limit": 3,
+            "author": 1,
+            "created_at": "2025-11-04T00:00:00Z",
+            "updated_at": "2025-11-04T00:00:00Z"
+        }
+    },
+    {
+        "model": "study_tests.studytest",
+        "pk": 7,
+        "fields": {
+            "title": "Тест: Аффинный шифр",
+            "category": 6,
+            "description": "Аффинный шифр: 6 одиночных и 4 множественных",
+            "attempt_limit": 3,
+            "author": 1,
+            "created_at": "2025-11-04T00:00:00Z",
+            "updated_at": "2025-11-04T00:00:00Z"
+        }
+    },
+    {
+        "model": "study_tests.studytest",
+        "pk": 8,
+        "fields": {
+            "title": "Тест: Шифр Виженера",
+            "category": 6,
+            "description": "Виженер: 6 одиночных и 4 множественных",
+            "attempt_limit": 3,
+            "author": 1,
+            "created_at": "2025-11-04T00:00:00Z",
+            "updated_at": "2025-11-04T00:00:00Z"
+        }
+    },
+    {
+        "model": "study_tests.studytest",
+        "pk": 9,
+        "fields": {
+            "title": "Тест: Шифр перестановки",
+            "category": 6,
+            "description": "Перестановка: 6 одиночных и 4 множественных",
+            "attempt_limit": 3,
+            "author": 1,
+            "created_at": "2025-11-04T00:00:00Z",
+            "updated_at": "2025-11-04T00:00:00Z"
+        }
+    },
+    {
+        "model": "study_tests.question",
+        "pk": 1,
+        "fields": {
+            "test": 1,
+            "text": "К какому классу относится шифр Цезаря?",
+            "multiple_answers": false
+        }
+    },
+    {
+        "model": "study_tests.question",
+        "pk": 2,
+        "fields": {
+            "test": 1,
+            "text": "Основной принцип шифра Цезаря",
+            "multiple_answers": false
+        }
+    },
+    {
+        "model": "study_tests.question",
+        "pk": 3,
+        "fields": {
+            "test": 1,
+            "text": "Формулы шифрования и дешифрования Цезаря",
+            "multiple_answers": true
+        }
+    },
+    {
+        "model": "study_tests.question",
+        "pk": 4,
+        "fields": {
+            "test": 1,
+            "text": "Свойства циклического сдвига в шифре Цезаря",
+            "multiple_answers": true
+        }
+    },
+    {
+        "model": "study_tests.question",
+        "pk": 5,
+        "fields": {
+            "test": 1,
+            "text": "Сколько возможных ключей для русского алфавита?",
+            "multiple_answers": false
+        }
+    },
+    {
+        "model": "study_tests.question",
+        "pk": 6,
+        "fields": {
+            "test": 1,
+            "text": "Главные недостатки шифра Цезаря",
+            "multiple_answers": true
+        }
+    },
+    {
+        "model": "study_tests.question",
+        "pk": 7,
+        "fields": {
+            "test": 1,
+            "text": "К какому типу шифрования относится Цезарь?",
+            "multiple_answers": false
+        }
+    },
+    {
+        "model": "study_tests.question",
+        "pk": 8,
+        "fields": {
+            "test": 1,
+            "text": "Почему шифр Цезаря полезен в обучении?",
+            "multiple_answers": false
+        }
+    },
+    {
+        "model": "study_tests.question",
+        "pk": 9,
+        "fields": {
+            "test": 1,
+            "text": "Что сохраняется при шифровании Цезаря?",
+            "multiple_answers": false
+        }
+    },
+    {
+        "model": "study_tests.question",
+        "pk": 10,
+        "fields": {
+            "test": 1,
+            "text": "Какие параметры описывают шифр Цезаря?",
+            "multiple_answers": true
+        }
+    },
+    {
+        "model": "study_tests.question",
+        "pk": 11,
+        "fields": {
+            "test": 2,
+            "text": "Что характеризует RSA?",
+            "multiple_answers": false
+        }
+    },
+    {
+        "model": "study_tests.question",
+        "pk": 12,
+        "fields": {
+            "test": 2,
+            "text": "Что входит в открытый ключ RSA?",
+            "multiple_answers": false
+        }
+    },
+    {
+        "model": "study_tests.question",
+        "pk": 13,
+        "fields": {
+            "test": 2,
+            "text": "Выберите верное свойство d",
+            "multiple_answers": false
+        }
+    },
+    {
+        "model": "study_tests.question",
+        "pk": 14,
+        "fields": {
+            "test": 2,
+            "text": "Где чаще применяют RSA на практике?",
+            "multiple_answers": false
+        }
+    },
+    {
+        "model": "study_tests.question",
+        "pk": 15,
+        "fields": {
+            "test": 2,
+            "text": "Какой риск относится к RSA?",
+            "multiple_answers": false
+        }
+    },
+    {
+        "model": "study_tests.question",
+        "pk": 16,
+        "fields": {
+            "test": 2,
+            "text": "Что верно про OAEP?",
+            "multiple_answers": false
+        }
+    },
+    {
+        "model": "study_tests.question",
+        "pk": 17,
+        "fields": {
+            "test": 2,
+            "text": "Шифрование/расшифрование в RSA основано на",
+            "multiple_answers": true
+        }
+    },
+    {
+        "model": "study_tests.question",
+        "pk": 18,
+        "fields": {
+            "test": 2,
+            "text": "Что входит в закрытый ключ RSA?",
+            "multiple_answers": true
+        }
+    },
+    {
+        "model": "study_tests.question",
+        "pk": 19,
+        "fields": {
+            "test": 2,
+            "text": "Где используется RSA в протоколах?",
+            "multiple_answers": true
+        }
+    },
+    {
+        "model": "study_tests.question",
+        "pk": 20,
+        "fields": {
+            "test": 2,
+            "text": "Какие оптимизации ускоряют RSA?",
+            "multiple_answers": true
+        }
+    },
+    {
+        "model": "study_tests.question",
+        "pk": 21,
+        "fields": {
+            "test": 3,
+            "text": "Что является основой безопасности ECC?",
+            "multiple_answers": false
+        }
+    },
+    {
+        "model": "study_tests.question",
+        "pk": 22,
+        "fields": {
+            "test": 3,
+            "text": "Что входит в параметры домена ECC?",
+            "multiple_answers": false
+        }
+    },
+    {
+        "model": "study_tests.question",
+        "pk": 23,
+        "fields": {
+            "test": 3,
+            "text": "Что верно о сложении/удвоении точек?",
+            "multiple_answers": false
+        }
+    },
+    {
+        "model": "study_tests.question",
+        "pk": 24,
+        "fields": {
+            "test": 3,
+            "text": "Что верно про ECDSA?",
+            "multiple_answers": false
+        }
+    },
+    {
+        "model": "study_tests.question",
+        "pk": 25,
+        "fields": {
+            "test": 3,
+            "text": "Где применяется ECC?",
+            "multiple_answers": false
+        }
+    },
+    {
+        "model": "study_tests.question",
+        "pk": 26,
+        "fields": {
+            "test": 3,
+            "text": "Примеры стандартных кривых",
+            "multiple_answers": false
+        }
+    },
+    {
+        "model": "study_tests.question",
+        "pk": 27,
+        "fields": {
+            "test": 3,
+            "text": "Что такое ECDLP?",
+            "multiple_answers": true
+        }
+    },
+    {
+        "model": "study_tests.question",
+        "pk": 28,
+        "fields": {
+            "test": 3,
+            "text": "Какие факторы влияют на безопасность ECC?",
+            "multiple_answers": true
+        }
+    },
+    {
+        "model": "study_tests.question",
+        "pk": 29,
+        "fields": {
+            "test": 3,
+            "text": "Чем отличаются поля для ECC?",
+            "multiple_answers": true
+        }
+    },
+    {
+        "model": "study_tests.question",
+        "pk": 30,
+        "fields": {
+            "test": 3,
+            "text": "Что делает умножение точки k·P?",
+            "multiple_answers": true
+        }
+    },
+    {
+        "model": "study_tests.question",
+        "pk": 31,
+        "fields": {
+            "test": 4,
+            "text": "Что верно про ElGamal-шифрование?",
+            "multiple_answers": false
+        }
+    },
+    {
+        "model": "study_tests.question",
+        "pk": 32,
+        "fields": {
+            "test": 4,
+            "text": "Какие требования к k в ElGamal?",
+            "multiple_answers": false
+        }
+    },
+    {
+        "model": "study_tests.question",
+        "pk": 33,
+        "fields": {
+            "test": 4,
+            "text": "Что входит в открытый ключ ElGamal?",
+            "multiple_answers": false
+        }
+    },
+    {
+        "model": "study_tests.question",
+        "pk": 34,
+        "fields": {
+            "test": 4,
+            "text": "Выберите формулу расшифрования ElGamal",
+            "multiple_answers": false
+        }
+    },
+    {
+        "model": "study_tests.question",
+        "pk": 35,
+        "fields": {
+            "test": 4,
+            "text": "Что верно про подпись ElGamal?",
+            "multiple_answers": false
+        }
+    },
+    {
+        "model": "study_tests.question",
+        "pk": 36,
+        "fields": {
+            "test": 4,
+            "text": "Какая угроза актуальна для ElGamal?",
+            "multiple_answers": false
+        }
+    },
+    {
+        "model": "study_tests.question",
+        "pk": 37,
+        "fields": {
+            "test": 4,
+            "text": "Где применяется ElGamal?",
+            "multiple_answers": true
+        }
+    },
+    {
+        "model": "study_tests.question",
+        "pk": 38,
+        "fields": {
+            "test": 4,
+            "text": "Какие элементы задают основу ElGamal?",
+            "multiple_answers": true
+        }
+    },
+    {
+        "model": "study_tests.question",
+        "pk": 39,
+        "fields": {
+            "test": 4,
+            "text": "Что делает случайный параметр k?",
+            "multiple_answers": true
+        }
+    },
+    {
+        "model": "study_tests.question",
+        "pk": 40,
+        "fields": {
+            "test": 4,
+            "text": "Какие свойства группы важны для ElGamal?",
+            "multiple_answers": true
+        }
+    },
+    {
+        "model": "study_tests.question",
+        "pk": 41,
+        "fields": {
+            "test": 5,
+            "text": "Размер блока DES",
+            "multiple_answers": false
+        }
+    },
+    {
+        "model": "study_tests.question",
+        "pk": 42,
+        "fields": {
+            "test": 5,
+            "text": "Эффективная длина ключа DES",
+            "multiple_answers": false
+        }
+    },
+    {
+        "model": "study_tests.question",
+        "pk": 43,
+        "fields": {
+            "test": 5,
+            "text": "Что делает функция F в DES?",
+            "multiple_answers": true
+        }
+    },
+    {
+        "model": "study_tests.question",
+        "pk": 44,
+        "fields": {
+            "test": 5,
+            "text": "Структура DES",
+            "multiple_answers": false
+        }
+    },
+    {
+        "model": "study_tests.question",
+        "pk": 45,
+        "fields": {
+            "test": 5,
+            "text": "Назначение IP в DES",
+            "multiple_answers": false
+        }
+    },
+    {
+        "model": "study_tests.question",
+        "pk": 46,
+        "fields": {
+            "test": 5,
+            "text": "Почему DES устарел?",
+            "multiple_answers": false
+        }
+    },
+    {
+        "model": "study_tests.question",
+        "pk": 47,
+        "fields": {
+            "test": 5,
+            "text": "Режимы работы, применимые к DES",
+            "multiple_answers": true
+        }
+    },
+    {
+        "model": "study_tests.question",
+        "pk": 48,
+        "fields": {
+            "test": 5,
+            "text": "Сколько раундов в DES?",
+            "multiple_answers": false
+        }
+    },
+    {
+        "model": "study_tests.question",
+        "pk": 49,
+        "fields": {
+            "test": 5,
+            "text": "Как формируются раундовые ключи Ki?",
+            "multiple_answers": true
+        }
+    },
+    {
+        "model": "study_tests.question",
+        "pk": 50,
+        "fields": {
+            "test": 5,
+            "text": "Что такое 3DES?",
+            "multiple_answers": false
+        }
+    },
+    {
+        "model": "study_tests.question",
+        "pk": 51,
+        "fields": {
+            "test": 6,
+            "text": "Размер блока AES",
+            "multiple_answers": false
+        }
+    },
+    {
+        "model": "study_tests.question",
+        "pk": 52,
+        "fields": {
+            "test": 6,
+            "text": "Допустимые длины ключа AES",
+            "multiple_answers": false
+        }
+    },
+    {
+        "model": "study_tests.question",
+        "pk": 53,
+        "fields": {
+            "test": 6,
+            "text": "Этапы раунда AES",
+            "multiple_answers": true
+        }
+    },
+    {
+        "model": "study_tests.question",
+        "pk": 54,
+        "fields": {
+            "test": 6,
+            "text": "Что отсутствует в последнем раунде AES?",
+            "multiple_answers": false
+        }
+    },
+    {
+        "model": "study_tests.question",
+        "pk": 55,
+        "fields": {
+            "test": 6,
+            "text": "Основа S-box AES",
+            "multiple_answers": false
+        }
+    },
+    {
+        "model": "study_tests.question",
+        "pk": 56,
+        "fields": {
+            "test": 6,
+            "text": "Роли Key Expansion",
+            "multiple_answers": true
+        }
+    },
+    {
+        "model": "study_tests.question",
+        "pk": 57,
+        "fields": {
+            "test": 6,
+            "text": "Матрица состояния AES-128",
+            "multiple_answers": false
+        }
+    },
+    {
+        "model": "study_tests.question",
+        "pk": 58,
+        "fields": {
+            "test": 6,
+            "text": "Сколько раундов у AES-128/192/256?",
+            "multiple_answers": false
+        }
+    },
+    {
+        "model": "study_tests.question",
+        "pk": 59,
+        "fields": {
+            "test": 7,
+            "text": "Формула шифрования аффинного шифра",
+            "multiple_answers": false
+        }
+    },
+    {
+        "model": "study_tests.question",
+        "pk": 60,
+        "fields": {
+            "test": 7,
+            "text": "Условие на a для обратимости",
+            "multiple_answers": false
+        }
+    },
+    {
+        "model": "study_tests.question",
+        "pk": 61,
+        "fields": {
+            "test": 7,
+            "text": "Что верно про дешифрование аффинного шифра?",
+            "multiple_answers": true
+        }
+    },
+    {
+        "model": "study_tests.question",
+        "pk": 62,
+        "fields": {
+            "test": 7,
+            "text": "Когда аффинный шифр вырождается в Цезаря?",
+            "multiple_answers": false
+        }
+    },
+    {
+        "model": "study_tests.question",
+        "pk": 63,
+        "fields": {
+            "test": 7,
+            "text": "Какие уязвимости присущи аффинному шифру?",
+            "multiple_answers": true
+        }
+    },
+    {
+        "model": "study_tests.question",
+        "pk": 64,
+        "fields": {
+            "test": 7,
+            "text": "Сколько параметров содержит ключ аффинного шифра?",
+            "multiple_answers": false
+        }
+    },
+    {
+        "model": "study_tests.question",
+        "pk": 65,
+        "fields": {
+            "test": 7,
+            "text": "Какие значения a допустимы при n=32?",
+            "multiple_answers": true
+        }
+    },
+    {
+        "model": "study_tests.question",
+        "pk": 66,
+        "fields": {
+            "test": 8,
+            "text": "Класс шифра Виженера",
+            "multiple_answers": false
+        }
+    },
+    {
+        "model": "study_tests.question",
+        "pk": 67,
+        "fields": {
+            "test": 8,
+            "text": "Формулы шифрования/дешифрования Виженера",
+            "multiple_answers": true
+        }
+    },
+    {
+        "model": "study_tests.question",
+        "pk": 68,
+        "fields": {
+            "test": 8,
+            "text": "Что задаёт величину сдвига каждой буквы?",
+            "multiple_answers": false
+        }
+    },
+    {
+        "model": "study_tests.question",
+        "pk": 69,
+        "fields": {
+            "test": 8,
+            "text": "Методы взлома Виженера",
+            "multiple_answers": true
+        }
+    },
+    {
+        "model": "study_tests.question",
+        "pk": 70,
+        "fields": {
+            "test": 8,
+            "text": "Как поступают с ключом, если он короче текста?",
+            "multiple_answers": false
+        }
+    },
+    {
+        "model": "study_tests.question",
+        "pk": 71,
+        "fields": {
+            "test": 8,
+            "text": "Почему длинный ключ повышает стойкость?",
+            "multiple_answers": false
+        }
+    },
+    {
+        "model": "study_tests.question",
+        "pk": 72,
+        "fields": {
+            "test": 8,
+            "text": "Таблица Виженера — это",
+            "multiple_answers": false
+        }
+    },
+    {
+        "model": "study_tests.question",
+        "pk": 73,
+        "fields": {
+            "test": 9,
+            "text": "Что делает шифр перестановки?",
+            "multiple_answers": false
+        }
+    },
+    {
+        "model": "study_tests.question",
+        "pk": 74,
+        "fields": {
+            "test": 9,
+            "text": "Как выполняется дешифрование перестановочного шифра?",
+            "multiple_answers": false
+        }
+    },
+    {
+        "model": "study_tests.question",
+        "pk": 75,
+        "fields": {
+            "test": 9,
+            "text": "Что повышает стойкость?",
+            "multiple_answers": false
+        }
+    },
+    {
+        "model": "study_tests.question",
+        "pk": 76,
+        "fields": {
+            "test": 9,
+            "text": "Главная уязвимость простой перестановки",
+            "multiple_answers": false
+        }
+    },
+    {
+        "model": "study_tests.question",
+        "pk": 77,
+        "fields": {
+            "test": 9,
+            "text": "Как растёт число ключей при длине блока n?",
+            "multiple_answers": false
+        }
+    },
+    {
+        "model": "study_tests.question",
+        "pk": 78,
+        "fields": {
+            "test": 9,
+            "text": "Табличный шифр перестановки — это",
+            "multiple_answers": false
+        }
+    },
+    {
+        "model": "study_tests.question",
+        "pk": 79,
+        "fields": {
+            "test": 9,
+            "text": "Маршрутная перестановка — это",
+            "multiple_answers": false
+        }
+    },
+    {
+        "model": "study_tests.question",
+        "pk": 80,
+        "fields": {
+            "test": 9,
+            "text": "Комбинация, повышающая безопасность",
+            "multiple_answers": true
+        }
+    },
+    {
+        "model": "study_tests.question",
+        "pk": 81,
+        "fields": {
+            "test": 6,
+            "text": "В каком поле выполняются операции AES?",
+            "multiple_answers": false
+        }
+    },
+    {
+        "model": "study_tests.question",
+        "pk": 82,
+        "fields": {
+            "test": 6,
+            "text": "Назначение AddRoundKey в AES",
+            "multiple_answers": false
+        }
+    },
+    {
+        "model": "study_tests.question",
+        "pk": 83,
+        "fields": {
+            "test": 7,
+            "text": "Что такое ключ аффинного шифра?",
+            "multiple_answers": false
+        }
+    },
+    {
+        "model": "study_tests.question",
+        "pk": 84,
+        "fields": {
+            "test": 7,
+            "text": "Что обеспечивает обратимость функции шифрования?",
+            "multiple_answers": false
+        }
+    },
+    {
+        "model": "study_tests.question",
+        "pk": 85,
+        "fields": {
+            "test": 7,
+            "text": "Выберите верные утверждения об аффинном шифре",
+            "multiple_answers": true
+        }
+    },
+    {
+        "model": "study_tests.question",
+        "pk": 86,
+        "fields": {
+            "test": 8,
+            "text": "Что задаёт сдвиг в шифре Виженера для каждой буквы?",
+            "multiple_answers": false
+        }
+    },
+    {
+        "model": "study_tests.question",
+        "pk": 87,
+        "fields": {
+            "test": 8,
+            "text": "Какие методы помогают взламывать Виженера?",
+            "multiple_answers": true
+        }
+    },
+    {
+        "model": "study_tests.question",
+        "pk": 88,
+        "fields": {
+            "test": 8,
+            "text": "Какие утверждения верны о ключе Виженера?",
+            "multiple_answers": true
+        }
+    },
+    {
+        "model": "study_tests.question",
+        "pk": 89,
+        "fields": {
+            "test": 9,
+            "text": "Какие виды шифров перестановки существуют?",
+            "multiple_answers": true
+        }
+    },
+    {
+        "model": "study_tests.question",
+        "pk": 90,
+        "fields": {
+            "test": 9,
+            "text": "Где используются перестановки в современных шифрах?",
+            "multiple_answers": true
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 1,
+        "fields": {
+            "question": 1,
+            "text": "К подстановочным шифрам",
+            "is_correct": true
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 2,
+        "fields": {
+            "question": 1,
+            "text": "К перестановочным шифрам",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 3,
+        "fields": {
+            "question": 1,
+            "text": "К потоковым асимметричным шифрам",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 4,
+        "fields": {
+            "question": 1,
+            "text": "К гомоморфным шифрам",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 5,
+        "fields": {
+            "question": 2,
+            "text": "Сдвиг букв алфавита на фиксированное число позиций",
+            "is_correct": true
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 6,
+        "fields": {
+            "question": 2,
+            "text": "Перестановка символов по ключевой таблице",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 7,
+        "fields": {
+            "question": 2,
+            "text": "Матричное умножение блоков",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 8,
+        "fields": {
+            "question": 2,
+            "text": "Кодирование битовых полей GF(2)",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 9,
+        "fields": {
+            "question": 3,
+            "text": "E(x) = (x + k) mod n",
+            "is_correct": true
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 10,
+        "fields": {
+            "question": 3,
+            "text": "D(y) = (y − k) mod n",
+            "is_correct": true
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 11,
+        "fields": {
+            "question": 3,
+            "text": "E(x) = (a·x + b) mod n",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 12,
+        "fields": {
+            "question": 3,
+            "text": "D(y) = y^d mod n",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 13,
+        "fields": {
+            "question": 4,
+            "text": "Сдвиг выполняется по кругу (циклически)",
+            "is_correct": true
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 14,
+        "fields": {
+            "question": 4,
+            "text": "После Я идёт А",
+            "is_correct": true
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 15,
+        "fields": {
+            "question": 4,
+            "text": "Сдвиг обрезает конец текста",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 16,
+        "fields": {
+            "question": 4,
+            "text": "Сдвиг прекращается на последней букве",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 17,
+        "fields": {
+            "question": 5,
+            "text": "32",
+            "is_correct": true
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 18,
+        "fields": {
+            "question": 5,
+            "text": "26",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 19,
+        "fields": {
+            "question": 5,
+            "text": "128",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 20,
+        "fields": {
+            "question": 5,
+            "text": "256",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 21,
+        "fields": {
+            "question": 6,
+            "text": "Уязвим к полному перебору",
+            "is_correct": true
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 22,
+        "fields": {
+            "question": 6,
+            "text": "Уязвим к частотному анализу",
+            "is_correct": true
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 23,
+        "fields": {
+            "question": 6,
+            "text": "Требует квантовых вычислений",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 24,
+        "fields": {
+            "question": 6,
+            "text": "Слишком большой ключ",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 25,
+        "fields": {
+            "question": 7,
+            "text": "Симметричное шифрование",
+            "is_correct": true
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 26,
+        "fields": {
+            "question": 7,
+            "text": "Асимметричное шифрование",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 27,
+        "fields": {
+            "question": 7,
+            "text": "Гомоморфное шифрование",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 28,
+        "fields": {
+            "question": 7,
+            "text": "Квантовое шифрование",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 29,
+        "fields": {
+            "question": 8,
+            "text": "Демонстрирует ключ, модульную арифметику и симметрию",
+            "is_correct": true
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 30,
+        "fields": {
+            "question": 8,
+            "text": "Используется в TLS как стандарт",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 31,
+        "fields": {
+            "question": 8,
+            "text": "Гарантирует абсолютную стойкость",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 32,
+        "fields": {
+            "question": 8,
+            "text": "Нужен для квантовых протоколов",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 33,
+        "fields": {
+            "question": 9,
+            "text": "Структура языка (распределение букв)",
+            "is_correct": true
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 34,
+        "fields": {
+            "question": 9,
+            "text": "Порядок слов в предложении",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 35,
+        "fields": {
+            "question": 9,
+            "text": "Разделители предложений",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 36,
+        "fields": {
+            "question": 9,
+            "text": "Заглавные буквы",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 37,
+        "fields": {
+            "question": 10,
+            "text": "Ключ k (величина сдвига)",
+            "is_correct": true
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 38,
+        "fields": {
+            "question": 10,
+            "text": "Размер алфавита n",
+            "is_correct": true
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 39,
+        "fields": {
+            "question": 10,
+            "text": "Раундовая функция F",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 40,
+        "fields": {
+            "question": 10,
+            "text": "S-box таблица",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 41,
+        "fields": {
+            "question": 11,
+            "text": "Асимметричное шифрование с парами ключей",
+            "is_correct": true
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 42,
+        "fields": {
+            "question": 11,
+            "text": "Основан на трудности факторизации",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 43,
+        "fields": {
+            "question": 11,
+            "text": "Использует S-box",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 44,
+        "fields": {
+            "question": 11,
+            "text": "Размер блока фиксирован 128 бит",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 45,
+        "fields": {
+            "question": 12,
+            "text": "Модуль n",
+            "is_correct": true
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 46,
+        "fields": {
+            "question": 12,
+            "text": "Открытая экспонента e",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 47,
+        "fields": {
+            "question": 12,
+            "text": "Закрытая экспонента d",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 48,
+        "fields": {
+            "question": 12,
+            "text": "Пара простых (p, q) как есть",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 49,
+        "fields": {
+            "question": 13,
+            "text": "d — мультипликативная обратная к e mod φ(n)",
+            "is_correct": true
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 50,
+        "fields": {
+            "question": 13,
+            "text": "d = e^−1 mod n",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 51,
+        "fields": {
+            "question": 13,
+            "text": "d — сумма p и q",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 52,
+        "fields": {
+            "question": 13,
+            "text": "d — публичная экспонента",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 53,
+        "fields": {
+            "question": 14,
+            "text": "Шифрование ключей в гибридных схемах",
+            "is_correct": true
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 54,
+        "fields": {
+            "question": 14,
+            "text": "Цифровые подписи",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 55,
+        "fields": {
+            "question": 14,
+            "text": "Потоковое шифрование больших данных",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 56,
+        "fields": {
+            "question": 14,
+            "text": "Выбор S-box для AES",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 57,
+        "fields": {
+            "question": 15,
+            "text": "Общие модули n у разных пользователей",
+            "is_correct": true
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 58,
+        "fields": {
+            "question": 15,
+            "text": "Наличие IP-перестановки",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 59,
+        "fields": {
+            "question": 15,
+            "text": "Малый блок 64 бита в стандарте",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 60,
+        "fields": {
+            "question": 15,
+            "text": "Использование S-box",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 61,
+        "fields": {
+            "question": 16,
+            "text": "Схема паддинга для безопасности",
+            "is_correct": true
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 62,
+        "fields": {
+            "question": 16,
+            "text": "Уменьшает модуль n",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 63,
+        "fields": {
+            "question": 16,
+            "text": "Заменяет хэш-функцию",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 64,
+        "fields": {
+            "question": 16,
+            "text": "Определяет e=65537",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 65,
+        "fields": {
+            "question": 17,
+            "text": "Возведении в степень по модулю n",
+            "is_correct": true
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 66,
+        "fields": {
+            "question": 17,
+            "text": "(M^e)^d ≡ M mod n",
+            "is_correct": true
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 67,
+        "fields": {
+            "question": 17,
+            "text": "Случайной перестановке символов",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 68,
+        "fields": {
+            "question": 17,
+            "text": "S-box подстановке",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 69,
+        "fields": {
+            "question": 18,
+            "text": "Модуль n",
+            "is_correct": true
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 70,
+        "fields": {
+            "question": 18,
+            "text": "Закрытая экспонента d",
+            "is_correct": true
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 71,
+        "fields": {
+            "question": 18,
+            "text": "Только p и q без n",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 72,
+        "fields": {
+            "question": 18,
+            "text": "Только открытая экспонента e",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 73,
+        "fields": {
+            "question": 19,
+            "text": "TLS/SSL установление соединения",
+            "is_correct": true
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 74,
+        "fields": {
+            "question": 19,
+            "text": "PGP/SSH аутентификация/подпись",
+            "is_correct": true
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 75,
+        "fields": {
+            "question": 19,
+            "text": "S-box AES",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 76,
+        "fields": {
+            "question": 19,
+            "text": "Режим CBC",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 77,
+        "fields": {
+            "question": 20,
+            "text": "CRT для операций",
+            "is_correct": true
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 78,
+        "fields": {
+            "question": 20,
+            "text": "Выбор e=65537",
+            "is_correct": true
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 79,
+        "fields": {
+            "question": 20,
+            "text": "Увеличение блока до 512 бит",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 80,
+        "fields": {
+            "question": 20,
+            "text": "Замена φ(n) на n−1",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 81,
+        "fields": {
+            "question": 21,
+            "text": "Задача дискретного логарифма на кривой (ECDLP)",
+            "is_correct": true
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 82,
+        "fields": {
+            "question": 21,
+            "text": "Факторизация модуля n",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 83,
+        "fields": {
+            "question": 21,
+            "text": "S-box таблицы",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 84,
+        "fields": {
+            "question": 21,
+            "text": "IP/FP перестановки",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 85,
+        "fields": {
+            "question": 22,
+            "text": "Коэффициенты кривой a, b",
+            "is_correct": true
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 86,
+        "fields": {
+            "question": 22,
+            "text": "Базовая точка G и её порядок n",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 87,
+        "fields": {
+            "question": 22,
+            "text": "S-box таблицы",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 88,
+        "fields": {
+            "question": 22,
+            "text": "Перестановки PC-1/PC-2",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 89,
+        "fields": {
+            "question": 23,
+            "text": "Разные формулы для P≠Q и 2P",
+            "is_correct": true
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 90,
+        "fields": {
+            "question": 23,
+            "text": "Требует факторизации",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 91,
+        "fields": {
+            "question": 23,
+            "text": "Только над R",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 92,
+        "fields": {
+            "question": 23,
+            "text": "Опирается на S-box",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 93,
+        "fields": {
+            "question": 24,
+            "text": "Подпись — пара (r, s)",
+            "is_correct": true
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 94,
+        "fields": {
+            "question": 24,
+            "text": "Шифрует сообщение напрямую",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 95,
+        "fields": {
+            "question": 24,
+            "text": "r — это y-координата",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 96,
+        "fields": {
+            "question": 24,
+            "text": "Не использует хэш",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 97,
+        "fields": {
+            "question": 25,
+            "text": "TLS/SSL, SSH, Signal",
+            "is_correct": true
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 98,
+        "fields": {
+            "question": 25,
+            "text": "Внутри S-box AES",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 99,
+        "fields": {
+            "question": 25,
+            "text": "Как режим блочного шифра",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 100,
+        "fields": {
+            "question": 25,
+            "text": "Только для хэширования",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 101,
+        "fields": {
+            "question": 26,
+            "text": "NIST P-256 / P-384 / P-521",
+            "is_correct": true
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 102,
+        "fields": {
+            "question": 26,
+            "text": "secp256k1",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 103,
+        "fields": {
+            "question": 26,
+            "text": "AES-256",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 104,
+        "fields": {
+            "question": 26,
+            "text": "DES-56",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 105,
+        "fields": {
+            "question": 27,
+            "text": "Задача дискретного логарифма на кривой",
+            "is_correct": true
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 106,
+        "fields": {
+            "question": 27,
+            "text": "Найти d из Q = d·G",
+            "is_correct": true
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 107,
+        "fields": {
+            "question": 27,
+            "text": "Факторизация n",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 108,
+        "fields": {
+            "question": 27,
+            "text": "Интерполяция S-box",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 109,
+        "fields": {
+            "question": 28,
+            "text": "Размер n (порядок G)",
+            "is_correct": true
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 110,
+        "fields": {
+            "question": 28,
+            "text": "Качество генерации случайных чисел",
+            "is_correct": true
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 111,
+        "fields": {
+            "question": 28,
+            "text": "Длина блока 128 бит",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 112,
+        "fields": {
+            "question": 28,
+            "text": "Наличие IP перестановки",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 113,
+        "fields": {
+            "question": 29,
+            "text": "Поля простого модуля Fp",
+            "is_correct": true
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 114,
+        "fields": {
+            "question": 29,
+            "text": "Бинарные поля F2^m",
+            "is_correct": true
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 115,
+        "fields": {
+            "question": 29,
+            "text": "Только вещественные числа R",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 116,
+        "fields": {
+            "question": 29,
+            "text": "Только комплексные C",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 117,
+        "fields": {
+            "question": 30,
+            "text": "Определяет публичный ключ Q = d·G",
+            "is_correct": true
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 118,
+        "fields": {
+            "question": 30,
+            "text": "Основа сложности ECDLP",
+            "is_correct": true
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 119,
+        "fields": {
+            "question": 30,
+            "text": "Заменяет необходимость ключей",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 120,
+        "fields": {
+            "question": 30,
+            "text": "Выполняется делением по модулю",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 121,
+        "fields": {
+            "question": 31,
+            "text": "Работает в мультипликативной группе mod p",
+            "is_correct": true
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 122,
+        "fields": {
+            "question": 31,
+            "text": "Шифротекст — пара (a, b)",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 123,
+        "fields": {
+            "question": 31,
+            "text": "Детерминированный без случайности",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 124,
+        "fields": {
+            "question": 31,
+            "text": "Основан на факторизации",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 125,
+        "fields": {
+            "question": 32,
+            "text": "k выбирается случайно каждый раз",
+            "is_correct": true
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 126,
+        "fields": {
+            "question": 32,
+            "text": "gcd(k, p−1) = 1",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 127,
+        "fields": {
+            "question": 32,
+            "text": "k = 1 для повторяемости",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 128,
+        "fields": {
+            "question": 32,
+            "text": "k должен делить p−1",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 129,
+        "fields": {
+            "question": 33,
+            "text": "(p, g, y)",
+            "is_correct": true
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 130,
+        "fields": {
+            "question": 33,
+            "text": "Секретное x",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 131,
+        "fields": {
+            "question": 33,
+            "text": "Только g",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 132,
+        "fields": {
+            "question": 33,
+            "text": "(p, q, d)",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 133,
+        "fields": {
+            "question": 34,
+            "text": "M = b * a^(p−1−x) mod p",
+            "is_correct": true
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 134,
+        "fields": {
+            "question": 34,
+            "text": "Эквивалентно b * (a^x)⁻¹ mod p",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 135,
+        "fields": {
+            "question": 34,
+            "text": "M = b − a^x",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 136,
+        "fields": {
+            "question": 34,
+            "text": "M = a / b mod p",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 137,
+        "fields": {
+            "question": 35,
+            "text": "Подпись — пара (r, s)",
+            "is_correct": true
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 138,
+        "fields": {
+            "question": 35,
+            "text": "Проверка сравнивает v1 и v2",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 139,
+        "fields": {
+            "question": 35,
+            "text": "Использует S-box",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 140,
+        "fields": {
+            "question": 35,
+            "text": "r = k mod p без возведения",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 141,
+        "fields": {
+            "question": 36,
+            "text": "Повторное использование k раскрывает ключ",
+            "is_correct": true
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 142,
+        "fields": {
+            "question": 36,
+            "text": "Недетерминированность делает слабым",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 143,
+        "fields": {
+            "question": 36,
+            "text": "Малый блок 64 бита",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 144,
+        "fields": {
+            "question": 36,
+            "text": "Наличие IP-перестановки",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 145,
+        "fields": {
+            "question": 37,
+            "text": "PGP/GPG",
+            "is_correct": true
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 146,
+        "fields": {
+            "question": 37,
+            "text": "Гибридное шифрование (шифрование симм. ключа)",
+            "is_correct": true
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 147,
+        "fields": {
+            "question": 37,
+            "text": "Внутри AES MixColumns",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 148,
+        "fields": {
+            "question": 37,
+            "text": "Как режим потокового шифра",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 149,
+        "fields": {
+            "question": 38,
+            "text": "Большое простое p",
+            "is_correct": true
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 150,
+        "fields": {
+            "question": 38,
+            "text": "Примитивный корень g",
+            "is_correct": true
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 151,
+        "fields": {
+            "question": 38,
+            "text": "S-box 16×16",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 152,
+        "fields": {
+            "question": 38,
+            "text": "Гаммирование XOR с ключом",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 153,
+        "fields": {
+            "question": 39,
+            "text": "Обеспечивает недетерминированность",
+            "is_correct": true
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 154,
+        "fields": {
+            "question": 39,
+            "text": "Используется и в подписи, и в шифровании",
+            "is_correct": true
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 155,
+        "fields": {
+            "question": 39,
+            "text": "Фиксируется один раз на все сообщения",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 156,
+        "fields": {
+            "question": 39,
+            "text": "Делает алгоритм потоковым",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 157,
+        "fields": {
+            "question": 40,
+            "text": "Мультипликативность по модулю простого p",
+            "is_correct": true
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 158,
+        "fields": {
+            "question": 40,
+            "text": "Наличие примитивного корня",
+            "is_correct": true
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 159,
+        "fields": {
+            "question": 40,
+            "text": "S-box таблицы",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 160,
+        "fields": {
+            "question": 40,
+            "text": "Перестановки PC-1/PC-2",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 161,
+        "fields": {
+            "question": 41,
+            "text": "64 бита",
+            "is_correct": true
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 162,
+        "fields": {
+            "question": 41,
+            "text": "128 бит",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 163,
+        "fields": {
+            "question": 41,
+            "text": "32 бита",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 164,
+        "fields": {
+            "question": 41,
+            "text": "256 бит",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 165,
+        "fields": {
+            "question": 42,
+            "text": "56 бит",
+            "is_correct": true
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 166,
+        "fields": {
+            "question": 42,
+            "text": "64 бита без чётности",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 167,
+        "fields": {
+            "question": 42,
+            "text": "40 бит",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 168,
+        "fields": {
+            "question": 42,
+            "text": "112 бит",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 169,
+        "fields": {
+            "question": 43,
+            "text": "Расширение E",
+            "is_correct": true
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 170,
+        "fields": {
+            "question": 43,
+            "text": "XOR с Ki",
+            "is_correct": true
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 171,
+        "fields": {
+            "question": 43,
+            "text": "S-box подстановки",
+            "is_correct": true
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 172,
+        "fields": {
+            "question": 43,
+            "text": "AddRoundKey как в AES",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 173,
+        "fields": {
+            "question": 44,
+            "text": "Сеть Фейстеля",
+            "is_correct": true
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 174,
+        "fields": {
+            "question": 44,
+            "text": "SPN без Фейстеля",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 175,
+        "fields": {
+            "question": 44,
+            "text": "Потоковый шифр",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 176,
+        "fields": {
+            "question": 44,
+            "text": "Гомоморфный шифр",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 177,
+        "fields": {
+            "question": 45,
+            "text": "Распределяет биты для дальнейшей обработки",
+            "is_correct": true
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 178,
+        "fields": {
+            "question": 45,
+            "text": "Повышает стойкость как секрет",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 179,
+        "fields": {
+            "question": 45,
+            "text": "Шифрует левую половину",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 180,
+        "fields": {
+            "question": 45,
+            "text": "Удаляет биты чётности",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 181,
+        "fields": {
+            "question": 46,
+            "text": "Малая длина ключа (56 бит)",
+            "is_correct": true
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 182,
+        "fields": {
+            "question": 46,
+            "text": "Слишком большой блок",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 183,
+        "fields": {
+            "question": 46,
+            "text": "Нет S-box",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 184,
+        "fields": {
+            "question": 46,
+            "text": "Не работает в железе",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 185,
+        "fields": {
+            "question": 47,
+            "text": "ECB, CBC",
+            "is_correct": true
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 186,
+        "fields": {
+            "question": 47,
+            "text": "CFB, OFB, CTR",
+            "is_correct": true
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 187,
+        "fields": {
+            "question": 47,
+            "text": "GCM — только для RSA",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 188,
+        "fields": {
+            "question": 47,
+            "text": "MAC — режим шифрования",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 189,
+        "fields": {
+            "question": 48,
+            "text": "16",
+            "is_correct": true
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 190,
+        "fields": {
+            "question": 48,
+            "text": "10",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 191,
+        "fields": {
+            "question": 48,
+            "text": "12",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 192,
+        "fields": {
+            "question": 48,
+            "text": "8",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 193,
+        "fields": {
+            "question": 49,
+            "text": "PC-1, разбиение C/D",
+            "is_correct": true
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 194,
+        "fields": {
+            "question": 49,
+            "text": "Циклические сдвиги",
+            "is_correct": true
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 195,
+        "fields": {
+            "question": 49,
+            "text": "PC-2",
+            "is_correct": true
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 196,
+        "fields": {
+            "question": 49,
+            "text": "Случайный выбор на каждый блок",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 197,
+        "fields": {
+            "question": 50,
+            "text": "Тройное применение DES с 2/3 ключами",
+            "is_correct": true
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 198,
+        "fields": {
+            "question": 50,
+            "text": "DES с 24 раундами",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 199,
+        "fields": {
+            "question": 50,
+            "text": "DES с блоком 128 бит",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 200,
+        "fields": {
+            "question": 50,
+            "text": "DES со случайными S-box",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 201,
+        "fields": {
+            "question": 51,
+            "text": "128 бит",
+            "is_correct": true
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 202,
+        "fields": {
+            "question": 51,
+            "text": "64 бита",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 203,
+        "fields": {
+            "question": 51,
+            "text": "256 бит",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 204,
+        "fields": {
+            "question": 51,
+            "text": "96 бит",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 205,
+        "fields": {
+            "question": 52,
+            "text": "128, 192, 256 бит",
+            "is_correct": true
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 206,
+        "fields": {
+            "question": 52,
+            "text": "64, 128, 256 бит",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 207,
+        "fields": {
+            "question": 52,
+            "text": "80, 112, 256 бит",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 208,
+        "fields": {
+            "question": 52,
+            "text": "192, 224, 256 бит",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 209,
+        "fields": {
+            "question": 53,
+            "text": "SubBytes",
+            "is_correct": true
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 210,
+        "fields": {
+            "question": 53,
+            "text": "ShiftRows",
+            "is_correct": true
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 211,
+        "fields": {
+            "question": 53,
+            "text": "MixColumns",
+            "is_correct": true
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 212,
+        "fields": {
+            "question": 53,
+            "text": "Initial Permutation",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 213,
+        "fields": {
+            "question": 54,
+            "text": "MixColumns",
+            "is_correct": true
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 214,
+        "fields": {
+            "question": 54,
+            "text": "SubBytes",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 215,
+        "fields": {
+            "question": 54,
+            "text": "ShiftRows",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 216,
+        "fields": {
+            "question": 54,
+            "text": "AddRoundKey",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 217,
+        "fields": {
+            "question": 55,
+            "text": "Мультипликативный обратный и аффинное преобразование в GF(2^8)",
+            "is_correct": true
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 218,
+        "fields": {
+            "question": 55,
+            "text": "Случайная таблица",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 219,
+        "fields": {
+            "question": 55,
+            "text": "PC-1/PC-2",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 220,
+        "fields": {
+            "question": 55,
+            "text": "Permutation Choice",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 221,
+        "fields": {
+            "question": 56,
+            "text": "Генерирует раундовые ключи",
+            "is_correct": true
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 222,
+        "fields": {
+            "question": 56,
+            "text": "Использует SubWord/RotWord/Rcon",
+            "is_correct": true
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 223,
+        "fields": {
+            "question": 56,
+            "text": "Случайно выбирает ключ для каждого блока",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 224,
+        "fields": {
+            "question": 56,
+            "text": "Компрессирует исходный ключ",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 225,
+        "fields": {
+            "question": 57,
+            "text": "4×4 байта",
+            "is_correct": true
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 226,
+        "fields": {
+            "question": 57,
+            "text": "8×8 байт",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 227,
+        "fields": {
+            "question": 57,
+            "text": "2×8 байт",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 228,
+        "fields": {
+            "question": 57,
+            "text": "4×8 байт",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 229,
+        "fields": {
+            "question": 58,
+            "text": "10 / 12 / 14",
+            "is_correct": true
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 230,
+        "fields": {
+            "question": 58,
+            "text": "8 / 10 / 12",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 231,
+        "fields": {
+            "question": 58,
+            "text": "12 / 14 / 16",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 232,
+        "fields": {
+            "question": 58,
+            "text": "9 / 11 / 13",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 233,
+        "fields": {
+            "question": 59,
+            "text": "E(x) = (a·x + b) mod n",
+            "is_correct": true
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 234,
+        "fields": {
+            "question": 59,
+            "text": "E(x) = (x + k) mod n",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 235,
+        "fields": {
+            "question": 59,
+            "text": "E(x) = x^e mod n",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 236,
+        "fields": {
+            "question": 59,
+            "text": "E(x) = k − x",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 237,
+        "fields": {
+            "question": 60,
+            "text": "gcd(a, n) = 1",
+            "is_correct": true
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 238,
+        "fields": {
+            "question": 60,
+            "text": "a делится на n",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 239,
+        "fields": {
+            "question": 60,
+            "text": "a = 0",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 240,
+        "fields": {
+            "question": 60,
+            "text": "a = n−1 всегда",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 241,
+        "fields": {
+            "question": 61,
+            "text": "D(y) = a⁻¹·(y − b) mod n",
+            "is_correct": true
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 242,
+        "fields": {
+            "question": 61,
+            "text": "a⁻¹ ищут расширенным алгоритмом Евклида",
+            "is_correct": true
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 243,
+        "fields": {
+            "question": 61,
+            "text": "D(y) = (y − k) mod n",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 244,
+        "fields": {
+            "question": 61,
+            "text": "D(y) = y^d mod n",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 245,
+        "fields": {
+            "question": 62,
+            "text": "a = 1",
+            "is_correct": true
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 246,
+        "fields": {
+            "question": 62,
+            "text": "a = 0",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 247,
+        "fields": {
+            "question": 62,
+            "text": "a = 2",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 248,
+        "fields": {
+            "question": 62,
+            "text": "a = n−1",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 249,
+        "fields": {
+            "question": 63,
+            "text": "Частотный анализ",
+            "is_correct": true
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 250,
+        "fields": {
+            "question": 63,
+            "text": "Перебор ключей",
+            "is_correct": true
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 251,
+        "fields": {
+            "question": 63,
+            "text": "Атака по времени",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 252,
+        "fields": {
+            "question": 63,
+            "text": "Зависимость от IP",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 253,
+        "fields": {
+            "question": 64,
+            "text": "Два (a, b)",
+            "is_correct": true
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 254,
+        "fields": {
+            "question": 64,
+            "text": "Один (k)",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 255,
+        "fields": {
+            "question": 64,
+            "text": "Три (a, b, n)",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 256,
+        "fields": {
+            "question": 64,
+            "text": "Четыре",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 257,
+        "fields": {
+            "question": 65,
+            "text": "a взаимно просто с 32 (напр. 3,5,7,9,11)",
+            "is_correct": true
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 258,
+        "fields": {
+            "question": 65,
+            "text": "любой a",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 259,
+        "fields": {
+            "question": 65,
+            "text": "только чётные a",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 260,
+        "fields": {
+            "question": 65,
+            "text": "только простые a",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 261,
+        "fields": {
+            "question": 66,
+            "text": "Полиалфавитный подстановочный",
+            "is_correct": true
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 262,
+        "fields": {
+            "question": 66,
+            "text": "Моноалфавитный",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 263,
+        "fields": {
+            "question": 66,
+            "text": "Перестановочный",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 264,
+        "fields": {
+            "question": 66,
+            "text": "Асимметричный",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 265,
+        "fields": {
+            "question": 67,
+            "text": "E(x) = (x + k) mod n",
+            "is_correct": true
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 266,
+        "fields": {
+            "question": 67,
+            "text": "D(y) = (y − k) mod n",
+            "is_correct": true
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 267,
+        "fields": {
+            "question": 67,
+            "text": "E(x) = (a·x + b) mod n",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 268,
+        "fields": {
+            "question": 67,
+            "text": "D(y) = y^d mod n",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 269,
+        "fields": {
+            "question": 68,
+            "text": "Буква ключевого слова",
+            "is_correct": true
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 270,
+        "fields": {
+            "question": 68,
+            "text": "Позиция слова",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 271,
+        "fields": {
+            "question": 68,
+            "text": "Случайный генератор",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 272,
+        "fields": {
+            "question": 68,
+            "text": "Хэш сообщения",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 273,
+        "fields": {
+            "question": 69,
+            "text": "Метод Касиски",
+            "is_correct": true
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 274,
+        "fields": {
+            "question": 69,
+            "text": "Индекс совпадений",
+            "is_correct": true
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 275,
+        "fields": {
+            "question": 69,
+            "text": "RC4-ключевание",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 276,
+        "fields": {
+            "question": 69,
+            "text": "AES MixColumns",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 277,
+        "fields": {
+            "question": 70,
+            "text": "Повторяют до длины текста",
+            "is_correct": true
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 278,
+        "fields": {
+            "question": 70,
+            "text": "Дополняют нулями",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 279,
+        "fields": {
+            "question": 70,
+            "text": "Трунцируют текст",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 280,
+        "fields": {
+            "question": 70,
+            "text": "Меняют алфавит",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 281,
+        "fields": {
+            "question": 71,
+            "text": "Уменьшает повторяемость и усиливает рассеивание",
+            "is_correct": true
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 282,
+        "fields": {
+            "question": 71,
+            "text": "Увеличивает блок AES",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 283,
+        "fields": {
+            "question": 71,
+            "text": "Добавляет IP-перестановку",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 284,
+        "fields": {
+            "question": 71,
+            "text": "Вводит S-box",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 285,
+        "fields": {
+            "question": 72,
+            "text": "Квадрат со сдвинутыми строками алфавита",
+            "is_correct": true
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 286,
+        "fields": {
+            "question": 72,
+            "text": "Матрица DES перестановок",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 287,
+        "fields": {
+            "question": 72,
+            "text": "S-box таблица AES",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 288,
+        "fields": {
+            "question": 72,
+            "text": "Книга ключей",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 289,
+        "fields": {
+            "question": 73,
+            "text": "Меняет порядок символов",
+            "is_correct": true
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 290,
+        "fields": {
+            "question": 73,
+            "text": "Заменяет символы другими",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 291,
+        "fields": {
+            "question": 73,
+            "text": "Шифрует биты XOR с ключом",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 292,
+        "fields": {
+            "question": 73,
+            "text": "Сжимает текст",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 293,
+        "fields": {
+            "question": 74,
+            "text": "Применением обратной перестановки",
+            "is_correct": true
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 294,
+        "fields": {
+            "question": 74,
+            "text": "Через S-box",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 295,
+        "fields": {
+            "question": 74,
+            "text": "Возведением в степень",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 296,
+        "fields": {
+            "question": 74,
+            "text": "XOR с ключом",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 297,
+        "fields": {
+            "question": 75,
+            "text": "Множественная (double) перестановка",
+            "is_correct": true
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 298,
+        "fields": {
+            "question": 75,
+            "text": "Одиночная перестановка",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 299,
+        "fields": {
+            "question": 75,
+            "text": "Без перестановок",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 300,
+        "fields": {
+            "question": 75,
+            "text": "Увеличение алфавита",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 301,
+        "fields": {
+            "question": 76,
+            "text": "Сохраняется частотное распределение букв",
+            "is_correct": true
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 302,
+        "fields": {
+            "question": 76,
+            "text": "Малый блок данных",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 303,
+        "fields": {
+            "question": 76,
+            "text": "Большой ключ",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 304,
+        "fields": {
+            "question": 76,
+            "text": "Требует аппаратного ускорения",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 305,
+        "fields": {
+            "question": 77,
+            "text": "Факториально: n!",
+            "is_correct": true
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 306,
+        "fields": {
+            "question": 77,
+            "text": "Линейно: n",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 307,
+        "fields": {
+            "question": 77,
+            "text": "Квадратично: n^2",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 308,
+        "fields": {
+            "question": 77,
+            "text": "Экспоненциально: 2^n",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 309,
+        "fields": {
+            "question": 78,
+            "text": "Запись по строкам, чтение по столбцам по ключу",
+            "is_correct": true
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 310,
+        "fields": {
+            "question": 78,
+            "text": "Случайная подстановка символов",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 311,
+        "fields": {
+            "question": 78,
+            "text": "Сдвиг по модулю алфавита",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 312,
+        "fields": {
+            "question": 78,
+            "text": "XOR с ключом",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 313,
+        "fields": {
+            "question": 79,
+            "text": "Чтение по заданному маршруту (спираль, зигзаг и т.п.)",
+            "is_correct": true
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 314,
+        "fields": {
+            "question": 79,
+            "text": "Случайный выбор столбцов",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 315,
+        "fields": {
+            "question": 79,
+            "text": "Чередование алфавитов",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 316,
+        "fields": {
+            "question": 79,
+            "text": "Выбор S-box по ключу",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 317,
+        "fields": {
+            "question": 80,
+            "text": "Подстановка + перестановка",
+            "is_correct": true
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 318,
+        "fields": {
+            "question": 80,
+            "text": "Двойная подстановка без перестановки",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 319,
+        "fields": {
+            "question": 80,
+            "text": "Только перестановка",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 320,
+        "fields": {
+            "question": 80,
+            "text": "Только подстановка",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 321,
+        "fields": {
+            "question": 81,
+            "text": "GF(2^8)",
+            "is_correct": true
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 322,
+        "fields": {
+            "question": 81,
+            "text": "GF(2)",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 323,
+        "fields": {
+            "question": 81,
+            "text": "Z",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 324,
+        "fields": {
+            "question": 81,
+            "text": "R",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 325,
+        "fields": {
+            "question": 82,
+            "text": "XOR состояния с раундовым ключом",
+            "is_correct": true
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 326,
+        "fields": {
+            "question": 82,
+            "text": "Перестановка байтов по таблице",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 327,
+        "fields": {
+            "question": 82,
+            "text": "Умножение столбцов матрицей",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 328,
+        "fields": {
+            "question": 82,
+            "text": "Генерация раундовых ключей",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 329,
+        "fields": {
+            "question": 83,
+            "text": "Пара чисел (a, b)",
+            "is_correct": true
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 330,
+        "fields": {
+            "question": 83,
+            "text": "Одно число k",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 331,
+        "fields": {
+            "question": 83,
+            "text": "Тройка (a, b, n)",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 332,
+        "fields": {
+            "question": 83,
+            "text": "Матрица 2×2",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 333,
+        "fields": {
+            "question": 84,
+            "text": "Существование a⁻¹ mod n",
+            "is_correct": true
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 334,
+        "fields": {
+            "question": 84,
+            "text": "Чётность b",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 335,
+        "fields": {
+            "question": 84,
+            "text": "Простота n",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 336,
+        "fields": {
+            "question": 84,
+            "text": "a делится на n",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 337,
+        "fields": {
+            "question": 85,
+            "text": "При a=1 сводится к Цезарю",
+            "is_correct": true
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 338,
+        "fields": {
+            "question": 85,
+            "text": "Устойчив к частотному анализу",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 339,
+        "fields": {
+            "question": 85,
+            "text": "Требует a взаимно простого с n",
+            "is_correct": true
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 340,
+        "fields": {
+            "question": 85,
+            "text": "b всегда 0",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 341,
+        "fields": {
+            "question": 86,
+            "text": "Буква ключевого слова",
+            "is_correct": true
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 342,
+        "fields": {
+            "question": 86,
+            "text": "Номер строки",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 343,
+        "fields": {
+            "question": 86,
+            "text": "Длина сообщения",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 344,
+        "fields": {
+            "question": 86,
+            "text": "Хэш слова",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 345,
+        "fields": {
+            "question": 87,
+            "text": "Метод Касиски",
+            "is_correct": true
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 346,
+        "fields": {
+            "question": 87,
+            "text": "Индекс совпадений",
+            "is_correct": true
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 347,
+        "fields": {
+            "question": 87,
+            "text": "RSA-факторизация",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 348,
+        "fields": {
+            "question": 87,
+            "text": "DES IP-перестановка",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 349,
+        "fields": {
+            "question": 88,
+            "text": "Повторяется до длины текста",
+            "is_correct": true
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 350,
+        "fields": {
+            "question": 88,
+            "text": "Чем длиннее — тем выше стойкость",
+            "is_correct": true
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 351,
+        "fields": {
+            "question": 88,
+            "text": "Должен быть короче сообщения",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 352,
+        "fields": {
+            "question": 88,
+            "text": "Не влияет на стойкость",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 353,
+        "fields": {
+            "question": 89,
+            "text": "Простая (single) перестановка",
+            "is_correct": true
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 354,
+        "fields": {
+            "question": 89,
+            "text": "Множественная (double) перестановка",
+            "is_correct": true
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 355,
+        "fields": {
+            "question": 89,
+            "text": "S-box подстановка",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 356,
+        "fields": {
+            "question": 89,
+            "text": "Гаммирование XOR",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 357,
+        "fields": {
+            "question": 90,
+            "text": "DES",
+            "is_correct": true
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 358,
+        "fields": {
+            "question": 90,
+            "text": "AES",
+            "is_correct": true
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 359,
+        "fields": {
+            "question": 90,
+            "text": "RSA",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.answer",
+        "pk": 360,
+        "fields": {
+            "question": 90,
+            "text": "ElGamal",
+            "is_correct": false
+        }
+    },
+    {
+        "model": "study_tests.testattempt",
+        "pk": 19,
+        "fields": {
+            "user": 2,
+            "test": 5,
+            "attempt_number": 1,
+            "started_at": "2025-11-08T11:39:00Z",
+            "completed_at": "2025-11-08T11:39:57.032Z",
+            "score": 4
+        }
+    },
+    {
+        "model": "study_tests.questionattempt",
+        "pk": 173,
+        "fields": {
+            "attempt": 19,
+            "question": 41,
+            "selected_answers": [
+                161
+            ]
+        }
+    },
+    {
+        "model": "study_tests.questionattempt",
+        "pk": 174,
+        "fields": {
+            "attempt": 19,
+            "question": 42,
+            "selected_answers": [
+                165
+            ]
+        }
+    },
+    {
+        "model": "study_tests.questionattempt",
+        "pk": 175,
+        "fields": {
+            "attempt": 19,
+            "question": 43,
+            "selected_answers": [
+                171,
+                172
+            ]
+        }
+    },
+    {
+        "model": "study_tests.questionattempt",
+        "pk": 176,
+        "fields": {
+            "attempt": 19,
+            "question": 44,
+            "selected_answers": [
+                173
+            ]
+        }
+    },
+    {
+        "model": "study_tests.questionattempt",
+        "pk": 177,
+        "fields": {
+            "attempt": 19,
+            "question": 45,
+            "selected_answers": [
+                180
+            ]
+        }
+    },
+    {
+        "model": "study_tests.questionattempt",
+        "pk": 178,
+        "fields": {
+            "attempt": 19,
+            "question": 46,
+            "selected_answers": [
+                181
+            ]
+        }
+    },
+    {
+        "model": "study_tests.questionattempt",
+        "pk": 179,
+        "fields": {
+            "attempt": 19,
+            "question": 47,
+            "selected_answers": [
+                185,
+                187
+            ]
+        }
+    },
+    {
+        "model": "study_tests.questionattempt",
+        "pk": 180,
+        "fields": {
+            "attempt": 19,
+            "question": 48,
+            "selected_answers": [
+                191
+            ]
+        }
+    },
+    {
+        "model": "study_tests.questionattempt",
+        "pk": 181,
+        "fields": {
+            "attempt": 19,
+            "question": 49,
+            "selected_answers": [
+                194,
+                195
+            ]
+        }
+    },
+    {
+        "model": "study_tests.questionattempt",
+        "pk": 182,
+        "fields": {
+            "attempt": 19,
+            "question": 50,
+            "selected_answers": [
+                197
+            ]
+        }
+    },
+    {
+        "model": "theory.theory",
+        "pk": 11,
+        "fields": {
+            "title": "Шифр Цезаря",
+            "description": "Один из самых древних и простых методов шифрования",
+            "text": "Шифр Цезаря — это один из самых старых и простых способов шифрования текста. Он относится к классу подстановочных шифров, где каждая буква исходного текста заменяется другой буквой алфавита по определённому правилу. Название шифра связано с именем Гая Юлия Цезаря, который, согласно историческим источникам, использовал подобный метод для тайной переписки с военачальниками.\r\n\r\nСуть алгоритма\r\n\r\nОсновная идея шифра Цезаря заключается в сдвиге букв алфавита на фиксированное количество позиций. Например, если выбрать сдвиг на 3, то буква А заменяется на Г, Б на Д, В на Е и так далее. Когда сдвиг доходит до конца алфавита, он «закручивается» по кругу: после Я снова идёт А.\r\n\r\nФормально процесс можно описать так. Пусть каждая буква алфавита имеет свой номер:\r\nА – 0, Б – 1, В – 2, …, Я – 31 (для русского алфавита из 32 букв).\r\nПусть k — это величина сдвига (ключ шифрования).\r\nТогда каждая буква x шифруется по формуле:\r\n\r\nE(x) = (x + k) mod n\r\n\r\n\r\nгде n — количество букв в алфавите.\r\nДля расшифровки используется обратная операция:\r\n\r\nD(y) = (y - k) mod n\r\n\r\n\r\nТаким образом, чтобы вернуть исходный текст, достаточно знать значение k.\r\n\r\nПример работы шифра\r\n\r\nРассмотрим пример на русском алфавите.\r\nПусть исходное сообщение — \"ПРИВЕТ\", а ключ k = 5.\r\n\r\nКаждую букву заменяем на ту, что находится через 5 позиций:\r\n\r\nП → Ф\r\n\r\nР → Х\r\n\r\nИ → Н\r\n\r\nВ → Е\r\n\r\nЕ → Й\r\n\r\nТ → Ч\r\n\r\nЗашифрованный текст: \"ФХНЕЙЧ\".\r\nЧтобы расшифровать, нужно выполнить обратный сдвиг на 5 символов.\r\n\r\nПреимущества и недостатки\r\n\r\nГлавное достоинство шифра Цезаря — простота реализации. Его можно закодировать даже вручную, без использования компьютера. Этот метод хорошо подходит для знакомства с принципами криптографии: понятием ключа, преобразованием символов и идеей симметричного шифрования.\r\n\r\nОднако уровень безопасности у шифра крайне низкий. Вариантов ключа столько, сколько символов в алфавите. Для русского языка — всего 32 возможных сдвига. Это делает метод уязвимым для перебора (brute force): можно просто попробовать все ключи и быстро найти исходный текст. Кроме того, частотный анализ (изучение повторяемости букв) легко раскрывает шифр, потому что структура языка сохраняется.\r\n\r\nИсторическое значение\r\n\r\nНесмотря на слабую криптографическую стойкость, шифр Цезаря сыграл большую роль в развитии шифрования. Он стал основой для целого класса подстановочных шифров и помог сформировать понятия «ключ», «шифрование» и «дешифрование». Позднее появились более сложные варианты, где сдвиг зависел от позиции символа или использовались разные алфавиты. Например, шифр Виженера — это усовершенствование идеи Цезаря, в котором ключ меняется на каждом шаге.\r\n\r\nПрактическое применение сегодня\r\n\r\nСегодня шифр Цезаря не используется для защиты информации, но он широко применяется в обучении, программировании и развлечениях. На нём удобно объяснять принципы симметричных шифров, модульной арифметики и работы с текстом. Его часто используют в учебных задачах и лабораторных работах, когда нужно реализовать простой шифратор и дешифратор.\r\n\r\nВ некоторых случаях идея циклического сдвига применяется и в современных алгоритмах — например, при работе с битами внутри байта (битовые сдвиги и вращения). Таким образом, шифр Цезаря можно считать первым шагом к пониманию более сложных криптографических систем.\r\n\r\nЗаключение\r\n\r\nШифр Цезаря — это классический пример того, как простая идея может стать основой целой научной дисциплины. Он показывает, что даже элементарное преобразование текста уже может считаться шифрованием, если известно правило и существует ключ. Хотя в современном мире этот метод не обеспечивает защиты, он остаётся отличным инструментом для изучения основ криптографии и принципов симметричного шифрования.",
+            "category": 6,
+            "author": 1,
+            "created_at": "2025-11-03T16:52:27.262Z",
+            "updated_at": "2025-11-03T17:02:44Z"
+        }
+    },
+    {
+        "model": "theory.theory",
+        "pk": 12,
+        "fields": {
+            "title": "DES (Data Encryption Standard)",
+            "description": "Симметричный блочный шифр с длиной ключа 56 бит",
+            "text": "DES — симметричный блочный алгоритм шифрования, основанный на перестановках и подстановках. Он был принят как федеральный стандарт США в 1977 году и долгое время использовался для защиты данных. DES работает с 64-битными блоками данных и использует 56-битный ключ (из исходных 64 бит 8 используются для контроля чётности).\r\n\r\nАлгоритм относится к классу алгоритмов Фейстеля, где каждая итерация (раунд) включает операции деления блока на две половины, нелинейные подстановки и перестановки.\r\n\r\nОсновные параметры\r\n\r\nРазмер блока данных: 64 бита\r\n\r\nДлина ключа: 64 бита (56 рабочих + 8 контрольных)\r\n\r\nКоличество раундов: 16\r\n\r\nТип шифрования: симметричный блочный шифр\r\n\r\nСтруктура: сеть Фейстеля\r\n\r\nОбщая схема работы\r\n\r\nНачальная перестановка (Initial Permutation, IP)\r\nИсходные 64 бита данных переставляются по фиксированной таблице. Эта операция не влияет на криптостойкость, но распределяет биты по позициям для дальнейшей обработки.\r\n\r\nРазделение блока\r\nПосле начальной перестановки блок делится на две половины:\r\n\r\nЛевая половина L0 (первые 32 бита)\r\n\r\nПравая половина R0 (последние 32 бита)\r\n\r\n16 раундов Фейстеля\r\nВ каждом раунде выполняются одинаковые шаги:\r\n\r\nLi = Ri-1\r\nRi = Li-1 ⊕ F(Ri-1, Ki)\r\n\r\n\r\nгде:\r\n\r\n⊕ — операция побитового XOR,\r\n\r\nF — раундовая функция,\r\n\r\nKi — раундовый ключ (48 бит).\r\n\r\nФункция F\r\nЯдро алгоритма DES. Она выполняет:\r\n\r\nРасширение (Expansion E): 32 бита R расширяются до 48 бит по таблице, дублируя некоторые позиции.\r\n\r\nСмешивание с ключом: результат XOR с раундовым ключом Ki.\r\n\r\nПодстановка (S-boxes): 48 бит разбиваются на 8 групп по 6 бит. Каждая группа подаётся в свою S-таблицу (S-box), которая преобразует 6 бит в 4 бита. Это делает шифр нелинейным.\r\n\r\nПерестановка (P): полученные 32 бита переставляются по таблице P для дополнительного перемешивания.\r\n\r\nПосле этого результат функции F объединяется с левой половиной блока через XOR.\r\n\r\nОкончательная перестановка (Final Permutation, IP⁻¹)\r\nПосле завершения всех 16 раундов половины блока объединяются (в обратном порядке: R16L16) и подвергаются обратной перестановке, которая является инверсией начальной IP. Результатом является зашифрованный 64-битный блок.\r\n\r\nГенерация раундовых ключей\r\n\r\nНачальная перестановка ключа (PC-1):\r\nИз 64 бит исходного ключа убираются 8 бит чётности, остаётся 56 бит.\r\n\r\nРазделение ключа:\r\n56 бит делятся на две части по 28 бит: C0 и D0.\r\n\r\nСдвиги влево:\r\nВ каждом раунде обе половины циклически сдвигаются влево на 1 или 2 позиции в зависимости от номера раунда.\r\n\r\nПерестановка PC-2:\r\nПосле сдвига из объединённых 56 бит выбираются 48 по таблице PC-2 для формирования раундового ключа Ki.\r\n\r\nВсего создаётся 16 уникальных ключей для 16 раундов.\r\n\r\nРасшифровка\r\n\r\nDES использует одинаковый алгоритм для шифрования и дешифрования. Разница только в порядке применения ключей: при расшифровке ключи используются в обратном порядке — от K16 к K1. Это свойство обусловлено структурой Фейстеля.\r\n\r\nБезопасность и ограничения\r\n\r\nЭффективная длина ключа:\r\n56 бит дают 2⁵⁶ ≈ 7,2×10¹⁶ возможных ключей. В 1970-х это считалось безопасным, но современные вычислительные мощности позволяют выполнить полный перебор (brute force) за приемлемое время.\r\n\r\nУстойчивость к криптоанализу:\r\nDES устойчив к линейному и дифференциальному криптоанализу в базовом виде, но его малая длина ключа делает его уязвимым к прямому взлому.\r\n\r\nМодификации:\r\nДля повышения безопасности разработаны варианты:\r\n\r\n2DES (двойное шифрование с двумя ключами);\r\n\r\n3DES (Triple DES) — тройное применение DES с двумя или тремя ключами, что увеличивает длину эффективного ключа до 112 или 168 бит.\r\n\r\nХарактеристики таблиц S-box\r\n\r\nS-box — это таблицы нелинейной подстановки, каждая из которых преобразует 6 входных бит в 4 выходных.\r\nКаждая таблица имеет 4 строки и 16 столбцов (64 возможных входа).\r\n\r\nНомера строк определяются первым и последним битом группы.\r\n\r\nНомер столбца определяется четырьмя средними битами.\r\nS-box обеспечивает диффузию и путаницу (confusion), которые препятствуют обратному вычислению ключа.\r\n\r\nРежимы работы DES\r\n\r\nТак как DES — блочный шифр, для шифрования длинных сообщений применяются режимы работы:\r\n\r\nECB (Electronic Codebook): каждый блок шифруется независимо — простой, но уязвимый.\r\n\r\nCBC (Cipher Block Chaining): каждый блок XORится с предыдущим перед шифрованием — повышает стойкость.\r\n\r\nCFB, OFB, CTR: поточные режимы, превращающие DES в потоковый шифр.\r\n\r\nОсновные особенности\r\n\r\nБлочная структура 64 бита.\r\n\r\nСимметричный ключ длиной 56 бит.\r\n\r\n16 раундов с одинаковыми преобразованиями.\r\n\r\nИспользует перестановки и S-box для нелинейности.\r\n\r\nРаботает быстро в аппаратных реализациях.\r\n\r\nВ современных системах заменён на AES из-за малой длины ключа.",
+            "category": 6,
+            "author": 1,
+            "created_at": "2025-11-03T16:52:27.265Z",
+            "updated_at": "2025-11-03T16:52:27Z"
+        }
+    },
+    {
+        "model": "theory.theory",
+        "pk": 13,
+        "fields": {
+            "title": "AES (Advanced Encryption Standard)",
+            "description": "AES — симметричный блочный алгоритм шифрования, основанный на подстановках, перестановках и многократных раундах обработки данных.",
+            "text": "AES — симметричный блочный шифр, принятый как стандарт шифрования данных (FIPS PUB 197). Алгоритм оперирует блоками данных длиной 128 бит и использует ключи длиной 128, 192 или 256 бит. Безопасность обеспечивается комбинацией подстановок, перестановок и операций над байтами в поле GF(2⁸).\r\n\r\nОсновные параметры\r\n\r\nРазмер блока: 128 бит (16 байт)\r\n\r\nДлина ключа: 128, 192 или 256 бит\r\n\r\nКоличество раундов:\r\n\r\n10 раундов — AES-128\r\n\r\n12 раундов — AES-192\r\n\r\n14 раундов — AES-256\r\n\r\nКаждый раунд использует собственный раундовый ключ, получаемый из исходного ключа с помощью процедуры Key Expansion.\r\n\r\nПредставление данных\r\n\r\nДанные в AES представляются в виде матрицы 4×4 байта, называемой состоянием (state).\r\nНапример, для 128-битного блока:\r\n\r\n[ b0  b4  b8  b12 ]\r\n[ b1  b5  b9  b13 ]\r\n[ b2  b6  b10 b14 ]\r\n[ b3  b7  b11 b15 ]\r\n\r\n\r\nОперации шифрования выполняются над этой матрицей.\r\n\r\nСтруктура алгоритма\r\n\r\nAES выполняет начальное добавление ключа (AddRoundKey), затем несколько раундов, каждый из которых состоит из четырёх основных преобразований:\r\n\r\nSubBytes\r\nНелинейная подстановка каждого байта с использованием S-box, таблицы размером 16×16, определённой над полем GF(2⁸).\r\nФормула S-box основана на мультипликативном обратном элементе и аффинном преобразовании.\r\nЦель — ввести нелинейность и диффузию.\r\n\r\nShiftRows\r\nОперация циклического сдвига строк матрицы состояния:\r\n\r\nПервая строка не сдвигается.\r\n\r\nВторая строка сдвигается влево на 1 байт.\r\n\r\nТретья — на 2 байта.\r\n\r\nЧетвёртая — на 3 байта.\r\nОперация перемешивает данные по строкам, повышая рассеивание.\r\n\r\nMixColumns\r\nКаждая колонка рассматривается как вектор над GF(2⁸) и умножается на фиксированную матрицу:\r\n\r\n[02 03 01 01]\r\n[01 02 03 01]\r\n[01 01 02 03]\r\n[03 01 01 02]\r\n\r\n\r\nОперация обеспечивает диффузию между байтами одного столбца.\r\n\r\nAddRoundKey\r\nКаждый байт состояния комбинируется с соответствующим байтом раундового ключа через операцию XOR:\r\n\r\nState = State ⊕ RoundKey\r\n\r\n\r\nЭто связывает шифрование с ключом.\r\n\r\nПоследовательность шифрования\r\n\r\nInitial Round:\r\n\r\nAddRoundKey\r\n\r\nRounds (9, 11 или 13 в зависимости от длины ключа):\r\n\r\nSubBytes\r\n\r\nShiftRows\r\n\r\nMixColumns\r\n\r\nAddRoundKey\r\n\r\nFinal Round:\r\n\r\nSubBytes\r\n\r\nShiftRows\r\n\r\nAddRoundKey\r\n(MixColumns отсутствует в последнем раунде)\r\n\r\nРасшифрование\r\n\r\nРасшифрование выполняется теми же раундами в обратном порядке с использованием инверсных операций:\r\n\r\nInvShiftRows\r\n\r\nInvSubBytes\r\n\r\nAddRoundKey\r\n\r\nInvMixColumns\r\n\r\nДля обратного преобразования используется обратная S-box и инверсная матрица для MixColumns:\r\n\r\n[0E 0B 0D 09]\r\n[09 0E 0B 0D]\r\n[0D 09 0E 0B]\r\n[0B 0D 09 0E]\r\n\r\nРасширение ключа (Key Expansion)\r\n\r\nИсходный ключ преобразуется в набор раундовых ключей с помощью функции KeySchedule.\r\nКлюч представляется как массив 32-битных слов W[i].\r\nКоличество слов:\r\n\r\nAES-128 → 44 слова (11 раундовых ключей)\r\n\r\nAES-192 → 52 слова (13 раундовых ключей)\r\n\r\nAES-256 → 60 слов (15 раундовых ключей)\r\n\r\nПроцесс:\r\n\r\nДля каждого нового слова W[i]:\r\n\r\nЕсли i mod Nk ≠ 0:\r\n\r\nW[i] = W[i-1] ⊕ W[i-Nk]\r\n\r\n\r\nЕсли i mod Nk = 0:\r\n\r\nW[i] = SubWord(RotWord(W[i-1])) ⊕ Rcon[i/Nk] ⊕ W[i-Nk]\r\n\r\n\r\nгде:\r\n\r\nSubWord — замена байтов через S-box;\r\n\r\nRotWord — циклический сдвиг байтов;\r\n\r\nRcon — константа раунда (основана на степенях 2 в GF(2⁸)).\r\n\r\nПример параметров AES-128\r\n\r\nРазмер блока: 128 бит\r\n\r\nДлина ключа: 128 бит\r\n\r\nКоличество раундов: 10\r\n\r\nРаундовых ключей: 11\r\n\r\nКаждый раундовой ключ имеет 128 бит, всего 176 байт ключевых данных.\r\n\r\nРежимы работы AES\r\n\r\nAES шифрует только один блок (128 бит), поэтому для длинных сообщений используется режим работы:\r\n\r\nECB (Electronic Codebook): каждый блок шифруется независимо.\r\n\r\nCBC (Cipher Block Chaining): каждый блок перед шифрованием комбинируется с предыдущим (через XOR).\r\n\r\nCFB (Cipher Feedback) и OFB (Output Feedback): потоковые режимы.\r\n\r\nCTR (Counter Mode): используется счётчик, позволяет параллельную обработку блоков.\r\n\r\nGCM (Galois/Counter Mode): добавляет аутентификацию (AEAD).\r\n\r\nБезопасность\r\n\r\nAES устойчив к линейному и дифференциальному криптоанализу.\r\n\r\nБезопасность обеспечивается сложностью обратного вычисления без ключа.\r\n\r\nДлина ключа 128 бит обеспечивает высокий уровень защиты; для правительственных и коммерческих систем часто используется AES-256.\r\n\r\nОсновные характеристики\r\nПараметр\tЗначение\r\nТип\tСимметричный блочный шифр\r\nРазмер блока\t128 бит\r\nДлина ключа\t128 / 192 / 256 бит\r\nКоличество раундов\t10 / 12 / 14\r\nОсновные операции\tПодстановка, перестановка, XOR\r\nПоле\tGF(2⁸)\r\nБезопасность\tОснована на сложности обратного преобразования",
+            "category": 6,
+            "author": 1,
+            "created_at": "2025-11-03T16:52:27.269Z",
+            "updated_at": "2025-11-03T16:52:27Z"
+        }
+    },
+    {
+        "model": "theory.theory",
+        "pk": 14,
+        "fields": {
+            "title": "Аффинный шифр",
+            "description": "Моноалфавитный шифр подстановки на основе аффинных преобразований",
+            "text": "Аффинный шифр — это подстановочный симметричный шифр, который расширяет идею шифра Цезаря, добавляя умножение и сложение в модульной арифметике. Каждая буква исходного текста преобразуется в числовое значение, затем к ней применяется линейное преобразование, и результат снова переводится в букву алфавита.\r\n\r\nАлгоритм основан на функции:\r\n\r\nE(x) = (a * x + b) mod n\r\n\r\n\r\nгде:\r\n\r\nx — числовое значение буквы открытого текста;\r\n\r\na и b — ключи шифра;\r\n\r\nn — количество букв в алфавите;\r\n\r\nE(x) — результат (шифротекст).\r\n\r\nОперация выполняется по модулю n, чтобы результат всегда оставался в диапазоне алфавита.\r\n\r\nДля расшифровки используется обратная функция:\r\n\r\nD(y) = a⁻¹ * (y - b) mod n\r\n\r\n\r\nгде a⁻¹ — мультипликативная обратная к a по модулю n, то есть такое число, при котором выполняется:\r\n\r\n(a * a⁻¹) mod n = 1\r\n\r\n\r\nЧтобы шифр был корректным, коэффициент a должен быть взаимно простым с n (то есть их наибольший общий делитель равен 1). Если это условие не выполняется, функция не имеет обратного преобразования, и расшифровать текст будет невозможно.\r\n\r\nПример работы алгоритма\r\n\r\nРассмотрим пример на английском алфавите (n = 26).\r\nПусть a = 5, b = 8.\r\nСообщение: HELLO.\r\n\r\nСначала каждой букве присваивается номер: A=0, B=1, ..., Z=25.\r\nHELLO → [7, 4, 11, 11, 14].\r\n\r\nШифруем каждую букву по формуле E(x) = (5x + 8) mod 26:\r\n\r\nH: (5×7 + 8) mod 26 = 43 mod 26 = 17 → R\r\n\r\nE: (5×4 + 8) mod 26 = 28 mod 26 = 2 → C\r\n\r\nL: (5×11 + 8) mod 26 = 63 mod 26 = 11 → L\r\n\r\nL: (5×11 + 8) mod 26 = 63 mod 26 = 11 → L\r\n\r\nO: (5×14 + 8) mod 26 = 78 mod 26 = 0 → A\r\n\r\nЗашифрованный текст: RCLLA.\r\n\r\nДля расшифровки нужно найти a⁻¹.\r\nТак как a = 5, то a⁻¹ mod 26 = 21, потому что (5×21) mod 26 = 105 mod 26 = 1.\r\n\r\nДешифрование: D(y) = 21 × (y - 8) mod 26.\r\n\r\nR: 21×(17−8)=21×9=189 mod 26=7 → H\r\n\r\nC: 21×(2−8)=21×(−6)=−126 mod 26=4 → E\r\n\r\nL: 21×(11−8)=21×3=63 mod 26=11 → L\r\n\r\nL: → L\r\n\r\nA: 21×(0−8)=−168 mod 26=14 → O\r\n\r\nРасшифрованный текст: HELLO.\r\n\r\nСвойства и параметры\r\n\r\nКлюч шифра состоит из двух чисел (a, b).\r\n\r\na выбирается так, чтобы gcd(a, n) = 1;\r\n\r\nb может быть любым целым числом от 0 до n−1.\r\n\r\nКоличество возможных ключей определяется как φ(n) × n,\r\nгде φ(n) — функция Эйлера, показывающая количество чисел, взаимно простых с n.\r\nДля английского алфавита (n = 26) φ(26) = 12, значит всего 26 × 12 = 312 возможных ключей.\r\n\r\nЕсли a = 1, а b — любое значение, то алгоритм сводится к шифру Цезаря.\r\nЕсли a ≠ 1, шифр становится более устойчивым, так как кроме сдвига добавляется перемешивание букв.\r\n\r\nУязвимости и криптоанализ\r\n\r\nАффинный шифр уязвим к атакам по открытому тексту и частотному анализу.\r\nТак как это подстановочный шифр, частоты появления букв в зашифрованном тексте сохраняют структуру исходного языка.\r\nЧтобы взломать шифр, достаточно знать две пары «буква открытого текста — буква шифротекста».\r\nИз этих двух пар можно вычислить параметры a и b по системе уравнений:\r\n\r\nE(x1) = (a*x1 + b) mod n\r\nE(x2) = (a*x2 + b) mod n\r\n\r\n\r\nРешив систему, можно восстановить ключ.\r\n\r\nТакже возможен перебор ключей, так как общее число комбинаций невелико. Для английского алфавита достаточно проверить 312 вариантов. Поэтому аффинный шифр не используется для защиты данных, но применяется в учебных целях и демонстрации принципов линейных подстановок.\r\n\r\nПрактические аспекты реализации\r\n\r\nПри шифровании удобно заранее создать таблицу соответствия символов числам.\r\n\r\nВсе операции выполняются по модулю длины алфавита (n).\r\n\r\nДля нахождения обратного числа a⁻¹ используется расширенный алгоритм Евклида.\r\n\r\nПри работе с русским алфавитом (n = 32) выбирают a взаимно простое с 32, например 3, 5, 7, 9, 11 и т.д.\r\n\r\nАлгоритм одинаково применим для любых алфавитов и даже для числовых сообщений, если определить множество символов и правило модульных операций.",
+            "category": 6,
+            "author": 1,
+            "created_at": "2025-11-03T16:52:27.273Z",
+            "updated_at": "2025-11-03T16:52:27Z"
+        }
+    },
+    {
+        "model": "theory.theory",
+        "pk": 15,
+        "fields": {
+            "title": "Шифр Виженера",
+            "description": "Полиалфавитный шифр подстановки с использованием ключевого слова",
+            "text": "Шифр Виженера — это многоалфавитный подстановочный шифр, основанный на циклическом применении нескольких шифров Цезаря с разными сдвигами. Он относится к классу полиалфавитных шифров и использует ключевое слово для определения сдвига каждой буквы исходного текста.\r\n\r\nПринцип работы\r\n\r\nОсновная идея шифра Виженера — использование ключа, состоящего из букв алфавита, каждая из которых определяет величину сдвига.\r\nЕсли букве A присвоено значение 0, B = 1, C = 2, и так далее, то каждая буква ключа задаёт, на сколько позиций будет сдвинута соответствующая буква исходного текста.\r\n\r\nФормула шифрования:\r\n\r\nE(x) = (x + k) mod n\r\n\r\n\r\nгде:\r\n\r\nx — числовое значение буквы открытого текста,\r\n\r\nk — числовое значение буквы ключа,\r\n\r\nn — количество букв в алфавите (для русского — 32, для английского — 26).\r\n\r\nФормула дешифрования:\r\n\r\nD(y) = (y - k) mod n\r\n\r\n\r\nгде y — зашифрованная буква.\r\n\r\nТаким образом, для каждой буквы текста применяется собственный сдвиг, что делает шифр более стойким, чем простой шифр Цезаря.\r\n\r\nПример шифрования\r\n\r\nПусть алфавит — русский (n = 32), сообщение: \"ШИФР\", ключ: \"КОД\".\r\n\r\nПовторим ключ, чтобы его длина совпала с длиной текста:\r\nКОДК → [10, 15, 5] (если А=0, Б=1, …, Я=31).\r\n\r\nПреобразуем текст:\r\nШ (27), И (8), Ф (22), Р (17).\r\n\r\nШифруем по формуле E(x) = (x + k) mod 32:\r\n\r\n(27 + 10) mod 32 = 5 → Е\r\n\r\n(8 + 15) mod 32 = 23 → Х\r\n\r\n(22 + 5) mod 32 = 27 → Ш\r\n\r\n(17 + 10) mod 32 = 27 → Ш\r\n\r\nЗашифрованный текст: \"ЕХШШ\".\r\n\r\nДля расшифровки используется формула D(y) = (y - k) mod 32.\r\n\r\nТаблица Виженера\r\n\r\nДля визуализации алгоритма используется таблица Виженера — квадрат размером n × n, где каждая строка — это алфавит, сдвинутый на одну позицию относительно предыдущей.\r\n\r\nПример (фрагмент для латинского алфавита):\r\n\r\nКлюч/Текст\tA\tB\tC\tD\tE\tF\t...\r\nA\tA\tB\tC\tD\tE\tF\t...\r\nB\tB\tC\tD\tE\tF\tG\t...\r\nC\tC\tD\tE\tF\tG\tH\t...\r\n\r\nЧтобы зашифровать букву, нужно найти строку, соответствующую букве ключа, и столбец — букве открытого текста. На пересечении будет зашифрованная буква.\r\n\r\nКлюч и его использование\r\n\r\nКлючевое слово задаёт последовательность сдвигов.\r\nЕсли ключ короче сообщения, он повторяется до длины текста.\r\n\r\nДлина ключа напрямую влияет на безопасность:\r\n\r\nкороткий ключ делает шифр уязвимым,\r\n\r\nдлинный ключ, равный длине текста и случайный по содержанию, превращает шифр Виженера в одноразовый блокнот (one-time pad), который теоретически неразрушим.\r\n\r\nВсе операции выполняются по модулю n, что обеспечивает циклический переход в пределах алфавита.\r\n\r\nПреимущества\r\n\r\nПростота реализации.\r\n\r\nСильнее, чем моноалфавитные подстановки (например, Цезарь).\r\n\r\nПри достаточно длинном ключе труднее поддаётся частотному анализу.\r\n\r\nКлюч можно легко запомнить, если он представляет осмысленное слово.\r\n\r\nНедостатки\r\n\r\nУязвим к криптоанализу при повторяющемся ключе.\r\n\r\nПри длинных текстах и коротком ключе сохраняются закономерности, позволяющие вычислить длину ключа и восстановить его.\r\n\r\nНеподходит для современных систем, требующих высокой стойкости.\r\n\r\nМетоды взлома\r\n\r\nМетод Касиски — позволяет определить длину ключа, анализируя повторяющиеся последовательности в шифротексте. Расстояние между повторениями часто кратно длине ключа.\r\n\r\nИндекс совпадений (Friedman test) — статистический способ вычисления длины ключа, основанный на вероятности совпадений символов.\r\n\r\nПосле определения длины ключа весь шифр можно разбить на группы, каждая из которых зашифрована шифром Цезаря, и подобрать сдвиги по частотному анализу.\r\n\r\nФормальные характеристики\r\n\r\nТип шифра: полиалфавитный подстановочный.\r\n\r\nКлюч: текстовая строка длиной m.\r\n\r\nРазмер блока: 1 символ.\r\n\r\nОсновные операции: сдвиг по модулю длины алфавита.\r\n\r\nСтойкость зависит от длины и случайности ключа.\r\n\r\nШифрование и дешифрование симметричны по формуле.\r\n\r\nМодификации\r\n\r\nАвтоключевой шифр Виженера: вместо повторяющегося ключа используется комбинация ключа и самого открытого текста. После исчерпания ключа к нему добавляются символы исходного сообщения.\r\n\r\nПолный шифр Виженера: используется случайная таблица перестановок вместо стандартного циклического алфавита.\r\n\r\nОдноразовый блокнот (One-time pad): ключ длиной с сообщение, полностью случайный и используемый только один раз — обеспечивает абсолютную криптостойкость.\r\n\r\nПрименение\r\n\r\nШифр Виженера долго использовался в военных и дипломатических целях до появления вычислительной криптографии. В современных условиях используется как учебный пример полиалфавитного шифрования и основа для понимания концепции симметричных ключей, циклических сдвигов и статистических атак.",
+            "category": 6,
+            "author": 1,
+            "created_at": "2025-11-03T16:52:27.276Z",
+            "updated_at": "2025-11-03T16:52:27Z"
+        }
+    },
+    {
+        "model": "theory.theory",
+        "pk": 16,
+        "fields": {
+            "title": "Шифр перестановки",
+            "description": "Метод шифрования, изменяющий порядок следования символов",
+            "text": "Шифр перестановки — это метод симметричного шифрования, при котором символы исходного текста не изменяются, а меняется их порядок. В отличие от подстановочных шифров, где буквы заменяются другими, здесь используется перестановка позиций символов в соответствии с определённым ключом.\r\n\r\nОсновная идея\r\n\r\nШифр перестановки преобразует текст с помощью перестановки индексов.\r\nПусть сообщение состоит из n символов, а ключ задаёт порядок, в котором эти символы должны следовать.\r\n\r\nЕсли P — перестановка длины n, то каждая позиция i исходного текста перемещается на позицию P(i) в шифротексте.\r\n\r\nПример:\r\nТекст: КОДЕК\r\nКлюч (перестановка): [3, 1, 5, 2, 4]\r\nРезультат: 3→Д, 1→К, 5→К, 2→О, 4→Е → ДККОЕ\r\n\r\nФормальное определение\r\n\r\nПусть M = m₁m₂...mₙ — исходное сообщение,\r\nа P = (p₁, p₂, …, pₙ) — перестановка чисел от 1 до n.\r\n\r\nШифрование:\r\n\r\nE(M) = m_{p1} m_{p2} ... m_{pn}\r\n\r\n\r\nДешифрование:\r\n\r\nD(C) = m_{P⁻¹(1)} m_{P⁻¹(2)} ... m_{P⁻¹(n)}\r\n\r\n\r\nгде P⁻¹ — обратная перестановка.\r\n\r\nТаким образом, для дешифрования нужно просто применить обратный порядок индексов.\r\n\r\nВиды шифров перестановки\r\n\r\nПростая перестановка (single transposition)\r\nКаждая буква меняет позицию в пределах одного блока фиксированной длины.\r\n\r\nПример:\r\nТекст: ПРИМЕР\r\nКлюч: [3, 1, 4, 2, 6, 5]\r\nРезультат: 3→И, 1→П, 4→М, 2→Р, 6→Р, 5→Е → ИПМРРЕ\r\n\r\nЕсли длина текста не делится на длину ключа, то добавляются фиктивные символы (например, «Х»).\r\n\r\nМножественная перестановка (double transposition)\r\nВыполняется две или более перестановки подряд с разными ключами.\r\nЭтот вариант значительно повышает стойкость шифра.\r\n\r\nПусть сначала применяется ключ K1, затем результат шифруется с ключом K2.\r\nФормально:\r\n\r\nC = E2(E1(M))\r\n\r\n\r\nПример:\r\nСначала по ключу [3,1,2], затем по [2,3,1].\r\n\r\nТабличный шифр перестановки\r\nТекст записывается построчно в таблицу фиксированной ширины, а затем считывается по столбцам в порядке, определённом ключом.\r\n\r\nПример:\r\nТекст: КРИПТОГРАФИЯ\r\nКлюч: [3,1,4,2]\r\n\r\nТаблица (по строкам):\r\n\r\nК Р И П  \r\nТ О Г Р  \r\nА Ф И Я\r\n\r\n\r\nПорядок чтения по ключу: 3 → 1 → 4 → 2\r\nРезультат: ИГИА КТПФ РПРЯО → Шифротекст: ИГИАКТПФРПРЯО\r\n\r\nМаршрутная перестановка (route cipher)\r\nСимволы исходного текста записываются в таблицу, а затем считываются по определённому маршруту: по диагонали, спирали, зигзагом, по столбцам и т. д.\r\nТакой метод использовался в классических шифрах времён войн.\r\n\r\nКлюч перестановки\r\n\r\nКлюч — это перестановка чисел, определяющая новый порядок символов.\r\nЕсли длина блока равна n, то существует n! возможных перестановок, то есть количество ключей растёт факториально.\r\n\r\nДля небольших n (например, n=5) количество ключей = 120,\r\nдля n=8 — уже 40 320,\r\nдля n=10 — 3 628 800 возможных перестановок.\r\n\r\nПри увеличении длины блока криптостойкость растёт, но возрастает сложность вычислений.\r\n\r\nДешифрование\r\n\r\nДешифрование выполняется применением обратной перестановки.\r\nЕсли шифрование выполнялось по P = [3,1,4,2],\r\nто дешифрование выполняется по P⁻¹ = [2,4,1,3].\r\n\r\nТакое свойство делает алгоритм симметричным и легко реализуемым.\r\n\r\nПреимущества\r\n\r\nПростота реализации вручную и программно.\r\n\r\nНе изменяет символы, только их порядок.\r\n\r\nМожет использоваться в комбинации с другими шифрами (например, с подстановкой) для повышения безопасности.\r\n\r\nМножественные перестановки повышают сложность взлома.\r\n\r\nНедостатки\r\n\r\nПри одиночной перестановке сохраняется частотное распределение букв, что делает шифр уязвимым для частотного анализа.\r\n\r\nКороткий ключ легко восстанавливается методом перебора.\r\n\r\nУязвим к атакам по известному открытому тексту, если известен хотя бы один фрагмент исходного и зашифрованного текста.\r\n\r\nНе обеспечивает скрытие структуры языка (например, повторяющихся букв).\r\n\r\nПример шифрования и дешифрования\r\n\r\nПусть текст: АЛГОРИТМ\r\nКлюч: [4,1,3,2,7,6,5,8]\r\n\r\nШифрование:\r\nПорядок символов после перестановки:\r\n1→4 (О), 2→1 (А), 3→3 (Г), 4→2 (Л), 5→7 (Т), 6→6 (И), 7→5 (Р), 8→8 (М).\r\nРезультат: ОАГЛТИРМ.\r\n\r\nДешифрование по обратной перестановке [2,4,3,1,7,6,5,8] вернёт исходное слово.\r\n\r\nВарианты комбинаций\r\n\r\nШифр подстановки + перестановки — классическая схема двойного шифрования (используется в DES).\r\n\r\nПерестановка по ключевому слову: числа ключа задаются по алфавитному порядку букв слова (например, «КОД» → [2,3,1]).\r\n\r\nМатричная перестановка — используется в более сложных блочных шифрах, где перестановка применяется к битам, а не символам.\r\n\r\nПрименение\r\n\r\nШифры перестановки применялись в классической криптографии до появления компьютерных алгоритмов. Принцип перестановок используется и сегодня — в современных блочных шифрах (DES, AES, Serpent), где на уровне бит выполняются аналогичные перестановочные операции (перемешивание, перестановка, диффузия).",
+            "category": 6,
+            "author": 1,
+            "created_at": "2025-11-03T16:52:27.279Z",
+            "updated_at": "2025-11-03T16:52:27Z"
+        }
+    },
+    {
+        "model": "theory.theory",
+        "pk": 17,
+        "fields": {
+            "title": "RSA (Rivest-Shamir-Adleman)",
+            "description": "Первый практический алгоритм с открытым ключом",
+            "text": "RSA — это асимметричный криптографический алгоритм, основанный на свойствах целых чисел и трудности факторизации больших простых чисел. Алгоритм использует два ключа: открытый (public key) и закрытый (private key). Открытый ключ используется для шифрования и проверки подписи, закрытый — для расшифрования и создания подписи.\r\n\r\nМатематическая основа\r\n\r\nRSA основан на том, что разложить большое число n на простые множители — задача, вычислительно сложная. Если n = p * q, где p и q — большие простые числа, то зная только n, невозможно быстро определить p и q.\r\n\r\nОсновные параметры\r\n\r\nДва больших простых числа:\r\np и q — секретные простые числа (обычно длиной от 512 до 2048 бит).\r\n\r\nМодуль:\r\n\r\nn = p * q\r\n\r\n\r\nИспользуется и в открытом, и в закрытом ключе.\r\n\r\nФункция Эйлера:\r\n\r\nφ(n) = (p - 1) * (q - 1)\r\n\r\n\r\nПоказывает количество чисел, взаимно простых с n.\r\n\r\nОткрытая экспонента (e):\r\nВыбирается такое число e, что:\r\n\r\n1 < e < φ(n)\r\ngcd(e, φ(n)) = 1\r\n\r\n\r\nЧаще всего используется стандартное значение e = 65537, так как оно простое и эффективно вычисляется.\r\n\r\nЗакрытая экспонента (d):\r\nВычисляется как мультипликативная обратная к e по модулю φ(n):\r\n\r\nd ≡ e⁻¹ mod φ(n)\r\n\r\n\r\nЭто означает, что (d * e) mod φ(n) = 1.\r\n\r\nФормирование ключей\r\n\r\nВыбрать простые числа p и q.\r\n\r\nВычислить n = p * q.\r\n\r\nНайти φ(n) = (p - 1) * (q - 1).\r\n\r\nВыбрать e, взаимно простое с φ(n).\r\n\r\nНайти d, такое что (d * e) mod φ(n) = 1.\r\n\r\nРезультат:\r\n\r\nОткрытый ключ: (n, e)\r\n\r\nЗакрытый ключ: (n, d)\r\n\r\nШифрование и расшифрование\r\n\r\nШифрование:\r\n\r\nC = M^e mod n\r\n\r\n\r\nгде M — числовое представление исходного сообщения, C — шифротекст.\r\n\r\nРасшифрование:\r\n\r\nM = C^d mod n\r\n\r\n\r\nБлагодаря свойству модульной арифметики выполняется равенство:\r\n\r\n(M^e)^d ≡ M mod n\r\n\r\n\r\nчто делает шифрование и расшифрование взаимно обратными.\r\n\r\nПример работы RSA\r\n\r\nПусть p = 11, q = 13.\r\nТогда n = 143, φ(n) = 120.\r\n\r\nВыберем e = 7, так как gcd(7,120) = 1.\r\n\r\nНайдём d, при котором (7 * d) mod 120 = 1.\r\nРешение: d = 103.\r\n\r\nКлючи:\r\n\r\nОткрытый: (n=143, e=7)\r\n\r\nЗакрытый: (n=143, d=103)\r\n\r\nШифрование сообщения M = 9:\r\n\r\nC = 9^7 mod 143 = 48\r\n\r\n\r\nРасшифрование:\r\n\r\nM = 48^103 mod 143 = 9\r\n\r\nЦифровая подпись\r\n\r\nRSA также используется для подписи сообщений.\r\nПроцесс обратен шифрованию:\r\n\r\nОтправитель вычисляет подпись:\r\n\r\nS = M^d mod n\r\n\r\n\r\nПолучатель проверяет подпись:\r\n\r\nM' = S^e mod n\r\n\r\n\r\nЕсли M' совпадает с исходным хэшом сообщения, подпись действительна.\r\n\r\nБезопасность RSA\r\n\r\nБезопасность RSA основана на сложности разложения n на множители p и q.\r\nОсновные факторы, влияющие на стойкость:\r\n\r\nРазмер ключа (рекомендуется ≥2048 бит).\r\n\r\nНадёжная генерация случайных простых чисел.\r\n\r\nИспользование схем паддинга (PKCS#1, OAEP) для защиты от атак по выбранному тексту.\r\n\r\nУязвимости\r\n\r\nМалые значения e: при неправильной реализации возможна утечка информации.\r\n\r\nОбщие модули n: если два пользователя используют одно и то же n, шифр взламывается.\r\n\r\nАтаки по времени: анализ времени выполнения операций может раскрыть d.\r\n\r\nНеправильный выбор p и q: если числа не случайны или слишком близки, возможен факторизационный взлом.\r\n\r\nПрактическое применение\r\n\r\nRSA применяется:\r\n\r\nдля шифрования ключей в гибридных системах (где само сообщение шифруется симметричным алгоритмом);\r\n\r\nдля цифровых подписей;\r\n\r\nв TLS/SSL при установлении защищённого соединения;\r\n\r\nв PGP и SSH для аутентификации и защиты данных.\r\n\r\nОсобенности реализации\r\n\r\nВсе операции выполняются в модульной арифметике с большими числами.\r\n\r\nВ реальных системах сообщения перед шифрованием проходят паддинг (добавление случайных данных) для предотвращения атак.\r\n\r\nДля ускорения вычислений используется китайская теорема об остатках (CRT), позволяющая выполнять операции отдельно по p и q.\r\n\r\nХарактеристики RSA\r\nПараметр\tЗначение\r\nТип шифра\tАсимметричный\r\nОсновная операция\tВозведение в степень по модулю\r\nКлючи\tОткрытый (n, e), закрытый (n, d)\r\nРазмер блока\t≤ n\r\nОсновная трудность\tФакторизация n\r\nПрименение\tШифрование, цифровая подпись, обмен ключами",
+            "category": 7,
+            "author": 1,
+            "created_at": "2025-11-03T16:52:27.282Z",
+            "updated_at": "2025-11-03T17:28:16Z"
+        }
+    },
+    {
+        "model": "theory.theory",
+        "pk": 18,
+        "fields": {
+            "title": "ECC (Elliptic Curve Cryptography)",
+            "description": "Криптография на эллиптических кривых",
+            "text": "ECC — это асимметричная криптосистема, основанная на математике эллиптических кривых над конечными полями. Безопасность ECC определяется сложностью решения задачи дискретного логарифма на эллиптической кривой (ECDLP). Алгоритм обеспечивает тот же уровень безопасности, что RSA, но при значительно меньшей длине ключа.\r\n\r\nМатематическая основа\r\n\r\nЭллиптическая кривая задаётся уравнением вида:\r\n\r\ny² = x³ + a·x + b\r\n\r\n\r\nгде a и b — коэффициенты, выбираемые так, чтобы выполнялось условие:\r\n\r\n4a³ + 27b² ≠ 0\r\n\r\n\r\nЭто гарантирует, что кривая не имеет особенностей (точек перегиба и самопересечений).\r\n\r\nНад этой кривой рассматривается множество точек (x, y), удовлетворяющих уравнению, и добавляется особая точка O (точка на бесконечности), которая используется как нейтральный элемент при операциях.\r\n\r\nОперации над точками\r\n\r\nНа множестве точек эллиптической кривой определены две операции:\r\n\r\nСложение точек (P + Q)\r\nЕсли заданы две точки P(x₁, y₁) и Q(x₂, y₂), то результатом сложения будет третья точка R(x₃, y₃), вычисляемая по формулам:\r\n\r\nЕсли P ≠ Q:\r\n\r\nλ = (y₂ - y₁) / (x₂ - x₁)\r\nx₃ = λ² - x₁ - x₂\r\ny₃ = λ(x₁ - x₃) - y₁\r\n\r\n\r\nЕсли P = Q (удвоение точки):\r\n\r\nλ = (3x₁² + a) / (2y₁)\r\nx₃ = λ² - 2x₁\r\ny₃ = λ(x₁ - x₃) - y₁\r\n\r\n\r\nУмножение точки на число (k·P)\r\nОпределяется как многократное сложение точки самой с собой.\r\nЭто операция основная для шифрования и генерации ключей.\r\n\r\nПример:\r\n\r\n3·P = P + P + P\r\n\r\nКонечные поля\r\n\r\nECC обычно работает над конечным полем, где все операции выполняются по модулю простого числа p (для кривых над Fₚ) или по модулю полинома (для бинарных полей F₂ᵐ).\r\nТипы полей:\r\n\r\nPrime field (Fₚ): используется уравнение y² mod p = (x³ + a·x + b) mod p.\r\n\r\nBinary field (F₂ᵐ): операции выполняются побитово, используется уравнение y² + x·y = x³ + a·x² + b.\r\n\r\nКлючи и параметры\r\n\r\nКаждая система ECC задаётся параметрами домена:\r\n\r\n(p, a, b, G, n, h)\r\n\r\n\r\nгде:\r\n\r\np — модуль поля;\r\n\r\na, b — коэффициенты кривой;\r\n\r\nG — базовая точка (генератор);\r\n\r\nn — порядок точки G (наименьшее положительное число, при котором n·G = O);\r\n\r\nh — кофактор, равный (число всех точек на кривой) / n.\r\n\r\nГенерация ключей\r\n\r\nВыбор приватного ключа:\r\nСлучайное число d из диапазона [1, n-1].\r\n\r\nВычисление публичного ключа:\r\n\r\nQ = d · G\r\n\r\n\r\nгде G — известная базовая точка, Q — публичная точка на кривой.\r\n\r\nПриватный ключ: d\r\n\r\nПубличный ключ: Q = (x, y)\r\n\r\nБезопасность основана на невозможности вычислить d, зная G и Q, то есть решить задачу дискретного логарифма на эллиптической кривой.\r\n\r\nШифрование (на примере схемы Эл-Гамаля для ECC)\r\n\r\nОтправитель знает открытый ключ получателя Q и выбирает случайное число k.\r\n\r\nВычисляет:\r\n\r\nC₁ = k · G\r\nC₂ = M + k · Q\r\n\r\n\r\nгде M — сообщение, представленное как точка на кривой.\r\n\r\nОтправитель отправляет пару (C₁, C₂).\r\n\r\nДешифрование выполняет получатель, владеющий закрытым ключом d:\r\n\r\nM = C₂ - d · C₁\r\n\r\n\r\nтак как C₂ - d·C₁ = M + k·Q - d·(k·G) = M.\r\n\r\nЦифровая подпись (ECDSA)\r\n\r\nВыбирается случайное число k из [1, n-1].\r\n\r\nВычисляется R = k·G, берётся r = Rₓ mod n.\r\n\r\nВычисляется хэш сообщения e = H(M).\r\n\r\nВычисляется s = k⁻¹(e + d·r) mod n.\r\nПодпись — пара (r, s).\r\n\r\nПроверка подписи выполняется так:\r\n\r\nВычислить w = s⁻¹ mod n.\r\n\r\nНайти u₁ = e·w mod n, u₂ = r·w mod n.\r\n\r\nВычислить X = u₁·G + u₂·Q.\r\n\r\nПроверить, что r ≡ Xₓ mod n. Если да — подпись подлинна.\r\n\r\nБезопасность ECC\r\n\r\nОсновная сложность — решение задачи дискретного логарифма:\r\n\r\nЗадано G и Q = d·G. Найти d.\r\n\r\n\r\nДля ECC не существует эффективного алгоритма решения этой задачи при достаточно больших n.\r\nБезопасность ECC эквивалентна RSA с ключом длиной примерно в 6–7 раз больше.\r\nНапример:\r\n\r\nECC 256 бит ≈ RSA 3072 бит\r\n\r\nECC 384 бит ≈ RSA 7680 бит\r\n\r\nПреимущества ECC\r\n\r\nВысокая безопасность при коротких ключах.\r\n\r\nМеньшее использование памяти и вычислительных ресурсов.\r\n\r\nУскоренные операции подписи и проверки.\r\n\r\nПодходит для мобильных и встроенных систем.\r\n\r\nОсновные стандарты\r\n\r\nNIST P-256, P-384, P-521 — стандартные кривые.\r\n\r\nCurve25519 — современная безопасная кривая, используется в TLS, SSH, Signal.\r\n\r\nsecp256k1 — кривая, применяемая в Bitcoin.\r\n\r\nПрименение ECC\r\n\r\nECC используется в протоколах:\r\n\r\nTLS/SSL для установления защищённых соединений;\r\n\r\nPGP и S/MIME для защиты электронной почты;\r\n\r\nECDSA для цифровых подписей в блокчейнах и финансовых системах;\r\n\r\nDiffie–Hellman на эллиптических кривых (ECDH) для безопасного обмена ключами.",
+            "category": 7,
+            "author": 1,
+            "created_at": "2025-11-03T16:52:27.284Z",
+            "updated_at": "2025-11-03T16:52:27Z"
+        }
+    },
+    {
+        "model": "theory.theory",
+        "pk": 19,
+        "fields": {
+            "title": "ElGamal",
+            "description": "Алгоритм шифрования и цифровой подписи на основе дискретного логарифма",
+            "text": "Алгоритм ElGamal — это асимметричная криптосистема, основанная на сложности задачи дискретного логарифма в конечном мультипликативном поле. Алгоритм обеспечивает как шифрование, так и цифровую подпись. Использует два ключа: открытый и закрытый.\r\n\r\nМатематическая основа\r\n\r\nОснова алгоритма — работа в мультипликативной группе целых чисел по модулю простого числа p.\r\nПусть p — большое простое число, g — примитивный корень по модулю p.\r\nЭто означает, что g генерирует все возможные элементы группы:\r\n\r\n{1, 2, 3, …, p-1}\r\n\r\n\r\nто есть для любого числа a, существует такое k, что a ≡ g^k mod p.\r\n\r\nБезопасность ElGamal основана на невозможности вычислить показатель x в выражении:\r\n\r\ny = g^x mod p\r\n\r\n\r\nчто называется задачей дискретного логарифма (DLP).\r\n\r\nГенерация ключей\r\n\r\nВыбирается большое простое число p.\r\n\r\nВыбирается примитивный корень g по модулю p.\r\n\r\nСлучайным образом выбирается секретный ключ x в диапазоне [1, p−2].\r\n\r\nВычисляется открытая часть:\r\n\r\ny = g^x mod p\r\n\r\n\r\nКлючи:\r\n\r\nОткрытый ключ: (p, g, y)\r\n\r\nЗакрытый ключ: x\r\n\r\nШифрование\r\n\r\nПусть отправитель хочет зашифровать сообщение M, где M — число, меньшее p.\r\nПроцесс шифрования:\r\n\r\nВыбирается случайное число k из диапазона [1, p−2], взаимно простое с p−1.\r\n\r\nВычисляются две части шифротекста:\r\n\r\na = g^k mod p\r\nb = (M * y^k) mod p\r\n\r\n\r\nШифротекст представляет собой пару:\r\n\r\nC = (a, b)\r\n\r\nДешифрование\r\n\r\nПолучатель, владеющий закрытым ключом x, вычисляет исходное сообщение:\r\n\r\nM = (b * a^(p−1−x)) mod p\r\n\r\n\r\nПоскольку по малой теореме Ферма a^(p−1) ≡ 1 mod p, операция эквивалентна:\r\n\r\nM = b * (a^x)⁻¹ mod p\r\n\r\n\r\nгде (a^x)⁻¹ — мультипликативно обратный элемент к a^x по модулю p.\r\n\r\nТаким образом, только владелец закрытого ключа x может вычислить a^x и, следовательно, расшифровать сообщение.\r\n\r\nПример работы\r\n\r\nПусть p = 23, g = 5.\r\n\r\nСекретный ключ: x = 6.\r\n\r\nОткрытый ключ:\r\n\r\ny = g^x mod p = 5^6 mod 23 = 8\r\n\r\n\r\nШифрование сообщения M = 13:\r\n\r\nСлучайное k = 10.\r\n\r\na = g^k mod p = 5^10 mod 23 = 9.\r\n\r\nb = M * y^k mod p = 13 * 8^10 mod 23 = 13 * 6 mod 23 = 9.\r\nШифротекст (a, b) = (9, 9).\r\n\r\nДешифрование:\r\n\r\nM = b * a^(p−1−x) mod p = 9 * 9^(16) mod 23 = 13\r\n\r\n\r\nИсходное сообщение восстановлено.\r\n\r\nЦифровая подпись ElGamal\r\n\r\nСхема подписи также основана на DLP.\r\n\r\nГенерация ключей — аналогична шифрованию (p, g, y, x).\r\n\r\nПодпись сообщения:\r\n\r\nВычисляется хэш сообщения: H(M).\r\n\r\nВыбирается случайное k, такое что 1 < k < p−1 и gcd(k, p−1) = 1.\r\n\r\nВычисляется r = g^k mod p.\r\n\r\nНаходится s = k⁻¹(H(M) − x·r) mod (p−1).\r\nПодпись — пара (r, s).\r\n\r\nПроверка подписи:\r\nПроверяющий получает (M, r, s) и вычисляет:\r\n\r\nv1 = y^r * r^s mod p\r\nv2 = g^(H(M)) mod p\r\n\r\n\r\nЕсли v1 = v2, подпись верна.\r\n\r\nБезопасность подписи зависит от того, что невозможно вычислить x, зная (p, g, y) и несколько подписей.\r\n\r\nБезопасность алгоритма\r\n\r\nКриптостойкость ElGamal определяется сложностью дискретного логарифма и задачи Диффи–Хеллмана. Безопасность обеспечивается при больших значениях p (обычно не менее 2048 бит).\r\n\r\nПри этом важно:\r\n\r\nкаждый раз выбирать новое случайное k;\r\n\r\nне использовать одинаковое k для разных сообщений;\r\n\r\nгенерировать p и g с высокой энтропией.\r\n\r\nИспользование одного и того же k для двух подписей или шифротекстов приводит к раскрытию закрытого ключа.\r\n\r\nСвойства и особенности\r\n\r\nElGamal является прототипом асимметричных схем на основе Диффи–Хеллмана.\r\n\r\nШифрование недетерминированное: одно и то же сообщение при каждом шифровании даёт разный результат из-за случайного k.\r\n\r\nАлгоритм не подходит для прямого шифрования больших сообщений; обычно используется для шифрования симметричного ключа.\r\n\r\nВозможна реализация ElGamal на эллиптических кривых (EC ElGamal), что повышает эффективность и снижает длину ключа.\r\n\r\nПреимущества\r\n\r\nВысокая криптостойкость при относительно простых операциях.\r\n\r\nПоддержка шифрования и цифровой подписи.\r\n\r\nНадёжная защита от атак при корректной реализации.\r\n\r\nНедостатки\r\n\r\nБольшой размер шифротекста: пара (a, b) в два раза длиннее исходного сообщения.\r\n\r\nНевозможность прямого шифрования длинных данных.\r\n\r\nТребует генерации случайного числа для каждого шифрования или подписи.\r\n\r\nПрименение\r\n\r\nElGamal используется:\r\n\r\nв схемах гибридного шифрования, где им шифруется симметричный ключ;\r\n\r\nв PGP (Pretty Good Privacy);\r\n\r\nв GNU Privacy Guard (GPG);\r\n\r\nв электронных подписи и протоколах обмена ключами.",
+            "category": 7,
+            "author": 1,
+            "created_at": "2025-11-03T16:52:27.286Z",
+            "updated_at": "2025-11-03T16:52:27Z"
+        }
+    }
+]

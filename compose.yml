@@ -1,0 +1,18 @@
+services:
+  app:
+    build:
+      dockerfile: Dockerfile
+      context: .
+    image: miszi_app
+    container_name: MiSZI_app
+    ports:
+      - 8000:8000
+    command: >
+      bash -c "python3 ./manage.py migrate && python3 ./manage.py runserver 0.0.0.0:8000"
+    volumes:
+    #   - .:/app
+      - ./volumes/data:/app/data
+
+    # restart: 
+    #   unless-stopped
+

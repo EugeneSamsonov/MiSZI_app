@@ -91,7 +91,7 @@ WSGI_APPLICATION = "app.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        "NAME": BASE_DIR / "data" / "db.sqlite3",
     }
 }
 
@@ -145,7 +145,7 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 AUTH_USER_MODEL = "users.User"
 
 AXES_FAILURE_LIMIT = 3 # Колличесвто попыток
-# AXES_COOLOFF_TIME = 2 # Блок на 2 часа
-AXES_COOLOFF_TIME = 0.004
+AXES_COOLOFF_TIME = 2 # Блок на 2 часа
+# AXES_COOLOFF_TIME = 0.004
 
 LOGIN_URL = '/login/'
