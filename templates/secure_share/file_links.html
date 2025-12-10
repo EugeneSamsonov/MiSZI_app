@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}
+    {{ title }}
+{% endblock title %}
+{% block content %}
+    <h1>Ссылки для {{ orig_file_name }}</h1>
+    <form method="post" enctype="multipart/form-data">
+        <h2>Создать ссылку для файла</h2>
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Создать">
+    </form>
+    <h2>Ссылки</h2>
+    <dir>
+        {% for link in links %}<a>{{ link.token }}</a><br>
+        {% endfor %}
+    </dir>
+{% endblock content %}

@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -43,6 +44,7 @@ INSTALLED_APPS = [
     "users",
     "study_tests",
     "theory",
+    "secure_share",
 ]
 
 MIDDLEWARE = [
@@ -137,6 +139,8 @@ STATICFILES_DIRS = [
     BASE_DIR / "static", # Or specify the path to your app's static folder
 ]
 
+MEDIA_URL = '/media/' # URL-путь, по которому будут доступны медиафайлы
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media') # Абсолютный путь к папке 'media'
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
@@ -144,7 +148,7 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 AUTH_USER_MODEL = "users.User"
 
-AXES_FAILURE_LIMIT = 3 # Колличесвто попыток
+AXES_FAILURE_LIMIT = 5 # Колличесвто попыток
 AXES_COOLOFF_TIME = 2 # Блок на 2 часа
 # AXES_COOLOFF_TIME = 0.004
 
