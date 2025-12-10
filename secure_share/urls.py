@@ -4,6 +4,8 @@ from secure_share import views
 urlpatterns = [
     path(r"", views.HomeView.as_view(), name="home"),
     path(r"file_links/<uuid:file_name>", views.FileLinksView.as_view(), name="file_links"),
+    path("download/<uuid:token>/", views.DownloadFileView.as_view(), name="download"),
+
     # path(r"control-panel/<str:category>", views.control_panel, name="control-panel"),
 
     # path(r"tests-list", views.tests_list, name="list"),

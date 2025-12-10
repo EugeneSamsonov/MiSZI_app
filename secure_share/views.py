@@ -1,6 +1,11 @@
 import uuid
+
 from django.urls import reverse_lazy
 from django.views.generic import CreateView
+from django.http import FileResponse, Http404
+from django.views import View
+from django.utils import timezone
+
 from .models import File, FileLink
 from .forms import CreateFileForm, CreateLinkForm
 
@@ -58,5 +63,43 @@ class FileLinksView(CreateView):
         link.save()
 
         return super().form_valid(form)
-        return super().form_valid(form)
     
+
+class DownloadFileView(View):
+    """Вьюха для скачивания файла по токену"""
+    
+    def get(self, request, token):
+        try:
+            file_link = FileLink.objects.get(token=token)
+            
+            if not file_link.is_active:
+                raise Http404("Ссылка не активна")
+            
+            if file_link.file.is_deleted:
+                raise Http404("Файл удален")
+            
+            if file_link.blocking_date and timezone.now() > file_link.blocking_date:
+                file_link.is_active = False  # Деактивируем
+                file_link.save()
+                raise Http404("Срок действия ссылки истек")
+            
+            if file_link.dowload_limit and file_link.download_count >= file_link.dowload_limit:
+                file_link.is_active = False  # Деактивируем
+                file_link.save()
+                raise Http404("Лимит скачиваний исчерпан")
+            
+
+            file_link.download_count += 1
+            file_link.save()
+            
+            
+            response = FileResponse(
+                file_link.file.file_obj,
+                as_attachment=True,  # Чтобы браузер скачивал, а не открывал
+                filename=file_link.file.orig_file_name  # Оригинальное имя
+            )
+            
+            return response
+            
+        except FileLink.DoesNotExist:
+            raise Http404("Ссылка не найдена")

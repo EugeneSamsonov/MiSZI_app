@@ -1,6 +1,8 @@
 import os
+
 from django import forms
 from django.forms import ValidationError
+
 from .models import File, FileLink
 
 
@@ -55,7 +57,6 @@ class CreateLinkForm(forms.ModelForm):
             'placeholder': 'Выберите дату и время'
         }),
         required=False,  # Не обязательно
-        help_text=""
     )
     
     dowload_limit = forms.IntegerField(

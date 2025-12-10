@@ -12,7 +12,10 @@
     </form>
     <h2>Ссылки</h2>
     <dir>
-        {% for link in links %}<a>{{ link.token }}</a><br>
+        {% for link in links %}
+            <a class="{% if not link.is_active %}errors{% endif %}"
+               href="{% url "share:download" link.token %}">{{ link.token }}</a>
+            <br>
         {% endfor %}
     </dir>
 {% endblock content %}

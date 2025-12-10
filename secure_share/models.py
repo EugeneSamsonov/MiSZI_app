@@ -48,4 +48,4 @@ class FileLink(models.Model):
     download_count = models.PositiveIntegerField(default=0)
 
     def __str__(self):
-        return f"Ссылка: {self.id} {f" | активна до {self.blocking_date}" if self.blocking_date else 'бессрочно'} | осталось {f"{self.download_count}/{self.dowload_limit}" if self.dowload_limit else '∞'} скачаваний"
+        return f"Ссылка: {self.id} {f" | активна до {self.blocking_date}" if self.blocking_date else 'бессрочно'} | осталось {f"{self.download_count}/{self.dowload_limit}" if self.dowload_limit else '∞'} скачаваний {f" | неактивна " if not self.is_active else ""}"
