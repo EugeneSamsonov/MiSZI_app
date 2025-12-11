@@ -1,0 +1,36 @@
+{% load static %}
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{% block title %}Secure Share{% endblock title %}</title>
+  <link rel="stylesheet" href="{% static 'share/styles.css' %}">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-row">
+      <a class="brand" href="{% url 'share:home' %}">
+        <svg class="logo" viewBox="0 0 48 48" aria-hidden="true"><g fill="none"><rect x="6" y="10" width="36" height="28" rx="4" stroke="currentColor" stroke-width="2"/></g></svg>
+        <span class="brand-text">Secure<span class="accent">Share</span></span>
+      </a>
+      <nav class="nav">
+        <a href="{% url 'share:home' %}">Главная</a>
+        <a href="#">Документация</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page container">
+    {% block content %}{% endblock content %}
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small>© {{ now|date:"Y" }} Secure Share — личный проект</small>
+    </div>
+  </footer>
+
+  <script src="{% static 'share/ui.js' %}"></script>
+</body>
+</html>
