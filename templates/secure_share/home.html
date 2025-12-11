@@ -1,31 +1,29 @@
 {% extends "basess.html" %}
-
 {% block title %}{{ title }}{% endblock title %}
 
 {% block content %}
 <section class="card upload-card" aria-labelledby="upload-title">
   <h1 id="upload-title" class="title">Secure Share</h1>
 
-  <form id="uploadForm" method="post" enctype="multipart/form-data" class="upload-form" aria-describedby="upload-instructions">
+  <form method="post" enctype="multipart/form-data" class="upload-form">
     {% csrf_token %}
-    <p id="upload-instructions" class="small-info">Загрузите файл и создайте персональную ссылку для скачивания. Ссылки можно отключать.</p>
+    <p class="small-info">Загрузите файл и создайте персональную ссылку для скачивания. Ссылки можно отключать.</p>
 
-    <!-- Проблема: id и name не совпадают с формой -->
     <label for="id_file_obj" class="dropzone" id="dropzone">
       <input id="id_file_obj" name="file_obj" type="file" class="sr-only" required />
       <div class="dropzone-inner">
-        <svg width="48" height="48" viewBox="0 0 24 24" aria-hidden><path d="M12 3v9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"></path><path d="M21 15v2a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3v-2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"></path></svg>
+        <svg width="48" height="48" viewBox="0 0 24 24" aria-hidden>
+          <path d="M12 3v9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
+          <path d="M21 15v2a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3v-2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
+        </svg>
         <strong>Перетащите файл сюда</strong>
         <span class="muted">или нажмите, чтобы выбрать</span>
       </div>
     </label>
     
-    <!-- Добавь показ ошибок формы -->
     {% if form.errors %}
     <div class="errors">
-      {% for error in form.file_obj.errors %}
-        <p class="error">{{ error }}</p>
-      {% endfor %}
+      {% for error in form.file_obj.errors %}<p class="error">{{ error }}</p>{% endfor %}
     </div>
     {% endif %}
 
@@ -38,17 +36,33 @@
 <section class="card files-card" aria-labelledby="files-title">
   <h2 id="files-title">Загруженные файлы</h2>
   {% if files %}
-  <ul class="files-list" role="list">
+  <ul class="files-list">
     {% for file in files %}
     <li class="file-item">
       <div class="file-meta">
         <div>
-          <div class="file-name">{{ file.orig_file_name }}</div>
-          <!-- Исправь названия полей -->
+          <div class="file-name">
+            {% if file.is_deleted %}
+            <s>{{ file.orig_file_name }}</s>
+            <span class="small-info">(удален)</span>
+            {% else %}
+            {{ file.orig_file_name }}
+            {% endif %}
+          </div>
           <div class="file-sub">{{ file.size|filesizeformat }} • Загружен {{ file.upload_date|date:"d.m.Y H:i" }}</div>
         </div>
         <div class="file-actions">
+          {% if not file.is_deleted %}
           <a class="button ghost" href="{% url 'share:file_links' file.file_name %}">Ссылки</a>
+          <!-- Форма удаления файла - БЕЗ data-confirm -->
+          <form method="post" action="{% url 'share:delete_file' %}">
+            {% csrf_token %}
+            <input type="hidden" name="file_name" value="{{ file.file_name }}">
+            <button type="submit" class="button ghost danger">
+              Удалить
+            </button>
+          </form>
+          {% endif %}
         </div>
       </div>
     </li>
@@ -58,5 +72,4 @@
   <p class="muted">Пока что нет загруженных файлов — загрузите первый выше.</p>
   {% endif %}
 </section>
-
 {% endblock content %}

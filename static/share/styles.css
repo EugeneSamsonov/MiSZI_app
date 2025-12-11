@@ -132,24 +132,133 @@ a{color:inherit}
   color: #c00;
 }
 
-/* Footer */
-.site-footer {
-  margin-top: 2rem;
-  padding: 1rem 0;
-  border-top: 1px solid rgba(15,23,36,0.06);
-  text-align: center;
-  color: var(--muted);
-}
 
-/* Drag & drop state */
-.dropzone.dragover {
-  border-color: var(--accent);
-  background: rgba(0, 102, 255, 0.05);
-}
 
 /* File size format */
 .file-sub {
   display: flex;
   gap: 0.5rem;
   align-items: center;
+}
+
+/* Добавь в конец файла */
+
+/* Inline forms (для форм удаления) */
+.inline-form {
+  display: inline;
+  margin: 0;
+  padding: 0;
+}
+
+
+/* Отображение удаленных файлов */
+s {
+  color: var(--muted);
+  opacity: 0.7;
+}
+
+/* Улучшенные token-actions */
+.token-actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.token-actions .inline-form button {
+  padding: 4px 8px;
+  min-width: auto;
+}
+
+/* Для маленьких кнопок удаления */
+.button.small.danger {
+  padding: 4px 8px;
+  font-size: 0.8rem;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Подсказки при наведении */
+button[title] {
+  position: relative;
+}
+
+/* Анимация для подтверждения удаления */
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0.5; }
+}
+
+.file-item.deleting {
+  animation: fadeOut 0.3s ease-out;
+}
+
+/* Добавь эти стили в конец файла */
+
+/* Состояние скопированного токена */
+.button.copied {
+  background: #4caf50 !important;
+  color: white !important;
+  border-color: #4caf50 !important;
+}
+
+/* Ошибки файлов */
+.file-error {
+  margin: 10px 0;
+  padding: 10px;
+  background: #ffebee;
+  border: 1px solid #ffcdd2;
+  border-radius: var(--radius);
+  color: #c62828;
+  font-size: 0.9rem;
+}
+
+/* Улучшенные кнопки удаления */
+.button.danger {
+  color: #dc2626;
+  border-color: #dc2626;
+  background: transparent;
+}
+
+.button.danger:hover {
+  background: #fee;
+  color: #b91c1c;
+}
+
+/* Анимации */
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOut {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+/* Состояние drag & drop */
+.dropzone.dragover {
+  border-color: var(--accent);
+  background: rgba(0, 102, 255, 0.05);
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { border-color: var(--accent); }
+  50% { border-color: #66b3ff; }
 }

@@ -1,5 +1,4 @@
 {% extends "basess.html" %}
-
 {% block title %}{{ title }}{% endblock title %}
 
 {% block content %}
@@ -10,7 +9,6 @@
     <h2 class="h4">Создать ссылку для файла</h2>
     {% csrf_token %}
     
-    <!-- Показываем форму вручную, чтобы контролировать стили -->
     <div class="form-group">
       <label for="id_blocking_date">{{ form.blocking_date.label }}</label>
       {{ form.blocking_date }}
@@ -38,31 +36,50 @@
   {% if links %}
   <ul class="links-list">
     {% for link in links %}
-      <li class="link-item">
-        <div class="token">
-          <code class="token-text">{{ link.token }}</code>
-          <div class="token-actions">
-            <button class="button small" data-token="{{ link.token }}" onclick="copyToken(event)">Копировать</button>
-            <a class="button ghost small{% if not link.is_active %} disabled{% endif %}" 
-               href="{% url 'share:download' link.token %}" 
-               {% if not link.is_active %}aria-disabled="true" tabindex="-1"{% endif %}>
-              Скачать
-            </a>
-          </div>
+    <li class="link-item">
+      <div class="token">
+        <code class="token-text">{{ link.token }}</code>
+        <div class="token-actions">
+          <button class="button small" 
+                  data-download-url="{{ request.scheme }}://{{ request.get_host }}{% url 'share:download' link.token %}"
+                  onclick="copyToken(event)">
+            Копировать ссылку
+          </button>
+          
+          <a class="button ghost small{% if not link.is_active %} disabled{% endif %}" 
+             href="{% url 'share:download' link.token %}" 
+             {% if not link.is_active %}aria-disabled="true" tabindex="-1"{% endif %}>
+            Скачать
+          </a>
+          
+          <!-- Форма удаления ссылки - БЕЗ data-confirm -->
+          <form method="post" action="{% url 'share:delete_link' %}">
+            {% csrf_token %}
+            <input type="hidden" name="token" value="{{ link.token }}">
+            <button type="submit" class="button small danger">
+              ×
+            </button>
+          </form>
         </div>
-        <div class="link-info">
-          Создана: {{ link.create_date|date:"d.m.Y H:i" }} | 
-          Действует до: {{ link.blocking_date|date:"d.m.Y H:i"|default:"Бессрочно" }} | 
-          Скачиваний: {{ link.download_count }}/{{ link.dowload_limit|default:"∞" }} |
-          Статус: <span class="status {{ link.is_active|yesno:'active,inactive' }}">{{ link.is_active|yesno:"Активна,Неактивна" }}</span>
-        </div>
-        {% if not link.is_active %}<div class="small-info">Ссылка отключена</div>{% endif %}
-      </li>
+      </div>
+      
+      <div class="link-info">
+        Создана: {{ link.create_date|date:"d.m.Y H:i" }} | 
+        Действует до: {{ link.blocking_date|date:"d.m.Y H:i"|default:"Бессрочно" }} | 
+        Скачиваний: {{ link.download_count }}/{{ link.dowload_limit|default:"∞" }} |
+        Статус: <span class="status {{ link.is_active|yesno:'active,inactive' }}">
+          {{ link.is_active|yesno:"Активна,Неактивна" }}
+        </span>
+      </div>
+      
+      {% if not link.is_active %}
+      <div class="small-info">Ссылка отключена</div>
+      {% endif %}
+    </li>
     {% endfor %}
   </ul>
   {% else %}
   <p class="muted">Для этого файла еще нет созданных ссылок.</p>
   {% endif %}
 </section>
-
 {% endblock content %}
