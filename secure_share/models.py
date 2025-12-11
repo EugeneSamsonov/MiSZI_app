@@ -9,7 +9,7 @@ class File(models.Model):
 
     def user_directory_path(instance, filename):
         # Будет сохранять в: secure_share/username/filename
-        ext = filename.split('.')[-1]
+        ext = filename.split(".")[-1]
         # Меняем имя файла на UUID
         return f"secure_share/{instance.user.username}/{instance.file_name}.{ext}"
 
@@ -30,6 +30,14 @@ class File(models.Model):
     def __str__(self):
         return f"Файл: {self.id} | {self.orig_file_name}"
 
+    def is_owner(self, user):
+        """Проверяет является ли пользователь владельцем файла"""
+        return self.user == user
+
+    def can_access(self, user):
+        """Проверяет может ли пользователь получить доступ к файлу"""
+        return self.is_owner(user) and not self.is_deleted
+
 
 class FileLink(models.Model):
 
@@ -47,3 +55,11 @@ class FileLink(models.Model):
 
     def __str__(self):
         return f"Ссылка: {self.id} {f" | активна до {self.blocking_date}" if self.blocking_date else 'бессрочно'} | осталось {f"{self.download_count}/{self.dowload_limit}" if self.dowload_limit else '∞'} скачаваний {f" | неактивна " if not self.is_active else ""}"
+
+    def is_owner(self, user):
+        """Проверяет является ли пользователь владельцем ссылки (через файл)"""
+        return self.file.user == user
+
+    def can_access(self, user):
+        """Проверяет может ли пользователь получить доступ к ссылке"""
+        return self.is_owner(user) and self.is_active

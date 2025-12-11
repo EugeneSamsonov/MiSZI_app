@@ -9,6 +9,8 @@ from django.utils import timezone
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import Http404
 
+from secure_share.mixins import FileOwnerRequiredMixin, LinkOwnerRequiredMixin
+
 from .models import File, FileLink
 from .forms import CreateFileForm, CreateLinkForm
 
@@ -23,7 +25,9 @@ class HomeView(LoginRequiredMixin, CreateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["title"] = "Secure Share"
-        context["files"] = File.objects.filter(user=self.request.user).order_by("is_deleted", "-upload_date")
+        context["files"] = File.objects.filter(user=self.request.user).order_by(
+            "is_deleted", "-upload_date"
+        )
         return context
 
     def form_valid(self, form):
@@ -38,7 +42,7 @@ class HomeView(LoginRequiredMixin, CreateView):
         return super().form_valid(form)
 
 
-class FileLinksView(LoginRequiredMixin, CreateView):
+class FileLinksView(FileOwnerRequiredMixin, LoginRequiredMixin, CreateView):
     model = FileLink
     template_name = "secure_share/file_links.html"
     form_class = CreateLinkForm
@@ -54,9 +58,9 @@ class FileLinksView(LoginRequiredMixin, CreateView):
         file = File.objects.get(file_name=file_name)
 
         if file.is_deleted:
-            
+
             raise Http404("Файл удален.")
-        
+
         context["orig_file_name"] = (
             File.objects.values("orig_file_name")
             .get(file_name=file_name)
@@ -124,17 +128,16 @@ class DownloadFileView(View):
             raise Http404("Ссылка не найдена")
 
 
-class DeleteFileView(LoginRequiredMixin, View): #FileOwnerRequiredMixin, 
+class DeleteFileView(
+    FileOwnerRequiredMixin, LoginRequiredMixin, View
+):  # FileOwnerRequiredMixin,
     """Удаление файла (мягкое)"""
 
     def post(self, request, *args, **kwargs):
         file_name = request.POST.get("file_name")
 
-
         # Проверяем владельца файла!
-        file = get_object_or_404(
-            File, file_name=file_name, user=request.user
-        )
+        file = get_object_or_404(File, file_name=file_name, user=request.user)
 
         # Мягкое удаление
         file.is_deleted = True
@@ -143,18 +146,16 @@ class DeleteFileView(LoginRequiredMixin, View): #FileOwnerRequiredMixin,
         return redirect("share:home")
 
 
-class DeleteFileLinkView(LoginRequiredMixin, View): #LinkOwnerRequiredMixin, 
+class DeleteFileLinkView(
+    LinkOwnerRequiredMixin, LoginRequiredMixin, View
+):  # LinkOwnerRequiredMixin,
     """Удаление ссылки"""
 
     def post(self, request, *args, **kwargs):
         link_token = request.POST.get("token")
 
         # Проверяем владельца файла!
-        link = get_object_or_404(
-            FileLink,
-            token=link_token,
-            file__user=request.user
-        )
+        link = get_object_or_404(FileLink, token=link_token, file__user=request.user)
 
         file_name = link.file.file_name  # Сохраняем до удаления
         link.delete()
