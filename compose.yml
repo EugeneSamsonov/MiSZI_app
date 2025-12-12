@@ -12,6 +12,7 @@ services:
     volumes:
     #   - .:/app
       - ./volumes/data:/app/data
+      - ./volumes/media:/app/media
 
     # restart: 
     #   unless-stopped
