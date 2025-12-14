@@ -136,7 +136,6 @@ class DeleteFileView(
     def post(self, request, *args, **kwargs):
         file_name = request.POST.get("file_name")
 
-        # Проверяем владельца файла!
         file = get_object_or_404(File, file_name=file_name, user=request.user)
 
         # Мягкое удаление
@@ -146,18 +145,15 @@ class DeleteFileView(
         return redirect("share:home")
 
 
-class DeleteFileLinkView(
-    LinkOwnerRequiredMixin, LoginRequiredMixin, View
-):  # LinkOwnerRequiredMixin,
+class DeleteFileLinkView(LoginRequiredMixin, View):  # LinkOwnerRequiredMixin,
     """Удаление ссылки"""
 
     def post(self, request, *args, **kwargs):
         link_token = request.POST.get("token")
 
-        # Проверяем владельца файла!
-        link = get_object_or_404(FileLink, token=link_token, file__user=request.user)
+        link = get_object_or_404(FileLink, token=link_token)
 
-        file_name = link.file.file_name  # Сохраняем до удаления
+        file_name = link.file.file_name
         link.delete()
 
         return redirect("share:file_links", file_name=file_name)

@@ -11,7 +11,7 @@ class File(models.Model):
         # Будет сохранять в: secure_share/username/filename
         ext = filename.split(".")[-1]
         # Меняем имя файла на UUID
-        return f"secure_share/{instance.user.username}/{instance.file_name}.{ext}"
+        return f"secure_share/{instance.user.username}{uuid.uuid4()}/{instance.file_name}.{ext}"
 
     class Meta:
         verbose_name = "Файл"
